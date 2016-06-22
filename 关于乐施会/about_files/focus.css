@@ -1,0 +1,56 @@
+﻿
+.box-focus {
+	width:940px;
+	position:relative;
+	background:#999;
+}
+.ctrl-panel {
+	position:absolute;
+	right:14px;
+	top:282px;
+	z-index:1000;
+}
+.m-page {
+	display:block;
+	width:25px;
+	height:28px;
+	text-align:center;
+	background:#ffffff;
+	float:left;
+	display:inline;
+	margin-left:8px;
+	line-height:28px;
+	color:#0c8849;
+	font-size:12px;
+	font-weight:bold;
+	text-decoration:none;
+}
+.m-page:hover {
+	color:#ffffff;
+}
+.focus {
+	background:#0c8849;
+	color:#ffffff;
+}
+.con {
+	width:100%;
+}
+.scroll-wrap {
+	OVERFLOW: hidden;
+	WIDTH: 940px;
+	POSITION: relative;
+	HEIGHT: 320px;
+}
+.scroll_box_content {
+	POSITION: absolute
+}
+.content_list {
+	FLOAT: left;
+	WIDTH: 940px;
+	HEIGHT: 320px;
+	cursor:pointer;
+}
+.content_list .contentimg{ float:right; width:620px;height:320px;}
+.img_description{ float:left; width:320px; height:320px; background:url(../images/mainbanner_bg.jpg) no-repeat;}
+.img_description h1, .img_description h2 { font-family:'微软雅黑'; font-size: 320%; line-height: 95%; margin: 40px 0 10px 20px; color:#FFF;}
+.img_description p { font-size:110%;line-height: 122%; margin:0 20px 20px 20px; color:#FFF; font-weight:bold;}

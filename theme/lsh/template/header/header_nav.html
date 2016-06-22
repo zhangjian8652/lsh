@@ -1,0 +1,18 @@
+<div class="nav">
+    <ul>
+        [@ec_nav queryType="tree" group="head_nav";nodes]
+            [#if nodes?? && (nodes?size > 0)]
+                [#list nodes as nod]
+                <li><a href="/" class="current"><span>${nod.name!}</span></a></li>
+                [/#list]
+            [/#if]
+        [/@ec_nav]
+        <li id="lm_about"><a href="about.php"><span>关于乐施会</span></a></li>
+        <li id="lm_work"><a href="work.php"><span>我们的工作</span></a></li>
+        <li id="lm_cbkw"><a href="publications.php"><span>出版物</span></a></li>
+        <li id="lm_news"><a href="jgxw.php"><span>新闻动态</span></a></li>
+        <li id="lm_apply"><a href="apply.php"><span>项目申请</span></a></li>
+
+        <li class="last_nav"><a href="getinvolved.php"><span>你的参与&nbsp;&nbsp;</span></a></li>
+    </ul>
+</div>

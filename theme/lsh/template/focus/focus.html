@@ -1,0 +1,33 @@
+[@ec_node code="focus";nod]
+<div id="focus">
+    <div class="box-focus">
+        <div class="ctrl-panel">
+            <a class="m-page" href="javascript:;" rel="js_btn_list">1</a>
+            <a class="m-page" href="javascript:;" rel="js_btn_list">2</a>
+            <a class="m-page" href="javascript:;" rel="js_btn_list">3</a>
+            <a class="m-page" href="javascript:;" rel="js_btn_list">4</a>
+            <a class="m-page focus" href="javascript:;" rel="js_btn_list">5</a>
+            <a class="m-page" href="javascript:;" rel="js_btn_list">6</a>
+        </div>
+
+        <div class="scroll-wrap">
+            <div class="scroll_box_content" rel="scroll_box_content" style="width: 5640px; left: -3760px;">
+                [@ec_info queryType="list" nodeId="${nod.id!}" groupName="";list]
+                [#if list?? && (list?size >0)]
+                [#list list as info]
+                <div class="content_list">
+                    <div class="img_description"><h1>${info.fields['tittle']!}</h1>
+                        <p><span>${info.fields['content']!}</span>&nbsp;<img src="images/t.gif"></p>
+                    </div>
+                    <img class="contentimg" onclick="location.href='http://www.oxfam.org.cn/info.php?cid=23&amp;id=1695'" src="${info.fields['background']!}">
+                </div>
+                [/#list]
+                [/#if]
+                [/@ec_info]
+
+            </div>
+        </div>
+    </div>
+</div>
+[/@ec_node]
+								
