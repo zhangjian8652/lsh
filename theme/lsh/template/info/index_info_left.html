@@ -1,101 +1,50 @@
+[@ec_node code="info_left";nod]
 <div class="infoleft">
     <div class="info_nav">
         <ul>
-            <li id="newsrelease" class="current"><a href="javascript:">新闻稿</a></li>
-            <li id="projectstory" class=""><a href="javascript:">故事</a></li>
-            <li id="webspecial" class=""><a href="javascript:">专题网站</a></li>
-            <li id="activity" class=""><a href="javascript:">活动</a></li>
+            [@ec_info queryType="list" nodeId="${nod.id!}" groupName="info_left";list]
+            [#if list?? && (list?size >0)]
+            [#list list as info]
+            [#if info_index == 0]
+            [#assign class = "current"/]
+            [#else]
+            [#assign class = ""/]
+            [/#if]
+            <li id="${info.fields['class']}" class="${class!''}"><a href="javascript:">${info.fields['tittle']}</a></li>
+            [/#list]
+            [/#if]
+            [/@ec_info]
         </ul>
     </div>
     <div class="info_content">
 
-        <dl class="newsrelease" style="display: block;">
+        [@ec_info queryType="list" nodeId="${nod.id!}" groupName="info_left";list]
+        [#if list?? && (list?size >0)]
+        [#list list as info]
+        [#if info_index == 0]
+        [#assign display = "block"/]
+        [#else]
+        [#assign display = "none"/]
+        [/#if]
+        <dl class="${info.fields['class']}" style="${display};">
             <div class="dot autoPage">
                 <div class="bd">
-                    <a href="news.php" class="gengduo">更多&gt;&gt;</a>
-                    <div class="tempWrap" style="overflow:hidden; position:relative; width:680px"><ul style="width: 1360px; position: relative; overflow: hidden; padding: 0px; margin: 0px; left: -680px;">
-                        <!-- 新闻稿-->
-                        <li style="float: left; width: 150px;">
-                            <img src="uploads/image/20160617/1466162154.png" width="150" height="100"><p><a class="font1" href="news.php?id=70&amp;p=news">[基础教育]</a></p><p><a href="info.php?cid=70&amp;id=1732&amp;p=work"><b>第四届全国乡土教材研讨会在四川阿坝州召开</b></a></p>
-                            <span></span>
-                        </li>
-                        <li style="float: left; width: 150px;">
-                            <img src="uploads/image/20160608/1465378502.jpg" width="150" height="100"><p><a class="font1" href="news.php?id=23&amp;p=news">[机构新闻]</a></p><p><a href="info.php?cid=23&amp;id=1728&amp;p=work"><b>构筑公平世界主题研讨会在北京召开  </b></a></p>
-                            <span></span>
-                        </li>
-                        <li style="float: left; width: 150px;">
-                            <img src="uploads/image/20160520/1463728649.png" width="150" height="100"><p><a class="font1" href="news.php?id=75&amp;p=news">[气候变化与贫困]</a></p><p><a href="info.php?cid=75&amp;id=1724&amp;p=work"><b>2016年第一轮气候谈判在波恩召开           厄尔尼诺影响持续  气候资金需求紧迫</b></a></p>
-                            <span></span>
-                        </li>
-                        <li style="float: left; width: 150px;">
-                            <img src="uploads/image/20160509/1462775997.jpg" width="150" height="100"><p><a class="font1" href="news.php?id=69&amp;p=news">[城市生计]</a></p><p><a href="info.php?cid=69&amp;id=1721&amp;p=work"><b>“纵横计划”征集项目</b></a></p>
-                            <span></span>
-                        </li>
-                        <li style="float: left; width: 150px;">
-                            <img src="uploads/image/20160304/1457081135.jpg" width="150" height="100"><p><a class="font1" href="news.php?id=146&amp;p=news">[中国与发展中国家]</a></p><p><a href="info.php?cid=152&amp;id=1709&amp;p=work"><b>“中非对话平台”正式启动 </b></a></p>
-                            <span></span>
-                        </li>
-                        <li style="float: left; width: 150px;">
-                            <img src="uploads/image/20150205/1423117609.jpg" width="150" height="100"><p><a class="font1" href="news.php?id=74&amp;p=news">[农业与扶贫政策]</a></p><p><a href="info.php?cid=74&amp;id=1696&amp;p=work"><b>乐施会发布《构筑公平世界》中文版</b></a></p>
-                            <span></span>
-                        </li>
-                        <li style="float: left; width: 150px;">
-                            <img src="uploads/image/20150115/1421302330.jpg" width="150" height="100"><p><a class="font1" href="news.php?id=72&amp;p=news">[社会性别与公民社会发展]</a></p><p><a href="info.php?cid=72&amp;id=1580&amp;p=work"><b>性别与中国媒体报道工作坊举办 乐施会力倡性别平等 </b></a></p>
-                            <span></span>
-                        </li>
-                        <li style="float: left; width: 150px;">
-                            <img src="uploads/image/20140808/1407500541.jpg" width="150" height="100"><p><a class="font1" href="news.php?id=67&amp;p=news">[农村发展与灾害管理]</a></p><p><a href="info.php?cid=67&amp;id=1462&amp;p=work"><b>乐施会云南地震救援进度(8月8日更新)</b></a></p>
-                            <span></span>
-                        </li>
-
-
-                    </ul></div>
-                </div>
-                <div class="hd">
-                    <ul><li class="">1</li><li class="on">2</li></ul>
-                </div>
-            </div>
-        </dl>
-        <!-- -->
-        <dl class="projectstory" style="display: none;">
-            <div class="dot autoPage">
-                <div class="bd">
-                    <a href="story.php" class="gengduo">更多&gt;&gt;</a>
+                    <a href="${nod.uri!''}" class="gengduo">更多&gt;&gt;</a>
                     <div class="tempWrap" style="overflow:hidden; position:relative; width:680px"><ul style="width: 1360px; position: relative; overflow: hidden; padding: 0px; margin: 0px; left: 0px;">
-                        <!-- 故事 -->
-                        <li style="float: left; width: 150px;">
-                            <img src="uploads/image/20160316/1458114246.jpg" width="150" height="100"><p><a class="font1" href="list.php?id=44">[基础教育]</a></p><p><a href="info.php?cid=90&amp;id=1704&amp;p=work"><b>参与了！快乐了！改变了！ </b></a></p>
-                            <span></span>
-                        </li>
-                        <li style="float: left; width: 150px;">
-                            <img src="uploads/image/20150527/1432696898.jpg" width="150" height="100"><p><a class="font1" href="list.php?id=43">[城市生计]</a></p><p><a href="info.php?cid=83&amp;id=1632&amp;p=work"><b>评估促进学习与成长---记珠三角流动人口社区公益项目评估活动</b></a></p>
-                            <span></span>
-                        </li>
-                        <li style="float: left; width: 150px;">
-                            <img src="uploads/image/20150204/1423018217.jpg" width="150" height="100"><p><a class="font1" href="list.php?id=102">[农村发展与灾害管理]</a></p><p><a href="info.php?cid=106&amp;id=1598&amp;p=work"><b>助贫点燃希望之光 --会宁项目小故事</b></a></p>
-                            <span></span>
-                        </li>
-                        <li style="float: left; width: 150px;">
-                            <img src="uploads/image/20131212/1386821768.jpg" width="150" height="100"><p><a class="font1" href="list.php?id=123">[气候变化与贫困]</a></p><p><a href="info.php?cid=123&amp;id=1380&amp;p=work"><b>气候贫穷，不得不知的事实</b></a></p>
-                            <span></span>
-                        </li>
-                        <li style="float: left; width: 150px;">
-                            <img src="uploads/image/20130923/1379920685.jpg" width="150" height="100"><p><a class="font1" href="list.php?id=118">[四川地震救援及重建]</a></p><p><a href="info.php?cid=118&amp;id=1364&amp;p=work"><b>北川漩坪椿芽村“7•9”洪灾救援小记</b></a></p>
-                            <span></span>
-                        </li>
-                        <li style="float: left; width: 150px;">
-                            <img src="uploads/image/20130502/1367493387.jpg" width="150" height="100"><p><a class="font1" href="list.php?id=120">[社会性别与公民社会发展]</a></p><p><a href="info.php?cid=120&amp;id=1010&amp;p=work"><b>李娜的故事</b></a></p>
-                            <span></span>
-                        </li>
-                        <li style="float: left; width: 150px;">
-                            <img src="uploads/image/20130501/1367396251.jpg" width="150" height="100"><p><a class="font1" href="list.php?id=121">[农业与扶贫政策]</a></p><p><a href="info.php?cid=121&amp;id=1310&amp;p=work"><b>GROW对谈一：无饥•无贫：十亿人的未来</b></a></p>
-                            <span></span>
-                        </li>
-                        <li style="float: left; width: 150px;">
-                            <img src="uploads/image/20130501/1367417395.jpg" width="150" height="100"><p><a class="font1" href="list.php?id=122">[企业社会责任]</a></p><p><a href="info.php?cid=122&amp;id=1309&amp;p=work"><b>妇女平等从巧克力开始</b></a></p>
-                            <span></span>
-                        </li>
 
+                        <!-- 新闻稿-->
+                        [@ec_node code="info_left_content";nod2]
+                        [@ec_info queryType="list" nodeId="${nod2.id!}" groupName="${info.fields['content_group']}";list]
+                        [#if list?? && (list?size >0)]
+                        [#list list as info2]
+                        <li style="float: left; width: 150px;">
+                            <img src="${info2.fields['image']}" width="150" height="100"><p><a class="font1" href="news.php?id=70&amp;p=news">${info2.fields['tittle']}</a></p><p><a href="info.php?cid=70&amp;id=1732&amp;p=work"><b>${info2.fields['content']}</b></a></p>
+                            <span></span>
+                        </li>
+                        [/#list]
+                        [/#if]
+                        [/@ec_info]
+                        [/@ec_node]
                     </ul></div>
                 </div>
                 <div class="hd">
@@ -103,94 +52,17 @@
                 </div>
             </div>
         </dl>
-        <dl class="webspecial" style="display: none;">
-            <div class="dot autoPage">
-                <div class="bd">
-                    <a href="thematic.php" class="gengduo">更多&gt;&gt;</a>
-                    <div class="tempWrap" style="overflow:hidden; position:relative; width:680px"><ul style="width: 2380px; position: relative; overflow: hidden; padding: 0px; margin: 0px; left: 0px;">
-                        <!-- 专题 -->
-                        <li style="float: left; width: 150px;">
-                            <img src="uploads/image/20150923/1443010104.jpg" width="150" height="100"><p><a href="http://www.oxfam.org.cn/huining/"><b>参与式扶贫 芦岔村的发展故事</b></a></p>
-                            <span></span>
-                        </li>
-                        <li style="float: left; width: 150px;">
-                            <img src="uploads/image/20141102/1414948864.jpg" width="150" height="100"><p><a href="http://www.oxfam.org.cn/zhoushan/"><b>针线绣出 农村变革</b></a></p>
-                            <span></span>
-                        </li>
-                        <li style="float: left; width: 150px;">
-                            <img src="uploads/image/20140420/1397958338.jpg" width="150" height="100"><p><a href="/yadzyzn/"><b>雅安地震一周年</b></a></p>
-                            <span></span>
-                        </li>
-                        <li style="float: left; width: 150px;">
-                            <img src="uploads/image/20130603/1370239379.jpg" width="150" height="100"><p><a href="/512_5years/"><b>5.12汶川地震五周年专题</b></a></p>
-                            <span></span>
-                        </li>
-                        <li style="float: left; width: 150px;">
-                            <img src="uploads/image/20130428/1367124729.jpg" width="150" height="100"><p><a href="http://www.oxfam.org.cn/www/experiences/"><b>乐施会中国扶贫经验总结</b></a></p>
-                            <span></span>
-                        </li>
-                        <li style="float: left; width: 150px;">
-                            <img src="uploads/image/20130428/1367123956.jpg" width="150" height="100"><p><a href="http://www.oxfam.org.cn/www/durban/"><b>德班气候会议专题</b></a></p>
-                            <span></span>
-                        </li>
-                        <li style="float: left; width: 150px;">
-                            <img src="uploads/image/20130428/1367131031.jpg" width="150" height="100"><p><a href="http://www.oxfam.org.cn/www/guizhou.php"><b>贵州农村发展和基础教育项目专题</b></a></p>
-                            <span></span>
-                        </li>
-                        <li style="float: left; width: 150px;">
-                            <img src="uploads/image/20130428/1367129728.jpg" width="150" height="100"><p><a href="http://www.oxfam.org.cn/www/512_3years.php"><b>乐施会512灾后重建项目专题</b></a></p>
-                            <span></span>
-                        </li>
-                        <li style="float: left; width: 150px;">
-                            <img src="uploads/image/20130428/1367130010.jpg" width="150" height="100"><p><a href="http://www.oxfam.org.cn/www/lueyang/"><b>陕西略阳灾后重建项目专题</b></a></p>
-                            <span></span>
-                        </li>
-                        <li style="float: left; width: 150px;">
-                            <img src="uploads/image/20130428/1367125704.jpg" width="150" height="100"><p><a href="http://www.oxfam.org.cn/www/cancun/"><b>坎昆气候会议专题</b></a></p>
-                            <span></span>
-                        </li>
-                        <li style="float: left; width: 150px;">
-                            <img src="uploads/image/20130428/1367129233.jpg" width="150" height="100"><p><a href="http://www.oxfam.org.cn/www/jianchuan.php"><b>云南剑川CDD项目专题</b></a></p>
-                            <span></span>
-                        </li>
-                        <li style="float: left; width: 150px;">
-                            <img src="uploads/image/20130428/1367122859.jpg" width="150" height="100"><p><a href="http://www.oxfam.org.cn/www/mashan.php"><b>“愚公移山”—马山项目专题</b></a></p>
-                            <span></span>
-                        </li>
-                        <li style="float: left; width: 150px;">
-                            <img src="uploads/image/20130428/1367123128.jpg" width="150" height="100"><p><a href="http://www.oxfam.org.cn/www/ido/"><b>I DO 行动专题</b></a></p>
-                            <span></span>
-                        </li>
-                        <li style="float: left; width: 150px;">
-                            <img src="uploads/image/20131018/1382081338.jpg" width="150" height="100"><p><a href="/boduoluo/"><b>波多罗，大山深处的发展故事</b></a></p>
-                            <span></span>
-                        </li>
-
-                    </ul></div>
-                </div>
-                <div class="hd">
-                    <ul><li class="on">1</li><li class="">2</li><li class="">3</li><li class="">4</li></ul>
-                </div>
-            </div>
-        </dl>
-        <dl class="activity" style="display: none;">
-            <div class="dot autoPage">
-                <div class="bd">
-                    <a href="workList.php?id=34&amp;p=get" class="gengduo">更多&gt;&gt;</a>
-                    <ul>
-                        <!-- 活动 -->
-                        <li>
-                            <img src="uploads/image/20130501/1367408509.jpg" width="150" height="100"><p><a href="http://www.behindthebrands.org/zh-cn"><b>品牌背后</b></a></p>
-                            <span>乐施会“品牌背后”全球倡导活动中国启动仪式 <br>2013年2月26日</span>
-                        </li>
-
-                    </ul>
-                </div>
-                <div class="hd">
-                    <ul></ul>
-                </div>
-            </div>
-        </dl>
+        [/#list]
+        [/#if]
+        [/@ec_info]
 
     </div>
 </div>
+[/@ec_node]
+
+
+
+								
+								
+								
+								
