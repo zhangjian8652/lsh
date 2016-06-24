@@ -1,68 +1,15 @@
-[@ec_node code="info_left";nod]
-<div class="infoleft">
-    <div class="info_nav">
-        <ul>
-            [@ec_info queryType="list" nodeId="${nod.id!}" groupName="info_left";list]
-            [#if list?? && (list?size >0)]
-            [#list list as info]
-            [#if info_index == 0]
-            [#assign class = "current"/]
-            [#else]
-            [#assign class = ""/]
-            [/#if]
-            <li id="${info.fields['class']}" class="${class!''}"><a href="javascript:">${info.fields['tittle']}</a></li>
-            [/#list]
-            [/#if]
-            [/@ec_info]
-        </ul>
-    </div>
-    <div class="info_content">
-
-        [@ec_info queryType="list" nodeId="${nod.id!}" groupName="info_left";list]
-        [#if list?? && (list?size >0)]
-        [#list list as info]
-        [#if info_index == 0]
-        [#assign display = "block"/]
-        [#else]
-        [#assign display = "none"/]
-        [/#if]
-        <dl class="${info.fields['class']}" style="${display};">
-            <div class="dot autoPage">
-                <div class="bd">
-                    <a href="${nod.uri!''}" class="gengduo">更多&gt;&gt;</a>
-                    <div class="tempWrap" style="overflow:hidden; position:relative; width:680px"><ul style="width: 1360px; position: relative; overflow: hidden; padding: 0px; margin: 0px; left: 0px;">
-
-                        <!-- 新闻稿-->
-                        [@ec_node code="info_left_content";nod2]
-                        [@ec_info queryType="list" nodeId="${nod2.id!}" groupName="${info.fields['content_group']}";list]
-                        [#if list?? && (list?size >0)]
-                        [#list list as info2]
-                        <li style="float: left; width: 150px;">
-                            <img src="${info2.fields['image']}" width="150" height="100"><p><a class="font1" href="news.php?id=70&amp;p=news">${info2.fields['tittle']}</a></p><p><a href="info.php?cid=70&amp;id=1732&amp;p=work"><b>${info2.fields['content']}</b></a></p>
-                            <span></span>
-                        </li>
-                        [/#list]
-                        [/#if]
-                        [/@ec_info]
-                        [/@ec_node]
-                    </ul></div>
-                </div>
-                <div class="hd">
-                    <ul><li class="on">1</li><li class="">2</li></ul>
-                </div>
-            </div>
-        </dl>
-        [/#list]
-        [/#if]
-        [/@ec_info]
-
-    </div>
-</div>
+[@ec_node code="work";nod]
+[@ec_info queryType="list" nodeId="${nod.id!}" groupName="activity_info";list]
+[#if list?? && (list?size >0)]
+[#list list as info]
+<li style="float: left; width: 150px;">
+    <img src="${info.fields['image']}" width="150" height="100">
+    <p><a class="font1"
+          href="news.php?id=70&amp;p=news">${info.fields['tittle']}</a></p>
+    <p><a href="${info.uri!}"><b>${info.fields['describe']}</b></a></p>
+    <span></span>
+</li>
+[/#list]
+[/#if]
+[/@ec_info]
 [/@ec_node]
-
-
-
-								
-								
-								
-								

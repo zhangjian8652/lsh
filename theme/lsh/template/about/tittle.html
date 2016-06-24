@@ -1,0 +1,16 @@
+<div class="aboutleft">
+    <div class="aboutleft1">
+        <ul class="ul1">
+            [@ec_node code="bout";nod]
+            [@ec_info queryType="list" nodeId="${nod.id!}" groupName="about_info";list]
+            [#if list?? && (list?size >0)]
+            [#list list as info]
+            <li><a href="${info.uri!}">${info.fields['tittle']}</a>
+            </li>
+            [/#list]
+            [/#if]
+            [/@ec_info]
+            [/@ec_node]
+        </ul>
+    </div>
+</div>

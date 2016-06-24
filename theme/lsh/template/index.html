@@ -8,16 +8,202 @@
 </head>
 
 <body>
-    [#include "header/header.html"/]
-    [#include "focus/focus.html"/]
-    [#include "info/index_info.html"/]
-    [#include "medias/medias.html"/]
-    [#include "footer/footer.html"/]
-    [#include "social/social.html"/]
-    [#include "share/share.html"/]
-    <script type="text/javascript" src="${res!}/resources/js/index.js"></script>
-    <script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh"></script>
-    <script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+[#include "header/header.html"/]
+[#include "focus/focus.html"/]
+
+<div id="info">
+    <div class="infoleft">
+        <div class="info_nav">
+            <ul>
+                <li id="newsrelease" class="current"><a href="javascript:">新闻稿</a></li>
+                <li id="activity"><a href="javascript:">公益活动</a></li>
+                <li id="volunteer"><a href="javascript:">自愿者风采</a></li>
+            </ul>
+        </div>
+        <div class="info_content">
+
+            <dl class="newsrelease">
+                <div class="dot autoPage">
+                    <div class="bd">
+                        <a href="news.php" class="gengduo">更多&gt;&gt;</a>
+                        <div class="tempWrap" style="overflow:hidden; position:relative; width:680px"><ul style="width: 1360px; position: relative; overflow: hidden; padding: 0px; margin: 0px; left: 0px;">
+
+                            [@ec_node code="work";nod]
+                            [@ec_info queryType="list" nodeId="${nod.id!}" groupName="activity_info";list]
+                            [#if list?? && (list?size >0)]
+                            [#list list as info]
+                            <li style="float: left; width: 150px;">
+                                <img src="${info.fields['image']}" width="150" height="100">
+                                <p><a class="font1"
+                                      href="news.php?id=70&amp;p=news">${info.fields['tittle']}</a></p>
+                                <p><a href="${info.uri!}"><b>${info.fields['describe']}</b></a></p>
+                                <span></span>
+                            </li>
+                            [/#list]
+                            [/#if]
+                            [/@ec_info]
+                            [/@ec_node]
+
+                        </ul>
+                        </div>
+                    </div>
+                    <div class="hd">
+                        <ul><li class="on">1</li><li class="">2</li></ul>
+                    </div>
+                </div>
+            </dl>
+            <dl class="activity">
+                <div class="dot autoPage">
+                    <div class="bd">
+                        <a href="news.php" class="gengduo">更多&gt;&gt;</a>
+                        <div class="tempWrap" style="overflow:hidden; position:relative; width:680px"><ul style="width: 1360px; position: relative; overflow: hidden; padding: 0px; margin: 0px; left: 0px;">
+
+                            [@ec_node code="work";nod]
+                            [@ec_info queryType="list" nodeId="${nod.id!}" groupName="activity_info";list]
+                            [#if list?? && (list?size >0)]
+                            [#list list as info]
+                            <li style="float: left; width: 150px;">
+                                <img src="${info.fields['image']}" width="150" height="100">
+                                <p><a class="font1"
+                                      href="news.php?id=70&amp;p=news">${info.fields['tittle']}</a></p>
+                                <p><a href="${info.uri!}"><b>${info.fields['describe']}</b></a></p>
+                                <span></span>
+                            </li>
+                            [/#list]
+                            [/#if]
+                            [/@ec_info]
+                            [/@ec_node]
+
+                        </ul>
+                        </div>
+                    </div>
+                    <div class="hd">
+                        <ul><li class="on">1</li><li class="">2</li></ul>
+                    </div>
+                </div>
+            </dl>
+            <dl class="volunteer">
+                <div class="dot autoPage">
+                    <div class="bd">
+                        <a href="news.php" class="gengduo">更多&gt;&gt;</a>
+                        <div class="tempWrap" style="overflow:hidden; position:relative; width:680px"><ul style="width: 1360px; position: relative; overflow: hidden; padding: 0px; margin: 0px; left: 0px;">
+
+                            [@ec_node code="work";nod]
+                            [@ec_info queryType="list" nodeId="${nod.id!}" groupName="activity_info";list]
+                            [#if list?? && (list?size >0)]
+                            [#list list as info]
+                            <li style="float: left; width: 150px;">
+                                <img src="${info.fields['image']}" width="150" height="100">
+                                <p><a class="font1"
+                                      href="news.php?id=70&amp;p=news">${info.fields['tittle']}</a></p>
+                                <p><a href="${info.uri!}"><b>${info.fields['describe']}</b></a></p>
+                                <span></span>
+                            </li>
+                            [/#list]
+                            [/#if]
+                            [/@ec_info]
+                            [/@ec_node]
+
+                        </ul>
+                        </div>
+                    </div>
+                    <div class="hd">
+                        <ul><li class="on">1</li><li class="">2</li></ul>
+                    </div>
+                </div>
+
+            </dl>
+
+        </div>
+    </div>
+</div>
+
+
+<div id="medias">
+    <div class="left">
+        <a href="http://www.oxfam.org.cn/www/grow/"><img src="${node.fields['medias_image']}"></a>
+    </div>
+    <div class="right">
+        <div class="media_nav">
+            <ul>
+                <li id="shipin" class="current"><a href="javascript:">${nod.fields['shiping']!}</a></li>
+                <li id="tupian"><a href="javascript:">${nod.fields['tupian']!}</a></li></ul>
+        </div>
+        <div class="media_content">
+            <!-- 视频 -->
+            <dl class="mediaphoto shipin">
+                [@ec_node code="medias";nod]
+                <span class="prev"></span>
+                <span class="next"></span>
+                <div class="mediaphoto-list shipin">
+                    <ul>
+                        [@ec_info queryType="list" nodeId="${nod.id!}" groupName="";list]
+                        [#if list?? && (list?size >0)]
+                        [#list list as info]
+                        [#if info_index == 0]
+                        [#assign class = "current"/]
+                        [#else]
+                        [#assign class = ""/]
+                        [/#if]
+                        <li>
+                            <div style=" width:620px; height:303px; padding:10px 25px 10px 25px;">
+                                <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" height="303" width="620">
+                                    <param name="movie" value="${info.fields['shiping_src']!}">
+                                    <param name="quality" value="high">
+                                    <param name="allowFullScreen" value="true">
+                                    <embed src="${info.fields['shiping_src']}" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="620" height="303">
+
+                                </object>
+                            </div>
+                            <div class="phototitle"><span>${info.fields['tittle']!}</span><a class="more" href="http://v.youku.com/v_show/id_XNTcyMjExNjI4.html">详情</a></div>
+                        </li>
+
+                        [/#list]
+                        [/#if]
+                        [/@ec_info]
+                    </ul>
+                </div>
+                [/@ec_node]
+            </dl>
+            <!-- -->
+            <!-- 图片 -->
+            <dl class="mediaphoto tupian" style="display: none;">
+                [@ec_node code="medias";nod]
+                <span class="prev"></span>
+                <span class="next"></span>
+                <div class="mediaphoto-list tupian">
+                    <ul>
+                        [@ec_info queryType="list" nodeId="${nod.id!}" groupName="tupian";list]
+                        [#if list?? && (list?size >0)]
+                        [#list list as info]
+                        [#if info_index == 0]
+                        [#assign class = "current"/]
+                        [#else]
+                        [#assign class = ""/]
+                        [/#if]
+
+                        <li>
+                            <div><img width="650" src="${info.fields['tupian']!}"></div>
+                            <div class="phototitle"><span>${info.fields['tittle']!}</span><a class="more" href="info.php?cid=68&amp;id=892&amp;p=work">详情</a></div>
+                        </li>
+                        [/#list]
+                        [/#if]
+                        [/@ec_info]
+                    </ul>
+                </div>
+                [/@ec_node]
+            </dl>
+            <!-- -->
+
+        </div>
+    </div>
+</div>
+
+[#include "footer/footer.html"/]
+<script type="text/javascript" src="${res!}/resources/js/index.js"></script>
+<script type="text/javascript" charset="utf-8"
+        src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh"></script>
+<script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
 
 
 </body>

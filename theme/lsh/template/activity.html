@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>${node.fields["tittle"]!}</title>
+    [#include "meta.html"/]
+    [#include "css.html"/]
+    [#include "js.html"/]
+</head>
+
+<body>
+[#include "header/header.html"/]
+
+[#include "activity/activity_tittle.html"/]
+
+<div id="info">
+
+    [#include "activity/activity_left.html"/]
+
+    <div class="aboutright">
+        <div class="detail">
+            <!-- -->
+            <div class="abouttitle1">
+                <div class="abouttitle2">公益项目展示</div>
+            <!-- -->
+            <div class="secbanner">
+                <div class="secleft sec3"><h1>项目展示</h1>
+                    <p><span>我们与贫穷人和伙伴机构合作，一起推动发展项目、人道主义项目、政策倡议及公众教育等工作。</span></p></div>
+                <div class="secright"><img onclick="location.href=''" src="${node.fields['large_image']}"></div>
+            </div>
+            <div class="wmdgz">
+                <div class="title">项目掠影</div>
+                <ul>
+                    [@ec_node code="work";nod]
+                    [@ec_info queryType="list" nodeId="${nod.id!}" groupName="activity_info";list]
+                    [#if list?? && (list?size >0)]
+                    [#list list as info]
+                    <li><a href="${info.uri!}"><img src="${info.fields['image']!}"></a><a
+                            href="${info.uri!}"><b>${info.fields['tittle']!}</b></a></li>
+                    [/#list]
+                    [/#if]
+                    [/@ec_info]
+                    [/@ec_node]
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+[#include "footer/footer.html"/]
+<script type="text/javascript" src="${res!}/resources/js/index.js"></script>
+<script type="text/javascript" charset="utf-8"
+        src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh"></script>
+<script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+
+
+</body>
+</html>

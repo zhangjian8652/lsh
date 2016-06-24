@@ -1,0 +1,61 @@
+[@ec_node code="publish";nod]
+<div id="dh">
+    <p><a href="index.php"><img src="${res!}/resources/images/home.gif"></a>&nbsp;&gt;&nbsp;出版物</p>
+</div>
+<div id="info">
+    <div class="aboutleft">
+        <div class="aboutleft1">
+            <ul class="ul1">
+                <li style="border-top-style: none;"><a href="#">年报</a>
+                </li>
+                <li class="openli"><a href="cbkwlist.php?id=18&amp;p=cbkw">报告</a>
+                    <ul><li><a href="#">机构报告</a></li>
+                        <li><a href="#">研究报告</a></li>
+                    </ul></li>
+                <li><a href="books.php">乐施丛书</a>
+                </li>
+
+            </ul>
+        </div><div class="aboutleft2">
+        <h3>相关链接</h3>
+        <ul class="ul1">
+            <li><a href="#" target="_blank">乐施会年报</a></li>
+            <li><a href="#" target="_blank">工作地区</a></li>
+            <li><a href="#" target="_blank">机构新闻</a></li>
+            <li><a href="#" target="_blank">工作机会</a></li>
+        </ul>
+    </div></div>
+    <div class="aboutright">
+        <div class="detail">
+            <!-- -->
+            <div class="abouttitle1"><div class="abouttitle2">出版物</div><div class="bshare-custom abouttitle3"><div class="bsPromo bsPromo2"></div><span>分享到：</span><a title="分享到QQ空间" class="bshare-qzone"></a><a title="分享到新浪微博" class="bshare-sinaminiblog"></a><a title="分享到人人网" class="bshare-renren"></a><a title="分享到腾讯微博" class="bshare-qqmb"></a><a title="分享到网易微博" class="bshare-neteasemb"></a><a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a><span class="BSHARE_COUNT bshare-share-count" style="float: none;">1</span></div></div>
+            <!-- -->
+            <div class="secbanner">
+                <div class="secleft sec1"><h1>弱势群体</h1><p><span>透过我们的出版刊物，你会知道弱势群体所面对的状况，以及乐施会如何帮助他们。</span></p></div>
+                <div class="secright"><img onclick="location.href=''" src="${nod.fields['large_image']}"></div>
+            </div>
+            <div class="cbw">
+                <ul>
+                    [@ec_info queryType="list" nodeId="${nod.id!}" groupName="publish_info";list]
+                    [#if list?? && (list?size >0)]
+                    [#list list as info]
+                    [#if info_index == 0]
+                    [#assign class = "current"/]
+                    [#else]
+                    [#assign class = ""/]
+                    [/#if]
+                    <li><a href="#"><img width="155" src="${info.fields['image']}"></a><a href="annualreport.php"><h2>${info.fields['tittle']}</h2></a><p></p></li>
+
+                    [/#list]
+                    [/#if]
+                    [/@ec_info]
+
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<div class="top_btn"><a href="#">返回页首</a></div>
+[/@ec_node]

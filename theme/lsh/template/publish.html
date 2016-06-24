@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>${node.fields["tittle"]!}</title>
+    [#include "meta.html"/]
+    [#include "css.html"/]
+    [#include "js.html"/]
 </head>
+
 <body>
+[#include "header/header.html"/]
+[#include "publish/publish_info.html"/]
+
+[#include "footer/footer.html"/]
+[#include "social/social.html"/]
+[#include "share/share.html"/]
+<script type="text/javascript" src="${res!}/resources/js/index.js"></script>
+<script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh"></script>
+<script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+
 
 </body>
 </html>

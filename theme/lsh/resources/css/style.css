@@ -145,7 +145,7 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 #foot{ padding-top:34px; background: url(../images/body_bottom.jpg) center bottom repeat-x #FFF;}
 
 
-#fixed{display:inline-block;width:50px; height:298px; /*background:#4aa92b;*/text-align:center; padding-top:15px;background:#efefef; overflow:hidden;}
+#fixed{display:inline-block;width:50px; height:320px; /*background:#4aa92b;*/text-align:center; padding-top:15px;background:#efefef; overflow:hidden;}
 #fixed a{ display:inline-block; text-align:center;}
 #fixed .xlwb{ background:url(../images/xlwb.png) center no-repeat; width:50px; height:27px; padding-top:18px;}
 #fixed .xlwb:hover{ background:url(../images/xlwb.png) center no-repeat #fff;}

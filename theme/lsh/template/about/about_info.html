@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> ${info.fields['tittle']!}</title>
+    [#include "../meta.html"/]
+    [#include "../css.html"/]
+    [#include "../js.html"/]
+</head>
+
+<body>
+[#include "../header/header.html"/]
+[@ec_node code="bout";nod]
+<div id="dh">
+    <p><a href="${nod.uri!}"><img src="${res!}/resources/images/home.gif"></a>&nbsp;&gt;&nbsp;关于我们</p>
+</div>
+<div id="info">
+    [#include "tittle.html"/]
+
+    <div class="aboutright">
+        <div class="detail">
+            <!-- -->
+            <div class="abouttitle1"><div class="abouttitle2">${info.fields['tittle']}</div></div>
+            <!-- -->
+            <div class="content">
+                    ${info.fields['detail']}
+            </div>
+            <!-- 组图区域开始-->
+            <!-- 组图区域结束 -->
+        </div>
+
+    </div>
+
+</div>
+<div class="top_btn"><a href="#">返回页首</a></div>
+[/@ec_node]
+
+[#include "../footer/footer.html"/]
+<script type="text/javascript" src="${res!}/resources/js/index.js"></script>
+<script type="text/javascript" charset="utf-8"
+        src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh"></script>
+<script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+
+
+</body>
+</html>

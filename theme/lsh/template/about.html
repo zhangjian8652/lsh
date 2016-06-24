@@ -1,11 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>${node.fields["tittle"]!}</title>
     [#include "meta.html"/]
     [#include "css.html"/]
     [#include "js.html"/]
 </head>
+
 <body>
+[#include "header/header.html"/]
+
+<div id="dh">
+    <p><a href="${node.uri!}"><img src="${res!}/resources/images/home.gif"></a>&nbsp;&gt;&nbsp;关于我们</p>
+</div>
+<div id="info">
+    [#include "about/tittle.html"/]
+
+    <div class="aboutright">
+        <div class="detail">
+            <div class="abouttitle1">
+                <div class="abouttitle2">关于我们</div>
+            </div>
+            <div class="secbanner">
+                <div class="secleft sec3"><h1>消除贫穷</h1>
+                    <p><span>乐施会是一个国际扶贫发展机构，旨在推动民众力量，消除贫穷。</span></p></div>
+                <div class="secright"><img onclick="location.href=''" src="${node.fields['large_image']}"></div>
+            </div>
+            <div class="wmdgz">
+                <p>
+                </p>
+                <p>
+                    <strong>关于我们 </strong>
+                </p>
+                <p>
+                    <br>
+                </p>
+                <p>
+                    全球每三个人之中就有一个贫穷。乐施会推动民众力量，以消除贫穷。
+                </p>
+                <p>
+                    <br>
+                </p>
+                <p>
+                    乐施会在世界各地以务实及创新的方法，协助贫穷人改善生活及持续发展。我们积极回应人道危机，提供救援，并协助恢复生计。我们推行公众教育及倡议运动，协助贫穷人发声，以改善本土及全球的扶贫政策。
+                </p>
+                <p>
+                    <br>
+                </p>
+                <p>
+                    乐施会与贫穷人及伙伴携手，消除贫穷以及导致贫穷的不公义情况。
+                </p>
+                <p>
+                    <br>
+                </p>
+                <p>
+                    <strong>关于香港乐施会 </strong>
+                </p>
+                <p>
+                    <br>
+                </p>
+                <p>
+                    乐施会创立于1976年，当时一群志愿人士走在一起，开设二手商品店，为世界各地的扶贫工作筹款。在1970、1980年代，乐施会初期的行动，包括了倡议以公义原则对待当时处身香港的越南船民/难民，以及在1984年向埃塞俄比亚的饥荒灾民伸出援手。目前，乐施会在全球70个国家
+                    / 地区推展工作项目。
+                </p>
+                <p>
+                    <br>
+                </p>
+                <p>
+                    乐施会在中国的项目，由总部统筹，确保符合国情、社情地有效推行。 &nbsp;
+                </p>
+                <p>
+                    <br>
+                </p>
+                <p>
+                    从1987年开始，乐施会在中国推行扶贫发展及防灾救灾工作，项目内容包括：农村综合发展、增收活动、小型基本建设、卫生服务、教育、能力建设及政策倡议等。至2015年3月，乐施会在国内29个省市和地区开展赈灾与扶贫发展工作，投入资金总额超過11亿元港币，受益群体主要是边远山区的贫困农民、少数民族、妇女和儿童、农民工及艾滋病感染者等，受益人口超过1250万人。
+                    &nbsp;<span id="__kindeditor_bookmark_start_0__"></span><span
+                        id="__kindeditor_bookmark_end_1__"></span>
+                </p>
+                <p>
+                    <br>
+                </p>
+                <p>
+                    1992年，乐施会在昆明开设了其在香港以外地区的第一个项目实施机构，后相继在北京、贵阳、兰州和成都设立项目办公室，项目活动内容和规模也随之
+                    增加和扩大。中国大陆是乐施会的重点工作地区，目前一半以上的项目在中国，重点工作地区是云南、贵州、广西、广东、甘肃、陕西、四川和北京。为回应需求和
+                    挑战，2004年正式成立乐施会中国部，专门管理日益扩展的中国项目。 &nbsp;
+                </p>
+                <p>
+                    <br>
+                </p>
+                <p>
+                    乐施会希望在内地的扶贫发展及防灾救灾工作，能为新农村建设，构建和谐社会贡献一份积极的力量。 &nbsp;
+                </p>
+                <p>
+                    <br>
+                </p>
+                <p>
+                    20年来，乐施会在中国的扶贫工作得到了政府有关部门的支持和肯定，这也是它得以顺利开展扶贫和发展工作并取得成绩的重
+                    要保障。2001年乐施会获得国务院扶贫办发表的“中国的农村扶贫开发”白皮书肯定。2003年获《南风窗》杂志颁发的“为了公共利益”年度榜
+                    扶贫奖。2004年，乐施会总干事庄陈有获得首届中国消除贫困奖奋斗奖荣誉。
+                </p>
+                <p>
+                    <br>
+                </p></div>
+        </div>
+
+    </div>
+
+</div>
+<div class="top_btn"><a href="#">返回页首</a></div>
+
+
+[#include "footer/footer.html"/]
+<script type="text/javascript" src="${res!}/resources/js/index.js"></script>
+<script type="text/javascript" charset="utf-8"
+        src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh"></script>
+<script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+
 
 </body>
 </html>
+								
