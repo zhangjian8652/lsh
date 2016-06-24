@@ -386,3 +386,21 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 
 
 
+#register-form{
+	margin-top: 55px;
+	margin-left: 300px;
+}
+
+#register-form div{
+	margin-top:10px;
+}
+#register-form div label{
+	position: absolute;
+	left: 220px;
+}
+#register-form div input{
+	width: 220px;
+}
+#register-form div label,#register-form div input{
+	line-height: 26px;
+}
