@@ -439,7 +439,7 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 	margin-left: 34px;
 }
 
-#news li div{
+#news .content-ul li div{
 	padding: 16px;
 	font-size: 12px;
 }

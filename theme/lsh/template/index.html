@@ -14,32 +14,36 @@
 <div id="news">
     <div class="news-left" id="news-carousel" style="width: 600px;margin: 0px;">
         [@ec_node code="news";nod]
-            <div class="head">
-                <div class="area-1"><div class="area-2"><span>${nod.name!}</span></div></div>
+        <div class="head">
+            <div class="area-1">
+                <div class="area-2"><span>${nod.name!}</span></div>
             </div>
-            <div class="content">
-                <ul>
-
-                    [@ec_info queryType="list" nodeId="${nod.id!}" groupName="default";list]
-                    [#if list?? && (list?size >0)]
-                    [#list list as info]
-                    <li>
-                        <div style="padding: 15px;">
+        </div>
+        <div class="content">
+            <ul class="content-ul">
+                [@ec_info queryType="list" nodeId="${nod.id!}" groupName="default";list]
+                [#if list?? && (list?size >0)]
+                [#list list as info]
+                <li>
+                    <div style="padding: 15px;">
                         <h4>${info.fields['tittle']}</h4>
                         <img src="${info.fields['image']!}">
                         <div>
                             ${info.fields['describe']}
                             <a href="${info.uri!}">[阅读更多]</a>
                         </div>
+                        <div>
+                            <ul></ul>
                         </div>
-                    </li>
-                    [/#list]
-                    [/#if]
-                    [/@ec_info]
+                    </div>
+                </li>
+                [/#list]
+                [/#if]
+                [/@ec_info]
 
-                </ul>
-            </div>
-            <div class="index"></div>
+            </ul>
+        </div>
+        <div class="index"></div>
         [/@ec_node]
     </div>
     <div class="news-right">
@@ -62,29 +66,33 @@
                 <div class="dot autoPage">
                     <div class="bd">
                         <a href="news.php" class="gengduo">更多&gt;&gt;</a>
-                        <div class="tempWrap" style="overflow:hidden; position:relative; width:680px"><ul style="width: 1360px; position: relative; overflow: hidden; padding: 0px; margin: 0px; left: 0px;">
+                        <div class="tempWrap" style="overflow:hidden; position:relative; width:680px">
+                            <ul style="width: 1360px; position: relative; overflow: hidden; padding: 0px; margin: 0px; left: 0px;">
 
-                            [@ec_node code="work";nod]
-                            [@ec_info queryType="list" nodeId="${nod.id!}" groupName="activity_info";list]
-                            [#if list?? && (list?size >0)]
-                            [#list list as info]
-                            <li style="float: left; width: 150px;">
-                                <img src="${info.fields['image']}" width="150" height="100">
-                                <p><a class="font1"
-                                      href="news.php?id=70&amp;p=news">${info.fields['tittle']}</a></p>
-                                <p><a href="${info.uri!}"><b>${info.fields['describe']}</b></a></p>
-                                <span></span>
-                            </li>
-                            [/#list]
-                            [/#if]
-                            [/@ec_info]
-                            [/@ec_node]
+                                [@ec_node code="work";nod]
+                                [@ec_info queryType="list" nodeId="${nod.id!}" groupName="activity_info";list]
+                                [#if list?? && (list?size >0)]
+                                [#list list as info]
+                                <li style="float: left; width: 150px;">
+                                    <img src="${info.fields['image']}" width="150" height="100">
+                                    <p><a class="font1"
+                                          href="news.php?id=70&amp;p=news">${info.fields['tittle']}</a></p>
+                                    <p><a href="${info.uri!}"><b>${info.fields['describe']}</b></a></p>
+                                    <span></span>
+                                </li>
+                                [/#list]
+                                [/#if]
+                                [/@ec_info]
+                                [/@ec_node]
 
-                        </ul>
+                            </ul>
                         </div>
                     </div>
                     <div class="hd">
-                        <ul><li class="on">1</li><li class="">2</li></ul>
+                        <ul>
+                            <li class="on">1</li>
+                            <li class="">2</li>
+                        </ul>
                     </div>
                 </div>
             </dl>
@@ -92,29 +100,33 @@
                 <div class="dot autoPage">
                     <div class="bd">
                         <a href="news.php" class="gengduo">更多&gt;&gt;</a>
-                        <div class="tempWrap" style="overflow:hidden; position:relative; width:680px"><ul style="width: 1360px; position: relative; overflow: hidden; padding: 0px; margin: 0px; left: 0px;">
+                        <div class="tempWrap" style="overflow:hidden; position:relative; width:680px">
+                            <ul style="width: 1360px; position: relative; overflow: hidden; padding: 0px; margin: 0px; left: 0px;">
 
-                            [@ec_node code="work";nod]
-                            [@ec_info queryType="list" nodeId="${nod.id!}" groupName="activity_info";list]
-                            [#if list?? && (list?size >0)]
-                            [#list list as info]
-                            <li style="float: left; width: 150px;">
-                                <img src="${info.fields['image']}" width="150" height="100">
-                                <p><a class="font1"
-                                      href="news.php?id=70&amp;p=news">${info.fields['tittle']}</a></p>
-                                <p><a href="${info.uri!}"><b>${info.fields['describe']}</b></a></p>
-                                <span></span>
-                            </li>
-                            [/#list]
-                            [/#if]
-                            [/@ec_info]
-                            [/@ec_node]
+                                [@ec_node code="work";nod]
+                                [@ec_info queryType="list" nodeId="${nod.id!}" groupName="activity_info";list]
+                                [#if list?? && (list?size >0)]
+                                [#list list as info]
+                                <li style="float: left; width: 150px;">
+                                    <img src="${info.fields['image']}" width="150" height="100">
+                                    <p><a class="font1"
+                                          href="news.php?id=70&amp;p=news">${info.fields['tittle']}</a></p>
+                                    <p><a href="${info.uri!}"><b>${info.fields['describe']}</b></a></p>
+                                    <span></span>
+                                </li>
+                                [/#list]
+                                [/#if]
+                                [/@ec_info]
+                                [/@ec_node]
 
-                        </ul>
+                            </ul>
                         </div>
                     </div>
                     <div class="hd">
-                        <ul><li class="on">1</li><li class="">2</li></ul>
+                        <ul>
+                            <li class="on">1</li>
+                            <li class="">2</li>
+                        </ul>
                     </div>
                 </div>
             </dl>
@@ -122,29 +134,33 @@
                 <div class="dot autoPage">
                     <div class="bd">
                         <a href="news.php" class="gengduo">更多&gt;&gt;</a>
-                        <div class="tempWrap" style="overflow:hidden; position:relative; width:680px"><ul style="width: 1360px; position: relative; overflow: hidden; padding: 0px; margin: 0px; left: 0px;">
+                        <div class="tempWrap" style="overflow:hidden; position:relative; width:680px">
+                            <ul style="width: 1360px; position: relative; overflow: hidden; padding: 0px; margin: 0px; left: 0px;">
 
-                            [@ec_node code="work";nod]
-                            [@ec_info queryType="list" nodeId="${nod.id!}" groupName="activity_info";list]
-                            [#if list?? && (list?size >0)]
-                            [#list list as info]
-                            <li style="float: left; width: 150px;">
-                                <img src="${info.fields['image']}" width="150" height="100">
-                                <p><a class="font1"
-                                      href="news.php?id=70&amp;p=news">${info.fields['tittle']}</a></p>
-                                <p><a href="${info.uri!}"><b>${info.fields['describe']}</b></a></p>
-                                <span></span>
-                            </li>
-                            [/#list]
-                            [/#if]
-                            [/@ec_info]
-                            [/@ec_node]
+                                [@ec_node code="work";nod]
+                                [@ec_info queryType="list" nodeId="${nod.id!}" groupName="activity_info";list]
+                                [#if list?? && (list?size >0)]
+                                [#list list as info]
+                                <li style="float: left; width: 150px;">
+                                    <img src="${info.fields['image']}" width="150" height="100">
+                                    <p><a class="font1"
+                                          href="news.php?id=70&amp;p=news">${info.fields['tittle']}</a></p>
+                                    <p><a href="${info.uri!}"><b>${info.fields['describe']}</b></a></p>
+                                    <span></span>
+                                </li>
+                                [/#list]
+                                [/#if]
+                                [/@ec_info]
+                                [/@ec_node]
 
-                        </ul>
+                            </ul>
                         </div>
                     </div>
                     <div class="hd">
-                        <ul><li class="on">1</li><li class="">2</li></ul>
+                        <ul>
+                            <li class="on">1</li>
+                            <li class="">2</li>
+                        </ul>
                     </div>
                 </div>
 
@@ -163,7 +179,8 @@
         <div class="media_nav">
             <ul>
                 <li id="shipin" class="current"><a href="javascript:">视频</a></li>
-                <li id="tupian"><a href="javascript:">图片</a></li></ul>
+                <li id="tupian"><a href="javascript:">图片</a></li>
+            </ul>
         </div>
         <div class="media_content">
             <!-- 视频 -->
@@ -183,15 +200,21 @@
                         [/#if]
                         <li>
                             <div style=" width:620px; height:303px; padding:10px 25px 10px 25px;">
-                                <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" height="303" width="620">
+                                <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+                                        codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0"
+                                        height="303" width="620">
                                     <param name="movie" value="${info.fields['url']}">
                                     <param name="quality" value="high">
                                     <param name="allowFullScreen" value="true">
-                                    <embed src="${info.fields['url']}" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="620" height="303">
+                                    <embed src="${info.fields['url']}" quality="high"
+                                           pluginspage="http://www.macromedia.com/go/getflashplayer"
+                                           type="application/x-shockwave-flash" width="620" height="303">
 
                                 </object>
                             </div>
-                            <div class="phototitle"><span>${info.fields['tittle']!}</span><a class="more" href="${info.fields['detail_url']}">详情</a></div>
+                            <div class="phototitle"><span>${info.fields['tittle']!}</span><a class="more"
+                                                                                             href="${info.fields['detail_url']}">详情</a>
+                            </div>
                         </li>
 
                         [/#list]
@@ -220,7 +243,9 @@
 
                         <li>
                             <div><img width="650" src="${info.fields['image']!}"></div>
-                            <div class="phototitle"><span>${info.fields['tittle']!}</span><a class="more" href="${info.uri!}?cid=68&amp;id=892&amp;p=work">详情</a></div>
+                            <div class="phototitle"><span>${info.fields['tittle']!}</span><a class="more"
+                                                                                             href="${info.uri!}?cid=68&amp;id=892&amp;p=work">详情</a>
+                            </div>
                         </li>
                         [/#list]
                         [/#if]
@@ -242,8 +267,8 @@
 <script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
-                new Carousel("#news-carousel",2).start();
-    }
+                new Carousel("#news-carousel", 2).start();
+            }
     );
 </script>
 
