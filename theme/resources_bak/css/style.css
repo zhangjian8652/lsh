@@ -47,10 +47,10 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 #header .nav ul {z-index: 350; position: relative; width:940px;}
 #header .nav ul li{ float:left; font-size:100%; text-align:center; position: relative;margin-right:2px;}
 #header .nav ul li a{ color:#FFF;background: #61a534; display:inline-block; height: 36px; width:134px;font-weight:bold; text-decoration:none; line-height:38px; overflow:hidden;}
-#header .nav ul li a:hover{color:#666666;background:none;}
+#header .nav ul li a:hover{color:#fafbf7;background:#abc468;}
 #header .nav ul .current a{color:#666666;background:none;}
 #header .nav ul .last_nav{}
-#header .nav ul .last_nav a{position:absolute; display:inline-block;width:140px;height: 36px; background:url(../images/btn_arrow.png) no-repeat;}
+#header .nav ul .last_nav a{position:absolute; display:inline-block;width:160px;height: 36px; background:url(../images/btn_arrow.png) no-repeat;}
 #header .nav ul .last_nav a:hover{background:url(../images/btn_arrow.png) no-repeat;color:#FFF;}
 
 #focus{margin:0px auto; width:940px; padding-top:30px; padding-bottom:37px; overflow:hidden;}
