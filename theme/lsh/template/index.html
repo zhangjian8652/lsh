@@ -11,6 +11,42 @@
 [#include "header/header.html"/]
 [#include "focus/focus.html"/]
 
+<div id="news">
+    <div class="news-left" id="news-carousel" style="width: 600px;margin: 0px;">
+        [@ec_node code="news";nod]
+            <div class="head">
+                <div class="area-1"><div class="area-2"><span>${nod.name!}</span></div></div>
+            </div>
+            <div class="content">
+                <ul>
+
+                    [@ec_info queryType="list" nodeId="${nod.id!}" groupName="default";list]
+                    [#if list?? && (list?size >0)]
+                    [#list list as info]
+                    <li>
+                        <div style="padding: 15px;">
+                        <h4>${info.fields['tittle']}</h4>
+                        <img src="${info.fields['image']!}">
+                        <div>
+                            ${info.fields['describe']}
+                            <a href="${info.uri!}">[阅读更多]</a>
+                        </div>
+                        </div>
+                    </li>
+                    [/#list]
+                    [/#if]
+                    [/@ec_info]
+
+                </ul>
+            </div>
+            <div class="index"></div>
+        [/@ec_node]
+    </div>
+    <div class="news-right">
+
+    </div>
+</div>
+
 <div id="info">
     <div class="infoleft">
         <div class="info_nav">
@@ -204,7 +240,12 @@
 <script type="text/javascript" charset="utf-8"
         src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh"></script>
 <script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
-
+<script type="text/javascript">
+    $(document).ready(function () {
+                new Carousel("#news-carousel",2).start();
+    }
+    );
+</script>
 
 </body>
 </html>

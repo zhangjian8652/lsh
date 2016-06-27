@@ -50,7 +50,7 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 #header .nav ul li a:hover{color:#666666;background:none;}
 #header .nav ul .current a{color:#666666;background:none;}
 #header .nav ul .last_nav{}
-#header .nav ul .last_nav a{position:absolute; display:inline-block;width:140px;height: 36px; background:url(../images/btn_arrow.png) no-repeat;}
+#header .nav ul .last_nav a{position:absolute; display:inline-block;width:160px;height: 36px; background:url(../images/btn_arrow.png) no-repeat;}
 #header .nav ul .last_nav a:hover{background:url(../images/btn_arrow.png) no-repeat;color:#FFF;}
 
 #focus{margin:0px auto; width:940px; padding-top:30px; padding-bottom:37px; overflow:hidden;}
@@ -416,4 +416,34 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 	color: white;
 	top: 80px;
 	border-radius: 10px;
+}
+#news{
+	width: 940px;
+}
+#news .head{
+	margin-bottom: 25px;
+}
+#news .head div{
+	height: 28px;
+}
+#news .head .area-1{
+	background: url("../images/news_yellow_arrow.png") 105px no-repeat;
+}
+#news .head .area-2{
+	background: url("../images/news_blue_arrow.png") 0px no-repeat;
+}
+
+#news .head .area-2 span{
+	color: white;
+	line-height: 28px;
+	margin-left: 34px;
+}
+
+#news li div{
+	padding: 16px;
+	font-size: 12px;
+}
+#news h3{
+	margin-bottom: 30px;
+	font-size: 17px;
 }
