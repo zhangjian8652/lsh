@@ -1,9 +1,6 @@
 <div class="logo"><a href="index.php"><img src="${res!}/resources/images/logo.png"></a></div>
 <div class="navigation">
     <ul>
-        <li><a href="offices.php">联络我们</a></li>
-        <li><a href="job.php">职位空缺</a></li>
-        <li><a href="http://www.oxfam.org.hk/sc/default.aspx">乐施会在香港</a></li>
         [#if member??]
         <li><a class="size txt_l" href="javascript:void(0);" title="18px" id="profile-btn">${member.loginId!''}</a>
             <div id="profile" style="display: none;">
@@ -23,10 +20,11 @@
                 });
             </script>
         </li>
-        <li><a class="size txt_l" href="${path!}/frontend/logout" title="18px">登出</a></li>
+        <li><a href="${path!}/frontend/logout" title="18px">登出</a></li>
         [#else]
-        <li><a class="size txt_l" href="${path!}/login.do" title="18px">登录</a></li>
+        <li><a  href="${path!}/login.do" title="18px">登录</a></li>
         [/#if]
+        <li><a href="#">联络我们</a></li>
     </ul>
 
     <div class="site-search">
