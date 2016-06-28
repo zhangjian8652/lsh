@@ -12,7 +12,7 @@
 [#include "focus/focus.html"/]
 
 <div id="news">
-    <div class="news-left" id="news-carousel" style="width: 600px;margin: 0px;">
+    <div class="news-left" id="news-carousel" style="width: 564px;margin: 0px;">
         [@ec_node code="news";nod]
         <div class="head">
             <div class="area-1">
@@ -26,14 +26,11 @@
                 [#list list as info]
                 <li>
                     <div style="padding: 15px;">
-                        <h4>${info.fields['tittle']}</h4>
+                        <h3>${info.fields['tittle']}</h3>
                         <img src="${info.fields['image']!}">
                         <div>
                             ${info.fields['describe']}
                             <a href="${info.uri!}">[阅读更多]</a>
-                        </div>
-                        <div>
-                            <ul></ul>
                         </div>
                     </div>
                 </li>
@@ -43,151 +40,96 @@
 
             </ul>
         </div>
-        <div class="index"></div>
+        <div class="hd">
+            <ul></ul>
+        </div>
         [/@ec_node]
     </div>
     <div class="news-right">
-
-    </div>
-</div>
-
-<div id="info">
-    <div class="infoleft">
-        <div class="info_nav">
-            <ul>
-                <li id="newsrelease" class="current"><a href="javascript:">新闻稿</a></li>
-                <li id="activity"><a href="javascript:">公益活动</a></li>
-                <li id="volunteer"><a href="javascript:">自愿者风采</a></li>
-            </ul>
+        <div class="head">
+            <div class="head1"><a table-id="recent">活动回顾</a></div>
+            <div class="head2"><a table-id="review">最新动态</a></div>
         </div>
-        <div class="info_content">
+        <div class="content">
 
-            <dl class="newsrelease">
-                <div class="dot autoPage">
-                    <div class="bd">
-                        <a href="news.php" class="gengduo">更多&gt;&gt;</a>
-                        <div class="tempWrap" style="overflow:hidden; position:relative; width:680px">
-                            <ul style="width: 1360px; position: relative; overflow: hidden; padding: 0px; margin: 0px; left: 0px;">
-
-                                [@ec_node code="work";nod]
-                                [@ec_info queryType="list" nodeId="${nod.id!}" groupName="activity_info";list]
-                                [#if list?? && (list?size >0)]
-                                [#list list as info]
-                                <li style="float: left; width: 150px;">
-                                    <img src="${info.fields['image']}" width="150" height="100">
-                                    <p><a class="font1"
-                                          href="news.php?id=70&amp;p=news">${info.fields['tittle']}</a></p>
-                                    <p><a href="${info.uri!}"><b>${info.fields['describe']}</b></a></p>
-                                    <span></span>
-                                </li>
-                                [/#list]
-                                [/#if]
-                                [/@ec_info]
-                                [/@ec_node]
-
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="hd">
-                        <ul>
-                            <li class="on">1</li>
-                            <li class="">2</li>
-                        </ul>
-                    </div>
-                </div>
-            </dl>
-            <dl class="activity">
-                <div class="dot autoPage">
-                    <div class="bd">
-                        <a href="news.php" class="gengduo">更多&gt;&gt;</a>
-                        <div class="tempWrap" style="overflow:hidden; position:relative; width:680px">
-                            <ul style="width: 1360px; position: relative; overflow: hidden; padding: 0px; margin: 0px; left: 0px;">
-
-                                [@ec_node code="work";nod]
-                                [@ec_info queryType="list" nodeId="${nod.id!}" groupName="activity_info";list]
-                                [#if list?? && (list?size >0)]
-                                [#list list as info]
-                                <li style="float: left; width: 150px;">
-                                    <img src="${info.fields['image']}" width="150" height="100">
-                                    <p><a class="font1"
-                                          href="news.php?id=70&amp;p=news">${info.fields['tittle']}</a></p>
-                                    <p><a href="${info.uri!}"><b>${info.fields['describe']}</b></a></p>
-                                    <span></span>
-                                </li>
-                                [/#list]
-                                [/#if]
-                                [/@ec_info]
-                                [/@ec_node]
-
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="hd">
-                        <ul>
-                            <li class="on">1</li>
-                            <li class="">2</li>
-                        </ul>
-                    </div>
-                </div>
-            </dl>
-            <dl class="volunteer">
-                <div class="dot autoPage">
-                    <div class="bd">
-                        <a href="news.php" class="gengduo">更多&gt;&gt;</a>
-                        <div class="tempWrap" style="overflow:hidden; position:relative; width:680px">
-                            <ul style="width: 1360px; position: relative; overflow: hidden; padding: 0px; margin: 0px; left: 0px;">
-
-                                [@ec_node code="work";nod]
-                                [@ec_info queryType="list" nodeId="${nod.id!}" groupName="activity_info";list]
-                                [#if list?? && (list?size >0)]
-                                [#list list as info]
-                                <li style="float: left; width: 150px;">
-                                    <img src="${info.fields['image']}" width="150" height="100">
-                                    <p><a class="font1"
-                                          href="news.php?id=70&amp;p=news">${info.fields['tittle']}</a></p>
-                                    <p><a href="${info.uri!}"><b>${info.fields['describe']}</b></a></p>
-                                    <span></span>
-                                </li>
-                                [/#list]
-                                [/#if]
-                                [/@ec_info]
-                                [/@ec_node]
-
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="hd">
-                        <ul>
-                            <li class="on">1</li>
-                            <li class="">2</li>
-                        </ul>
-                    </div>
-                </div>
-
-            </dl>
-
+            <table class="recent-news" id="recent">
+                <tbody>
+                <tr>
+                    <td>2014年地球一小时--蓝天自造</td>
+                    <td>2014-03-01</td>
+                </tr>
+                <tr>
+                    <td>2013年地球一小时--我做率V客</td>
+                    <td>2013-03-23</td>
+                </tr>
+                <tr>
+                    <td>寻豚记--2012年长江全流域淡水豚类考擦</td>
+                    <td>2013-03-23</td>
+                </tr>
+                <tr>
+                    <td>守护东北虎，致敬野生虎巡护员</td>
+                    <td>2013-03-23</td>
+                </tr>
+                <tr>
+                    <td>湿地飞翔--我们 和候鸟的约定</td>
+                    <td>2013-03-23</td>
+                </tr>
+                <tr>
+                    <td>点亮东北虎回家之路</td>
+                    <td>2013-03-23</td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="activity-review" style="display:none;" id="review">
+                <tbody>
+                <tr>
+                    <td>2014年地球一小时--蓝天自造</td>
+                    <td>2014-03-01</td>
+                </tr>
+                <tr>
+                    <td>2013年地球一小时--我做率V客</td>
+                    <td>2013-03-23</td>
+                </tr>
+                <tr>
+                    <td>守护东北虎，致敬野生虎巡护员</td>
+                    <td>2013-03-23</td>
+                </tr>
+                <tr>
+                    <td>湿地飞翔--我们 和候鸟的约定</td>
+                    <td>2013-03-23</td>
+                </tr>
+                <tr>
+                    <td>点亮东北虎回家之路</td>
+                    <td>2013-03-23</td>
+                </tr>
+                <tr>
+                    <td>寻豚记--2012年长江全流域淡水豚类考擦</td>
+                    <td>2013-03-23</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="footer">
+            <a href="#"><img src="${res!}/resources/images/news_more.png">&nbsp;&nbsp;&nbsp;浏览更多</a>
         </div>
     </div>
 </div>
-
 
 <div id="medias">
     <div class="left">
         <a href="http://www.oxfam.org.cn/www/grow/"><img src="${node.fields['medias_image']!}"></a>
     </div>
     <div class="right">
-        <div class="media_nav">
+        <div class="medias_nav">
             <ul>
-                <li id="shipin" class="current"><a href="javascript:">视频</a></li>
-                <li id="tupian"><a href="javascript:">图片</a></li>
+                <li class="video" media-id="video"><a href="javascript:" >视频</a></li>
+                <li class="image" media-id="image"><a href="javascript:" >图片</a></li>
             </ul>
         </div>
         <div class="media_content">
             <!-- 视频 -->
-            <dl class="mediaphoto shipin">
+            <dl class="mediaphoto " id="video">
                 [@ec_node code="video";nod]
-                <span class="prev"></span>
-                <span class="next"></span>
                 <div class="mediaphoto-list shipin">
                     <ul>
                         [@ec_info queryType="list" nodeId="${nod.id!}" groupName="";list]
@@ -199,21 +141,20 @@
                         [#assign class = ""/]
                         [/#if]
                         <li>
-                            <div style=" width:620px; height:303px; padding:10px 25px 10px 25px;">
+                            <div style=" width:620px; height:409px; margin-left: 0px">
                                 <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
                                         codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0"
-                                        height="303" width="620">
+                                        height="385" width="620">
                                     <param name="movie" value="${info.fields['url']}">
                                     <param name="quality" value="high">
                                     <param name="allowFullScreen" value="true">
                                     <embed src="${info.fields['url']}" quality="high"
                                            pluginspage="http://www.macromedia.com/go/getflashplayer"
-                                           type="application/x-shockwave-flash" width="620" height="303">
+                                           type="application/x-shockwave-flash" width="620" height="390">
 
                                 </object>
                             </div>
-                            <div class="phototitle"><span>${info.fields['tittle']!}</span><a class="more"
-                                                                                             href="${info.fields['detail_url']}">详情</a>
+                            <div class="video-tittle"><span>${info.fields['tittle']!}</span>
                             </div>
                         </li>
 
@@ -226,10 +167,8 @@
             </dl>
             <!-- -->
             <!-- 图片 -->
-            <dl class="mediaphoto tupian" style="display: none;">
+            <dl class="mediaphoto" id="image" style="display: none;">
                 [@ec_node code="image";nod]
-                <span class="prev"></span>
-                <span class="next"></span>
                 <div class="mediaphoto-list tupian">
                     <ul>
                         [@ec_info queryType="list" nodeId="${nod.id!}" groupName="default";list]
@@ -243,8 +182,7 @@
 
                         <li>
                             <div><img width="650" src="${info.fields['image']!}"></div>
-                            <div class="phototitle"><span>${info.fields['tittle']!}</span><a class="more"
-                                                                                             href="${info.uri!}?cid=68&amp;id=892&amp;p=work">详情</a>
+                            <div class="photo-tittle"><span>${info.fields['tittle']!}</span>
                             </div>
                         </li>
                         [/#list]
@@ -260,6 +198,47 @@
     </div>
 </div>
 
+
+
+<div id="sua" style="width:100%;">
+    [@ec_node code="work";nod]
+    <div style="margin: auto;width: 940px;">
+        <div class="head">
+            <div class="area-1">
+                <div class="area-2"><span>${nod.name!}</span></div>
+            </div>
+        </div>
+        <div class="sua-content" id="sua-carousel" style="margin: 0px;width:940px">
+
+            <div class="content">
+                <ul class="content-ul">
+                    [@ec_info queryType="list" nodeId="${nod.id!}" groupName="activity_info";list]
+                    [#if list?? && (list?size >0)]
+                    [#list list as info]
+                    <li>
+                        <div style="padding: 15px;">
+                            <img src="${info.fields['image']!}">
+                            <div class="finish-percent">${info.fields['finishPercent']!}</div>
+                            <div class="tittle">
+                                ${info.fields['tittle']!}
+                            </div>
+                        </div>
+                    </li>
+                    [/#list]
+                    [/#if]
+                    [/@ec_info]
+
+                </ul>
+            </div>
+            <div class="hd">
+                <ul></ul>
+            </div>
+            [/@ec_node]
+        </div>
+        <div class="lets-go">我要发起行动</div>
+    </div>
+
+</div>
 [#include "footer/footer.html"/]
 <script type="text/javascript" src="${res!}/resources/js/index.js"></script>
 <script type="text/javascript" charset="utf-8"
@@ -268,9 +247,20 @@
 <script type="text/javascript">
     $(document).ready(function () {
                 new Carousel("#news-carousel", 2).start();
+                new Carousel("#sua-carousel", 3).start();
+                $(".news-right .head a").click(function(){
+                    var id = $(this).attr("table-id");
+                    $("#" + id).show().siblings().hide();
+                });
+
+                $(".medias_nav li").click(function(){
+                    var id = $(this).attr("media-id");
+                    $("#" + id).show().siblings().hide();
+                });
             }
     );
 </script>
 
 </body>
 </html>
+								
