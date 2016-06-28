@@ -578,7 +578,7 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 
 #sua .finish-percent{
 	background: url("../images/sua_finish_percent_bg.png") 0px no-repeat;
-	position: relative;
+	position: absolute;
 	top: -265px;
 	height: 45px;
 	width: 292px;
@@ -590,7 +590,7 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 	padding-left: 20px;
 }
 #sua .tittle{
-	position: relative;
+	position: absolute;
 	top: -84px;
 	padding-left: 20px;
 }
@@ -602,8 +602,9 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 	margin: 0px 0px;
 	position: relative;
 	line-height: 40px;
-	top: -50px;
+	top: -30px;
 	right: -765px;
 	color: white;
 	padding-left: 25px;
+	cursor: pointer;
 }
