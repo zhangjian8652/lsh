@@ -135,7 +135,7 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 .mediaphoto-list li .phototitle .more{ float:right;color:#FFF;font-size:83%; padding-right:10px; background:url(../images/more1.gif) right center no-repeat; text-decoration:none;font-weight:bold; margin:10px 10px;}
 .mediaphoto-list li .phototitle .more:hover{text-decoration:underline;}
 
-.footer_bg{ background:url(../images/footer_bg.png) center 0 repeat-x #fff; margin-top:25px;}
+.footer_bg{  margin-top:25px;}
 #bottom{ width:920px; padding-top:55px; overflow:hidden;}
 #bottom .dh{ float:left; width:920px; overflow:hidden;}
 #bottom .dh li{ float:left; width:192px;}
@@ -554,9 +554,9 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 }
 .video-tittle{
 	position: relative;
-	top:-87px;
+	top: -140px;
 	color: white;
-	left: 31px;
+	left: 50px;
 	font-size: 24px;
 }
 .photo-tittle{
@@ -579,7 +579,7 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 #sua .finish-percent{
 	background: url("../images/sua_finish_percent_bg.png") 0px no-repeat;
 	position: absolute;
-	top: -265px;
+	top: 50px;
 	height: 45px;
 	width: 292px;
 	margin: 0;
@@ -591,7 +591,7 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 }
 #sua .tittle{
 	position: absolute;
-	top: -84px;
+	top: 265px;
 	padding-left: 20px;
 }
 
@@ -607,4 +607,58 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 	color: white;
 	padding-left: 25px;
 	cursor: pointer;
+}
+
+#lyhp .lyhp-content li{
+	width: 235px;
+	float:left;
+}
+#lyhp .describe{
+	font-size: 14px;
+}
+#lyhp .tittle{
+	color:  #45895b;
+}
+#lyhp .head{
+	background: url("../images/lyhp_head_bg.png") 0px 40px no-repeat;
+	height: 60px;
+}
+#lyhp .footer{
+	background: url("../images/lyhp_footrt_bg.png") 0px no-repeat;
+}
+#lyhp .head .area-1{
+	width: 400px;
+	display: inline-block;
+}
+#lyhp .head .moore-goods{
+	width: 200px;
+	text-align: right;
+	display: inline-block;
+	float: right;
+	color: #0b8749;
+	cursor: pointer;
+}
+
+#lyhp .content{
+	height: 540px;
+}
+#xdts{
+	background: url("../images/xdts_bg.png") 0px;
+	height: 580px;
+}
+#xdts ul>li{
+	width: 188px;
+	float: left;
+}
+#xdts .head{
+	position: relative;
+	top: -15px;
+}
+
+#xdts .content p{
+	text-align: center;
+	color: rgb(11, 135, 73);
+	margin-top: 15px;
+	margin-bottom: 15px;
+	font-size: 22px;
 }

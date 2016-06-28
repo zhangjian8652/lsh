@@ -129,41 +129,19 @@
         <div class="media_content">
             <!-- 视频 -->
             <dl class="mediaphoto " id="video">
-                [@ec_node code="video";nod]
                 <div class="mediaphoto-list shipin">
                     <ul>
-                        [@ec_info queryType="list" nodeId="${nod.id!}" groupName="";list]
-                        [#if list?? && (list?size >0)]
-                        [#list list as info]
-                        [#if info_index == 0]
-                        [#assign class = "current"/]
-                        [#else]
-                        [#assign class = ""/]
-                        [/#if]
                         <li>
                             <div style=" width:620px; height:409px; margin-left: 0px">
-                                <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
-                                        codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0"
-                                        height="385" width="620">
-                                    <param name="movie" value="${info.fields['url']}">
-                                    <param name="quality" value="high">
-                                    <param name="allowFullScreen" value="true">
-                                    <embed src="${info.fields['url']}" quality="high"
-                                           pluginspage="http://www.macromedia.com/go/getflashplayer"
-                                           type="application/x-shockwave-flash" width="620" height="390">
-
-                                </object>
+                                <video src="${res!}/resources/zgm.mp4" controls="controls">
+                                    不支持
+                                </video>
                             </div>
-                            <div class="video-tittle"><span>${info.fields['tittle']!}</span>
+                            <div class="video-tittle"><span>这是视频描述</span>
                             </div>
                         </li>
-
-                        [/#list]
-                        [/#if]
-                        [/@ec_info]
                     </ul>
                 </div>
-                [/@ec_node]
             </dl>
             <!-- -->
             <!-- 图片 -->
@@ -239,7 +217,115 @@
     </div>
 
 </div>
-[#include "footer/footer.html"/]
+
+<div id="lyhp" style="margin: 30px auto auto;width: 940px;">
+    [@ec_node code="green_good_comment";nod]
+    <div class="head">
+        <div class="area-1">
+            <div class="area-2"><span>${nod.name!}</span></div>
+        </div>
+        <div class="moore-goods">更多商品</div>
+    </div>
+    <div class="lyhp-content"  style="margin: 0px;width:940px">
+        <div class="content">
+            <ul class="content-ul">
+                [@ec_info queryType="list" nodeId="${nod.id!}" groupName="default";list]
+                [#if list?? && (list?size >0)]
+                [#list list as info]
+                <li>
+                    <div style="padding: 15px;">
+                        <img src="${info.fields['image']!}">
+                        <div class="describe">${info.fields['describe']!}</div>
+                        <div class="tittle">
+                            ${info.fields['name']!}&nbsp;&nbsp; ${info.fields['price']!}
+                        </div>
+                    </div>
+                </li>
+                [/#list]
+                [/#if]
+                [/@ec_info]
+
+            </ul>
+        </div>
+
+        [/@ec_node]
+    </div>
+    <div class="footer" style="margin:0px;width: 940px;height: 100px;"></div>
+</div>
+<div id="xdts">
+<div  style="margin: 30px auto auto;width: 940px;">
+    <div class="head">
+        <div class="area-1">
+            <div class="area-2"><span>行动天使</span></div>
+        </div>
+    </div>
+    <div class="xdts-content"  style="margin: 0px;width:940px">
+        <div class="content">
+            <p>行动组织</p>
+            <ul class="content-company-ul" style="height: 150px;">
+                <li>
+                    <div style="padding: 15px;">
+                        <img src="${res!}/resources/images/company_icon/huawei.png">
+                    </div>
+                </li>
+                <li>
+                    <div style="padding: 15px;">
+                        <img src="${res!}/resources/images/company_icon/zxyh.png">
+                    </div>
+                </li>
+                <li>
+                    <div style="padding: 15px;">
+                        <img src="${res!}/resources/images/company_icon/omega.png">
+                    </div>
+                </li>
+                <li>
+                    <div style="padding: 15px;">
+                        <img src="${res!}/resources/images/company_icon/cocole.png">
+                    </div>
+                </li>
+                <li>
+                    <div style="padding: 15px;">
+                        <img src="${res!}/resources/images/company_icon/five_star.png">
+                    </div>
+                </li>
+
+            </ul>
+            <p>绿芽天使</p>
+            <ul class="content-angel-ul">
+                <li>
+                    <div style="padding: 15px;">
+                        <img src="${res!}/resources/images/lyts_default.png">
+                    </div>
+                </li>
+                <li>
+                    <div style="padding: 15px;">
+                        <img src="${res!}/resources/images/lyts_default.png">
+                    </div>
+                </li>
+                <li>
+                    <div style="padding: 15px;">
+                        <img src="${res!}/resources/images/lyts_default.png">
+                    </div>
+                </li>
+                <li>
+                    <div style="padding: 15px;">
+                        <img src="${res!}/resources/images/lyts_default.png">
+                    </div>
+                </li>
+                <li>
+                    <div style="padding: 15px;">
+                        <img src="${res!}/resources/images/lyts_default.png">
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+
+    </div>
+    <div class="footer" style="margin:0px;width: 940px;"></div>
+</div>
+</div>
+
 <script type="text/javascript" src="${res!}/resources/js/index.js"></script>
 <script type="text/javascript" charset="utf-8"
         src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh"></script>
