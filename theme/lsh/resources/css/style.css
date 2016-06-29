@@ -740,6 +740,7 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 	border: 1px solid #e2e2e2;
 	border-right: none;
 	width: 1px;
+	height: 22px;
 }
 .page li a{
 	text-decoration: none;
@@ -774,4 +775,107 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 }
 .center .single-info .hx  {
 	margin: 10px 0px 10px 0px;
+}
+
+#news-carousel{
+	width: 600px;
+	margin: 0px;
+	float: left;
+}
+
+#news-carousel .tittle{
+	position: absolute;
+	top: 248px;
+	color: #fff;
+	padding-left: 20px;
+	height: 40px;
+	z-index: 100;
+	border-bottom: 12px solid black;
+	width: 100%;
+}
+
+
+#news-carousel .tittle span{
+	text-align: center;
+	float: left;
+	margin-top: 12px;
+}
+#news-carousel .tittle span:nth-child(1){
+	width: 45px;
+	background-color: #e74866;
+	margin-right: 12px;
+	border-top: 1px solid #a1374d;
+	border-bottom: 1px solid #a1374d;
+	display: block;
+}
+#news-carousel .shade{
+	height: 42px;
+	width: 100%;
+	background-color: black;
+	position: absolute;
+	top: 255px;
+	opacity: 0.6;
+}
+
+#news-carousel .hd{
+	position: relative;
+	z-index: 1000;
+	top: -24px;
+}
+
+#news-page .head .sx{
+	width: 60px;
+	float: left;
+	background: transparent url("../images/news/sx.png") 30px repeat-y;
+	height: 300px;
+}
+
+#news-page .advertise{
+	width: 280px;
+	float: left;
+	overflow: hidden;
+}
+
+#news-page .advertise div{
+	margin-bottom: 30px;
+}
+
+#news-page.head .hx{
+	background: url("../images/news/hx_small.png") no-repeat;
+	width: 590px;
+	height: 1px;
+	float: left;
+	margin-top: -28px;
+}
+
+#news-page .avator{
+	max-width: 200px;
+	width: 200px;
+}
+#news-info .content{
+	max-width: 720px;
+	width: 720px;
+	float: left;
+	margin-left: 20px;
+}
+
+#news-info p{
+	font-size: 20px;
+	font-weight: bold;
+	margin-bottom: 12px;
+}
+
+#news-info div{
+	margin-bottom: 8px;
+	font-size: 14px;
+}
+
+#news-info span{
+	font-size: 12px;
+}
+#news-info .hx{
+	background: url("../images/news/hx_large.png") 0px repeat-x;
+	width: 100%;
+	float: left;
+	height: 2px;
 }
