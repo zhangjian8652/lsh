@@ -5,8 +5,10 @@
         [#list nodes as nod]
         [#if nod_index == (nodes?size - 1)]
         <li class="last_nav"><a href="${path!}${nod.uri!}"><span>${nod.name!}&nbsp;&nbsp;</span></a></li>
+        [#elseif node.name?? && nod.name?? && (node.name == nod.name)]
+        <li><a href="${path!}${nod.uri!}" class="current"><span>${nod.name!} </span></a></li>
         [#else]
-        <li><a href="${path!}${nod.uri!}" class="current"><span>${nod.name!}</span></a></li>
+        <li><a href="${path!}${nod.uri!}"><span>${nod.name!}</span></a></li>
         [/#if]
         [/#list]
         [/#if]
