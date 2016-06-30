@@ -982,3 +982,15 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 .activity-body .page{
 	padding-left: 13px;
 }
+
+.angel-carousel li{
+	display: none;
+	position: absolute;
+}
+.angel-carousel li:nth-child(0){
+	display: block;
+}
+
+.angel-carousel li img{
+	width: 940px;
+}
