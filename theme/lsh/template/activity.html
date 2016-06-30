@@ -1,60 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>${node.fields["tittle"]!}</title>
+    <title>${node.name!}</title>
     [#include "meta.html"/]
     [#include "css.html"/]
     [#include "js.html"/]
 </head>
 
-<body>
+<body class="activity-body">
 [#include "header/header.html"/]
 
-[#include "activity/activity_tittle.html"/]
+<div class="container" id="activity-page">
 
-<div id="info">
-
-    [#include "activity/activity_left.html"/]
-
-    <div class="aboutright">
-        <div class="detail">
-            <!-- -->
-            <div class="abouttitle1">
-                <div class="abouttitle2">公益项目展示</div>
-            <!-- -->
-            <div class="secbanner">
-                <div class="secleft sec3"><h1>项目展示</h1>
-                    <p><span>我们与贫穷人和伙伴机构合作，一起推动发展项目、人道主义项目、政策倡议及公众教育等工作。</span></p></div>
-                <div class="secright"><img onclick="location.href=''" src="${node.fields['large_image']}"></div>
-            </div>
-            <div class="wmdgz">
-                <div class="title">项目掠影</div>
-                <ul>
-                    [@ec_node code="work";nod]
-                    [@ec_info queryType="list" nodeId="${nod.id!}" groupName="activity_info";list]
+    <div class="head carousel-advertise">
+        <div>
+                <ul class="images">
+                    [@ec_info queryType="list" nodeId="${node.id!}" groupName="carousel";list]
                     [#if list?? && (list?size >0)]
                     [#list list as info]
-                    <li><a href="${info.uri!}"><img src="${info.fields['image']!}"></a><a
-                            href="${info.uri!}"><b>${info.fields['tittle']!}</b></a></li>
+                    <li>
+                        <div style="position: relative;padding: 0px;">
+                            <img src="${info.fields['image']!}"/>
+                            <div class="arrow-right"><span>${info.fields['finishPercent']!}</span>${info.fields['tittle']!}</div>
+                        </div>
+                    </li>
                     [/#list]
                     [/#if]
                     [/@ec_info]
-                    [/@ec_node]
                 </ul>
+        </div>
+        <div>
+            <img src="${res!}/resources/images/activity/sx.png">
+        </div>
+        <div>
+            <div>
+                <img src="${node.fields['advertise_1']!}">
+            </div>
+            <div>
+                <img src="${node.fields['advertise_2']!}">
             </div>
         </div>
-
+        <div></div>
+    </div>
+    <div style="float: left;width: 940px;" id="news-info">
+        <ul>
+            [@ec_info queryType="list" nodeId="${node.id!}" groupName="content";list]
+            [#if list?? && (list?size >0)]
+            [#list list as info]
+            <li>
+                <div class="avator"><img src="${info.fields['image']!}"/></div>
+                <div class="content">
+                    <p class="tittle">${info.fields['tittle']!}</p>
+                    <div class="detail">${info.fields['describe']!}</div>
+                    <span class="date">${info.fields['update_date']!} 更新</span>
+                </div>
+                <div class="hx"></div>
+            </li>
+            [/#list]
+            [/#if]
+            [/@ec_info]
+        </ul>
     </div>
 
+    <div class="activity-info">
+        <ul>
+            [@ec_info queryType="list" nodeId="${node.id!}" groupName="activity_info";list]
+            [#if list?? && (list?size >0)]
+            [#list list as info]
+            <li>
+                <div style="padding: 15px;">
+                    <img src="${info.fields['image']!}">
+                    <div class="finish-percent">${info.fields['finishPercent']!}</div>
+                    <div class="tittle">
+                        ${info.fields['tittle']!}
+                    </div>
+                </div>
+            </li>
+            [/#list]
+            [/#if]
+            [/@ec_info]
+
+        </ul>
+    </div>
+
+
+    <div style="width: 940px; height: 120px;float: left;margin-top: 25px;">
+        <div class="page">
+            <ul>
+                <li class="prev"><a href="#">上一页</a></li>
+                <li><a href="#" class="current">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">&hellip;</a></li>
+                <li><a href="#">6</a></li>
+                <li class="next"><a href="#">下一页</a></li>
+                <li class="sx"></li>
+            </ul>
+        </div>
+    </div>
 </div>
 
-</div>
-[#include "footer/footer.html"/]
-<script type="text/javascript" src="${res!}/resources/js/index.js"></script>
-<script type="text/javascript" charset="utf-8"
-        src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh"></script>
-<script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+<script type="text/javascript">
+    $(function(){
 
+        var startIndex = 0;
+        var endIndex = $(".images li").size() - 1;
 
+        setInterval(function(){
+            $(".images li>div").fadeOut();
+            $(".images li>div").eq(startIndex).fadeIn();
+
+            if(startIndex == endIndex){
+                startIndex = 0;
+            }else{
+                startIndex++;
+            }
+
+        },6000);
+    });
+
+</script>
 </body>
 </html>

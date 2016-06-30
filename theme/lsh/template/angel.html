@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>${node.name!}</title>
+    [#include "meta.html"/]
+    [#include "css.html"/]
+    [#include "js.html"/]
+</head>
+
+<body class="angel-body">
+[#include "header/header.html"/]
+
+<div class="container" id="angel-page">
+
+    <div class="angel-carousel">
+        <div>
+                <ul class="images">
+                    [@ec_info queryType="list" nodeId="${node.id!}" groupName="carousel";list]
+                    [#if list?? && (list?size >0)]
+                    [#list list as info]
+                    <li>
+                        <div style="position: relative;padding: 0px;">
+                            <img src="${info.fields['image']!}"/>
+                            <div class="tittle">${info.fields['tittle']!}</div>
+                        </div>
+                    </li>
+                    [/#list]
+                    [/#if]
+                    [/@ec_info]
+                </ul>
+        </div>
+        <div></div>
+    </div>
+
+    <div class="activity-info">
+        <ul>
+            [@ec_info queryType="list" nodeId="${node.id!}" groupName="activity_info";list]
+            [#if list?? && (list?size >0)]
+            [#list list as info]
+            <li>
+                <div style="padding: 15px;">
+                    <img src="${info.fields['image']!}">
+                    <div class="finish-percent">${info.fields['finishPercent']!}</div>
+                    <div class="tittle">
+                        ${info.fields['tittle']!}
+                    </div>
+                </div>
+            </li>
+            [/#list]
+            [/#if]
+            [/@ec_info]
+
+        </ul>
+    </div>
+
+
+    <div style="width: 940px; height: 120px;float: left;margin-top: 25px;">
+        <div class="page">
+            <ul>
+                <li class="prev"><a href="#">上一页</a></li>
+                <li><a href="#" class="current">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">&hellip;</a></li>
+                <li><a href="#">6</a></li>
+                <li class="next"><a href="#">下一页</a></li>
+                <li class="sx"></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function(){
+
+        var startIndex = 0;
+        var endIndex = $(".images li").size() - 1;
+
+        setInterval(function(){
+            $(".images li>div").fadeOut();
+            $(".images li>div").eq(startIndex).fadeIn();
+
+            if(startIndex == endIndex){
+                startIndex = 0;
+            }else{
+                startIndex++;
+            }
+
+        },6000);
+    });
+
+</script>
+</body>
+</html>

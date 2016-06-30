@@ -90,8 +90,8 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 .dot{text-align:center;overflow:hidden;}
 .hd{ overflow:hidden;height:30px; padding:5px;display:inline-block; width:700px;}
 .hd ul{ overflow:hidden; margin-top:3px;display:inline-block; *display:inline; zoom:1;}
-.hd ul li{position:relative; float:left;  width:11px; height:11px; overflow:hidden; background:url(../images/dot2.gif) no-repeat; margin:5px; text-indent:-999px; cursor:pointer;}
-.hd ul li.on{background:url(../images/dot1.gif) no-repeat;}
+.hd ul li{position:relative; float:left; width: 15px; height:15px; overflow:hidden; background:url(../images/dot_gray.png) no-repeat; margin:5px; text-indent:-999px; cursor:pointer;}
+.hd ul li.on{background:url(../images/dot.png) no-repeat;}
 
 #info .info_content .webspecial{ padding-top:20px;}
 
@@ -114,8 +114,8 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 #medias .right .media_content .videostitle span{ color:#FFF;font-size:120%; font-weight:bold; line-height:38px; padding-left:10px;}
 
 .mediaphoto { position:relative; width:670px; overflow:hidden; background:#FFF;}
-.mediaphoto .prev,.mediaphoto .next { position:absolute;width:25px; height:313px; 
- top:0;overflow:hidden; z-index:1;}
+.mediaphoto .prev,.mediaphoto .next { position:absolute;width:25px; height:313px;
+	top:0;overflow:hidden; z-index:1;}
 .mediaphoto .prev { left:0px; background:url(../images/left_t.png) no-repeat center #FFF; cursor:pointer;}
 .mediaphoto .next { right:0px;background:url(../images/right_t.png) no-repeat center #FFF; cursor:pointer;}
 .mediaphoto-list { position:relative; width:670px;overflow:hidden;}
@@ -463,7 +463,7 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 	float: left;
 }
 #news .news-right{
-	 width: 336px;
+	width: 336px;
 	margin-left: 40px;
 	font-weight:bold;
 	font-size: 13px;
@@ -518,8 +518,8 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 }
 
 #news .footer{
-	 text-align: right;
- }
+	text-align: right;
+}
 
 #news .footer a{
 	color: #abc468;
@@ -551,7 +551,7 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 .medias_nav .image{
 	background: url("../images/medias_image.png") 0px no-repeat;
 	width: 123px;
-	
+
 }
 .video-tittle{
 	position: relative;
@@ -769,8 +769,8 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 	font-size: 24px;
 	opacity: 0.8;
 	padding-left: 30px;
-	position: relative;
-	top: -40px;
+	position: absolute;
+	top: 210px;
 	z-index: 100;
 }
 .center .single-info .hx  {
@@ -790,7 +790,7 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 	padding-left: 20px;
 	height: 40px;
 	z-index: 100;
-	border-bottom: 12px solid black;
+	border-bottom: 15px solid black;
 	width: 100%;
 }
 
@@ -819,8 +819,8 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 
 #news-carousel .hd{
 	position: relative;
+	top: -30px;
 	z-index: 1000;
-	top: -24px;
 }
 
 #news-page .head .sx{
@@ -878,4 +878,107 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 	width: 100%;
 	float: left;
 	height: 2px;
+}
+
+
+#news-page .head .hx {
+	height: 20px;
+	margin: 0;
+	position: relative;
+	top: 300px;
+	width: 590px;
+	background: url("../images/news/hx_small.png") 0px 16px no-repeat;
+}
+
+
+.carousel-advertise>div{
+	float: left;
+	margin: 0px;
+}
+
+.carousel-advertise>div:nth-child(1){
+	width: 600px;
+	height: 320px;
+}
+
+.carousel-advertise>div:nth-child(2){
+	width: 60px;
+	background: url("../images/activity/sx.png") 30px no-repeat;
+}
+
+.carousel-advertise>div:nth-child(3){
+	width: 280px;
+}
+.carousel-advertise>div:nth-child(3) div{
+	margin-bottom: 20px;
+}
+.carousel-advertise>div:nth-child(4){
+	width: 600px;
+	background: url("../images/activity/hx.png") repeat-x;
+	height: 2px;
+	position: relative;
+	top: -20px;
+}
+
+.carousel-advertise .images>li{
+	position: absolute;
+}
+
+.carousel-advertise .arrow-right{
+	position: absolute;
+	top: 235px;
+	color: #fff;
+	font-size: 25px;
+	left: 25px;
+	opacity: 0.9;
+}
+
+.carousel-advertise .arrow-right span{
+	font-size: 20px;
+	margin-right: 20px;
+	background: url("../images/activity/arrow_right.png");
+	display: inline-block;
+	height: 37px;
+	line-height: 37px;
+	width: 110px;
+	text-align: center;
+}
+
+.activity-body{
+	background: url("../images/activity/activity_bg.png") 0px 540px repeat-x;
+}
+
+.activity-info ul>li{
+	float: left;
+	width: 313px;
+	margin-top: 10px;
+}
+
+.activity-info ul>li>div{
+	padding: 10px;
+	position: relative;
+}
+
+.activity-info .finish-percent{
+	position: absolute;
+	width: 255px;
+	top: 44px;
+	z-index: 100;
+	height: 45px;
+	background: url("../images/activity/finish_percent_bg.png") no-repeat;
+	line-height: 45px;
+	font-size: 25px;
+	color: #45895b;
+	padding-left: 25px;
+}
+.activity-info .tittle{
+	position: absolute;
+	top: 266px;
+	font-size: 14px;
+	width: 100%;
+	font-weight: bold;
+	padding-left: 20px;
+}
+.activity-body .page{
+	padding-left: 13px;
 }
