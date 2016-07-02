@@ -14,52 +14,61 @@
 
     <div class="angel-carousel">
         <div>
-                <ul class="images">
-                    [@ec_info queryType="list" nodeId="${node.id!}" groupName="carousel";list]
-                    [#if list?? && (list?size >0)]
-                    [#list list as info]
-                    <li>
-                        <div style="position: relative;padding: 0px;">
-                            <img src="${info.fields['image']!}"/>
-                            <div class="tittle">${info.fields['tittle']!}</div>
+            <ul class="images">
+                [@ec_info queryType="list" nodeId="${node.id!}" groupName="carousel";list]
+                [#if list?? && (list?size >0)]
+                [#list list as info]
+                <li>
+                    <div style="position: relative;padding: 0px;">
+                        <img src="${info.fields['image']!}"/>
+                        <div class="tittle">${info.fields['tiitle']!}</div>
+                        <div class="shade"></div>
+                    </div>
+                </li>
+                [/#list]
+                [/#if]
+                [/@ec_info]
+            </ul>
+        </div>
+        <div class="arrow">
+            <a class="left" href="javascript:void(0);"><img src="${res!}/resources/images/angel/carosel_left.png"/></a>
+            <a class="right" href="javascript:void(0);"><img
+                    src="${res!}/resources/images/angel/carosel_right.png"/></a>
+        </div>
+
+    </div>
+
+    <div class="angel-info" style="margin: auto">
+        <div>
+            <ul>
+                [@ec_info queryType="list" nodeId="${node.id!}" groupName="default";list]
+                [#if list?? && (list?size >0)]
+                [#list list as info]
+                <li>
+                    <div>
+                        <img src="${info.fields['image']!}">
+                        <div class="tittle">
+                            ${info.fields['tiitle']!}
                         </div>
-                    </li>
-                    [/#list]
-                    [/#if]
-                    [/@ec_info]
-                </ul>
+                    </div>
+                </li>
+                [/#list]
+                [/#if]
+                [/@ec_info]
+
+            </ul>
         </div>
         <div></div>
         <div>
-            <a class="left"></a>
-            <a class="right"></a>
+            <div class="zgqs-tittle">${node.fields['zgqs_tittle']!}</div>
+            <img src="${res!}/resources/images/angel/zg_top.png">
+            <div class="zgqs-content">${node.fields['zgqs_content']!}</div>
+            <img src="${res!}/resources/images/angel/zg_bottom.png">
         </div>
 
+
     </div>
-
-    <div class="activity-info">
-        <ul>
-            [@ec_info queryType="list" nodeId="${node.id!}" groupName="activity_info";list]
-            [#if list?? && (list?size >0)]
-            [#list list as info]
-            <li>
-                <div style="padding: 15px;">
-                    <img src="${info.fields['image']!}">
-                    <div class="finish-percent">${info.fields['finishPercent']!}</div>
-                    <div class="tittle">
-                        ${info.fields['tittle']!}
-                    </div>
-                </div>
-            </li>
-            [/#list]
-            [/#if]
-            [/@ec_info]
-
-        </ul>
-    </div>
-
-
-    <div style="width: 940px; height: 120px;float: left;margin-top: 25px;">
+    <div>
         <div class="page">
             <ul>
                 <li class="prev"><a href="#">上一页</a></li>
@@ -73,26 +82,60 @@
             </ul>
         </div>
     </div>
+
+
 </div>
 
 <script type="text/javascript">
-   $(function(){
+    $(function () {
 
         var startIndex = 0;
         var endIndex = $(".images li").size() - 1;
 
-        setInterval(function(){
+        $(".images li>div").fadeOut();
+        $(".images li>div").eq(startIndex).fadeIn();
+
+        function carousel() {
             $(".images li>div").fadeOut();
             $(".images li>div").eq(startIndex).fadeIn();
 
-            if(startIndex == endIndex){
+            if (startIndex == endIndex) {
                 startIndex = 0;
-            }else{
+            } else {
                 startIndex++;
             }
+        }
 
-        },6000);
+        var carouselTimer = setInterval(carousel, 6000);
 
+        $(".left").click(function () {
+            clearInterval(carouselTimer);
+            if (startIndex > 0) {
+                startIndex--;
+            } else {
+                startIndex = endIndex;
+            }
+            $(".images li>div").fadeOut();
+            $(".images li>div").eq(startIndex).fadeIn();
+            carouselTimer = setInterval(carousel, 6000);
+        });
+
+        $(".right").click(function () {
+            clearInterval(carouselTimer);
+            if (startIndex < endIndex) {
+                startIndex++;
+            } else {
+                startIndex = 0;
+            }
+            $(".images li>div").fadeOut();
+            $(".images li>div").eq(startIndex).fadeIn();
+            carouselTimer = setInterval(carousel, 6000);
+        });
+
+        //动态设置高度
+        var height = $(".angel-info ul>li").size() / 2 * 240;
+        $(".angel-info").css("height", (height + 60) + "px");
+        $(".angel-info>div").eq(1).css("height", height + "px");
     });
 
 </script>
