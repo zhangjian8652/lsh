@@ -194,13 +194,15 @@
                     [#if list?? && (list?size >0)]
                     [#list list as info]
                     <li>
+                        <a href="${info.uri}">
                         <div style="padding: 15px;">
                             <img src="${info.fields['image']!}">
                             <div class="finish-percent">${info.fields['finishPercent']!}</div>
-                            <div class="tittle">
+                            <div class="tittle" style="color: black;">
                                 ${info.fields['tittle']!}
                             </div>
                         </div>
+                        </a>
                     </li>
                     [/#list]
                     [/#if]
@@ -219,7 +221,7 @@
 </div>
 
 <div id="lyhp" style="margin: 30px auto auto;width: 940px;">
-    [@ec_node code="green_good_comment";nod]
+    [@ec_node code="lymall";nod]
     <div class="head">
         <div class="area-1">
             <div class="area-2"><span>${nod.name!}</span></div>
@@ -235,9 +237,9 @@
                 <li>
                     <div style="padding: 15px;">
                         <img src="${info.fields['image']!}">
-                        <div class="describe">${info.fields['describe']!}</div>
+                        <div class="describe">${info.fields['tittle']!}</div>
                         <div class="tittle">
-                            ${info.fields['name']!}&nbsp;&nbsp; ${info.fields['price']!}
+                            ${info.fields['price']!}
                         </div>
                     </div>
                 </li>
@@ -252,6 +254,8 @@
     </div>
     <div class="footer" style="margin:0px;width: 940px;height: 100px;"></div>
 </div>
+
+
 <div id="xdts">
 <div  style="margin: 30px auto auto;width: 940px;">
     <div class="head">

@@ -7,120 +7,49 @@
     [#include "js.html"/]
 </head>
 
-<body class="activity-body">
+<body class="lyjj-body">
 [#include "header/header.html"/]
 
-<div class="container" id="activity-page">
 
-    <div class="head carousel-advertise">
-        <div>
-                <ul class="images">
-                    [@ec_info queryType="list" nodeId="${node.id!}" groupName="carousel";list]
-                    [#if list?? && (list?size >0)]
-                    [#list list as info]
-                    <li>
-                        <div style="position: relative;padding: 0px;">
-                            <img src="${info.fields['image']!}"/>
-                            <div class="arrow-right"><span>${info.fields['finishPercent']!}</span>${info.fields['tittle']!}</div>
-                        </div>
-                    </li>
-                    [/#list]
-                    [/#if]
-                    [/@ec_info]
-                </ul>
-        </div>
-        <div>
-            <img src="${res!}/resources/images/activity/sx.png">
-        </div>
-        <div>
-            <div>
-                <img src="${node.fields['advertise_1']!}">
-            </div>
-            <div>
-                <img src="${node.fields['advertise_2']!}">
-            </div>
-        </div>
-        <div></div>
-    </div>
-    <div style="float: left;width: 940px;" id="news-info">
-        <ul>
-            [@ec_info queryType="list" nodeId="${node.id!}" groupName="content";list]
-            [#if list?? && (list?size >0)]
-            [#list list as info]
-            <li>
-                <div class="avator"><img src="${info.fields['image']!}"/></div>
-                <div class="content">
-                    <p class="tittle">${info.fields['tittle']!}</p>
-                    <div class="detail">${info.fields['describe']!}</div>
-                    <span class="date">${info.fields['update_date']!} 更新</span>
+<div id="lyjj-bg">
+<div class="container" id="lyjj-page">
+
+    <table>
+        <tbody>
+        <tr>
+            <td>
+                <div>
+                    关于绿芽基金
                 </div>
-                <div class="hx"></div>
-            </li>
-            [/#list]
-            [/#if]
-            [/@ec_info]
-        </ul>
-    </div>
-
-    <div class="activity-info">
-        <ul>
-            [@ec_info queryType="list" nodeId="${node.id!}" groupName="activity_info";list]
-            [#if list?? && (list?size >0)]
-            [#list list as info]
-            <li>
-                <div style="padding: 15px;">
-                    <a href="${info.uri!}">
-                    <img src="${info.fields['image']!}">
-                    <div class="finish-percent">${info.fields['finishPercent']!}</div>
-                    <div class="tittle">
-                        ${info.fields['tittle']!}
-                    </div>
-                    </a>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+                <div>
+                    绿芽基金简介
                 </div>
-            </li>
-            [/#list]
-            [/#if]
-            [/@ec_info]
-
-        </ul>
-    </div>
-
-
-    <div style="width: 940px; height: 120px;float: left;margin-top: 25px;">
-        <div class="page">
-            <ul>
-                <li class="prev"><a href="#">上一页</a></li>
-                <li><a href="#" class="current">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">&hellip;</a></li>
-                <li><a href="#">6</a></li>
-                <li class="next"><a href="#">下一页</a></li>
-                <li class="sx"></li>
-            </ul>
-        </div>
-    </div>
+            </td>
+            <td>
+                <div>${node.fields['describe']!}</div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div>
+                    相关文件
+                </div>
+            </td>
+            <td>
+               <img src="${node.fields['reference_file_1']!}">
+                &nbsp;&nbsp;
+               <img src="${node.fields['reference_file_2']!}">
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
 </div>
 
-<script type="text/javascript">
-    $(function(){
-
-        var startIndex = 0;
-        var endIndex = $(".images li").size() - 1;
-
-        setInterval(function(){
-            $(".images li>div").fadeOut();
-            $(".images li>div").eq(startIndex).fadeIn();
-
-            if(startIndex == endIndex){
-                startIndex = 0;
-            }else{
-                startIndex++;
-            }
-
-        },6000);
-    });
-
-</script>
 </body>
 </html>

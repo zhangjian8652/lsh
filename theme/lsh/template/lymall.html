@@ -7,119 +7,125 @@
     [#include "js.html"/]
 </head>
 
-<body class="activity-body">
+<body class="lymall-body">
 [#include "header/header.html"/]
 
-<div class="container" id="activity-page">
-
-    <div class="head carousel-advertise">
-        <div>
-                <ul class="images">
-                    [@ec_info queryType="list" nodeId="${node.id!}" groupName="carousel";list]
-                    [#if list?? && (list?size >0)]
-                    [#list list as info]
-                    <li>
-                        <div style="position: relative;padding: 0px;">
-                            <img src="${info.fields['image']!}"/>
-                            <div class="arrow-right"><span>${info.fields['finishPercent']!}</span>${info.fields['tittle']!}</div>
+<div id="lymall-bg">
+    <div class="container" id="lymall-page">
+        <table style="margin: 0px;">
+            <tr>
+                <td><img src="${res!}/resources/images/lymall/lb_image.png" width="640"/></td>
+                <td><img src="${res!}/resources/images/lymall/advertise1.png" height="280" style="margin-left: 20px;"></td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="recommend">
+                        <div><span>推荐商品</span><a href="#">更多>></a>
+                            <img src="${res!}/resources/images/lymall/green_hx.png">
                         </div>
-                    </li>
-                    [/#list]
-                    [/#if]
-                    [/@ec_info]
-                </ul>
-        </div>
-        <div>
-            <img src="${res!}/resources/images/activity/sx.png">
-        </div>
-        <div>
-            <div>
-                <img src="${node.fields['advertise_1']!}">
-            </div>
-            <div>
-                <img src="${node.fields['advertise_2']!}">
-            </div>
-        </div>
-        <div></div>
-    </div>
-    <div style="float: left;width: 940px;" id="news-info">
-        <ul>
-            [@ec_info queryType="list" nodeId="${node.id!}" groupName="content";list]
-            [#if list?? && (list?size >0)]
-            [#list list as info]
-            <li>
-                <div class="avator"><img src="${info.fields['image']!}"/></div>
-                <div class="content">
-                    <p class="tittle">${info.fields['tittle']!}</p>
-                    <div class="detail">${info.fields['describe']!}</div>
-                    <span class="date">${info.fields['update_date']!} 更新</span>
-                </div>
-                <div class="hx"></div>
-            </li>
-            [/#list]
-            [/#if]
-            [/@ec_info]
-        </ul>
-    </div>
-
-    <div class="activity-info">
-        <ul>
-            [@ec_info queryType="list" nodeId="${node.id!}" groupName="activity_info";list]
-            [#if list?? && (list?size >0)]
-            [#list list as info]
-            <li>
-                <div style="padding: 15px;">
-                    <a href="${info.uri!}">
-                    <img src="${info.fields['image']!}">
-                    <div class="finish-percent">${info.fields['finishPercent']!}</div>
-                    <div class="tittle">
-                        ${info.fields['tittle']!}
+                        <ul>
+                            [@ec_info queryType="list" nodeId="${node.id!}" groupName="recommend";list]
+                            [#if list?? && (list?size >0)]
+                            [#list list as info]
+                            <li>
+                                <img src="${info.fields['image']!}"/>
+                                <p>${info.fields['tittle']!}</p>
+                                <p>${info.fields['price']!}</p>
+                            </li>
+                            [/#list]
+                            [/#if]
+                            [/@ec_info]
+                        </ul>
                     </div>
-                    </a>
+                </td>
+                <td>
+                    <div class="exchange">
+                        <div><span>热门兑换</span>
+                            <img src="${res!}/resources/images/lymall/green_hx.png">
+                        </div>
+                        <ul>
+                            [@ec_info queryType="list" nodeId="${node.id!}" groupName="exchange";list]
+                            [#if list?? && (list?size >0)]
+                            [#list list as info]
+                            <li>
+                                <div><img src="${info.fields['exchange_image']!}"/></div>
+
+                                <div>${info.fields['exchange_name']!}</div>
+                                <div>${info.fields['exchange_des']!}</div>
+                                <div>${info.fields['exchange_stress']!}</div>
+                            </li>
+                            [/#list]
+                            [/#if]
+                            [/@ec_info]
+                        </ul>
+                    </div>
+
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+
+        <div class="lydb">
+            <div>
+                <span>绿芽夺宝</span>
+                <img src="${res!}/resources/images/lymall/green_hx.png">
+                <a href="#">更多>></a>
+            </div>
+            [#list 1..3 as a]
+            <div class="lydb-block">
+                <div><img src="${res!}/resources/images/lymall/lydb.png"></div>
+                <div>（第109期）魔兽世界部......</div>
+                <div>总需：5000人</div>
+                <div class="processing-all">
+                    <div class="processing-percent" style="width: 10%;"></div>
                 </div>
-            </li>
+                <div><span>230人<br/>已参与人次</span><span>270人<br/>剩余人次</span></div>
+                <a class="detail-btn">查看详情</a>
+            </div>
             [/#list]
-            [/#if]
-            [/@ec_info]
-
-        </ul>
-    </div>
-
-
-    <div style="width: 940px; height: 120px;float: left;margin-top: 25px;">
-        <div class="page">
-            <ul>
-                <li class="prev"><a href="#">上一页</a></li>
-                <li><a href="#" class="current">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">&hellip;</a></li>
-                <li><a href="#">6</a></li>
-                <li class="next"><a href="#">下一页</a></li>
-                <li class="sx"></li>
-            </ul>
+        </div>
+        <div class="zjmd">
+            <div>
+                <span>中奖名单</span>
+                <img src="${res!}/resources/images/lymall/green_hx.png">
+            </div>
+            [#list 1..3 as a]
+            <div class="zjmd-block">
+                <div><img src="${res!}/resources/images/lymall/zjmd_jxgz_default.png"></div>
+                <div>阿尔托莉亚<span>(10人次)</span></div>
+                <div>中奖获得</div>
+                <div>(第100期)2014年国际足联世界杯吉祥工仔</div>
+            </div>
+            [/#list]
+        </div>
+        <div class="lyhp">
+            <div>
+                <span>绿优好品</span>
+                <img src="${res!}/resources/images/lymall/green_hx.png">
+                <a href="#">更多>></a>
+            </div>
+            [#list 1..3 as a]
+             <div class="lyhp-block">
+                <div> <img src="${res!}/resources/images/lymall/lyhp_default.png"></div>
+                 <div><span>攀枝花天然有机芒果</span><span>58元</span></div>
+             </div>
+            [/#list]
         </div>
     </div>
 </div>
 
 <script type="text/javascript">
-    $(function(){
-
-        var startIndex = 0;
-        var endIndex = $(".images li").size() - 1;
-
-        setInterval(function(){
-            $(".images li>div").fadeOut();
-            $(".images li>div").eq(startIndex).fadeIn();
-
-            if(startIndex == endIndex){
-                startIndex = 0;
-            }else{
-                startIndex++;
-            }
-
-        },6000);
-    });
+    $(function () {
+        var height = ($(".recommend ul li").size() / 3) * $(".recommend ul li").eq(0).height() + 20;
+        $(".recommend ul").height(height);
+    })
 
 </script>
 </body>
