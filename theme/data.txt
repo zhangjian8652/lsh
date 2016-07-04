@@ -38,5 +38,30 @@ hx1:45895b
 hx2:fdd35b
 lvdbkk:e1e1e1
 
+
+/frontend/authorization
+/frontend/register
+
+
+1）分页信息标签：
+说明：ec_info_page
+对应类：com.cloudeasy.content.directive.InfoPageDirective
+使用：[@ec_info_page nodeId="" groupName="";page][@/ec_info_page]
+参数：
+    - nodeId:节点ID，会按节点ID查询出分页信息；
+    - groupName：分组名称，按找分组查询，与nodeId互斥；
+    - sort:排序方式"desc/asc"
+    - order:按条件排序
+    - pageNum:当前页数
+    - pagesize:每页大小，默认10
+输出：
+    - count：总记录数
+    - pagesize:每页大小
+    - start:开始页数
+    - end：结束页数
+    - current:当前页数
+    - pagecount：总页数
+    - page：page对象，一般使用${page.datas}获取信息列表
+
 music
 此生不换

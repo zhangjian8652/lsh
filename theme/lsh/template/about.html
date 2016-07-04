@@ -26,67 +26,15 @@
             <div class="single-info">
                 ${node.fields['menu1_detail']}
             </div>
-            <div class="page">
-                <ul>
-                    <li class="prev"><a href="#">上一页</a></li>
-                    <li><a href="#" class="current">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">&hellip;</a></li>
-                    <li><a href="#">6</a></li>
-                    <li class="next"><a href="#">下一页</a></li>
-                    <li class="sx"></li>
-                </ul>
-            </div>
         </div>
 
         <div class="content" id="expert-consultant" style="display: none;">
-            [@ec_info queryType="list" nodeId="${node.id!}" groupName="default";list]
-            [#if list?? && (list?size >0)]
-            [#list list as info]
-            <div class="single-info">
-                <div class="avator"><img src="${info.fields['avator']}"/></div>
-                <div class="detail">
-                    <p>${info.fields['name']}</p>
-                    <div class="describe">
-                        ${info.fields['describe']}
-                    </div>
-                </div>
-                <img src="${res!}/resources/images/about_eepau/hx.png">
-            </div>
-            [/#list]
-            [/#if]
-            [/@ec_info]
-
-            <div class="page">
-                <ul>
-                    <li class="prev"><a href="#">上一页</a></li>
-                    <li><a href="#" class="current">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">&hellip;</a></li>
-                    <li><a href="#">6</a></li>
-                    <li class="next"><a href="#">下一页</a></li>
-                    <li class="sx"></li>
-                </ul>
-            </div>
+            [#include "about/about_info_page.html"]
         </div>
 
         <div class="content" id="law-rule" style="display: none;">
             <div class="single-info">
                 ${node.fields['menu3_detail']}
-            </div>
-            <div class="page">
-                <ul>
-                    <li class="prev"><a href="#">上一页</a></li>
-                    <li><a href="#" class="current">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">&hellip;</a></li>
-                    <li><a href="#">6</a></li>
-                    <li class="next"><a href="#">下一页</a></li>
-                    <li class="sx"></li>
-                </ul>
             </div>
         </div>
 
@@ -98,6 +46,7 @@
         var targetId = $(this).attr("content-id");
         $("#" + targetId).show().siblings().hide();
     });
+
 </script>
 </body>
 </html>

@@ -1,0 +1,52 @@
+[@ec_node code="work";nod]
+
+[@ec_info_page  nodeId="${nod.id!}" groupName="default" pageNum="${RequestParameters['pageNum']!1}" pagesize = "${RequestParameters['pageSize']!3}";page]
+
+[#assign list = page.datas/]
+[#if list?? && (list?size >0)]
+[#list list as info]
+<div class="single-info">
+    <div class="avator"><img src="${info.fields['avator']}"/></div>
+    <div class="detail">
+        <p>${info.fields['name']}</p>
+        <div class="describe">
+            ${info.fields['describe']}
+        </div>
+    </div>
+    <img src="${res!}/resources/images/about_eepau/hx.png">
+</div>
+[/#list]
+[/#if]
+
+
+<div class="page">
+    <ul>
+        [#if current>1]
+        <li class="prev"><a href="javascript:void(0);" data="${current - 1 }">上一页</a></li>
+        [/#if]
+        [#list 1..end as i]
+        [#if i == current]
+        <li><a href="javascript:void(0);" class="current" data="${i}">${i}</a></li>
+        [#else]
+        <li><a href="javascript:void(0);" data="${i}">${i}</a></li>
+        [/#if]
+        [/#list]
+        [#if end>current]
+        <li class="next"><a href="javascript:void(0);" data="${current + 1 }">下一页</a></li>
+        [/#if]
+        <li class="sx"></li>
+    </ul>
+</div>
+[/@ec_info_page]
+[/@ec_node]
+<script>
+    $(function () {
+        $(".page li>a").click(function () {
+            var pageNum = $(this).attr("data");
+            var url = "${path!}/about_info_page?pageNum=" + pageNum;
+            $.get(url,function (data) {
+                $("#expert-consultant").html(data);
+            });
+        });
+    });
+</script>

@@ -1,24 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>${node.fields["tittle"]!}</title>
+    <title>注册</title>
     [#include "meta.html"/]
     [#include "css.html"/]
+    <style>
+        table td{
+            height: 70px;
+            font-size: 30px;
+            text-align: right;
+        }
+
+        input{
+            height: 36px;
+            font-size: 30px;
+        }
+        input[type='button']{
+            display: block;
+            width: 100%;
+            height: 50px;
+        }
+    </style>
     [#include "js.html"/]
 </head>
 
 <body>
 [#include "header/header.html"/]
 
-<div style="width: 940px">
-    <form>
+<div style="width: 940px;">
+    <form >
         <div>
-            <label>用户名：</label><input type="text" name="loginId"/>
-            <label>密码：</label> <input type="password" name="password"/>
+            <table style="width: 450px;">
+                <tbody>
+                <tr>
+                    <td><label>用户名：</label></td>
+                    <td><input type="text" name="loginId" id="loginId"/></td>
+                </tr>
+                <tr>
+                    <td><label>邮箱：</label></td>
+                    <td><input type="text" name="email" id="email"/></td>
+                </tr>
+                <tr>
+                    <td><label>密码：</label><br/></td>
+                    <td><input type="password" name="password" id="password"/></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="button" value="登录" id="login-btn"/></td>
+                </tr>
+                </tbody>
+            </table>
         </div>
     </form>
 </div>
 <script type="text/javascript">
+    $(function () {
+
+        $("#login-btn").click(function() {
+            var loginId = $("#loginId").val();
+            var password = $("#password").val();
+            var email = $("#email").val();
+            if (loginId == null || password == null || email == null) {
+                alert("用户名、密码、邮箱不能为空");
+            } else {
+                var uri = "${path!}/frontend/register"
+                $.post(uri, {loginId: loginId, password: password,email:email}, function (result) {
+                    try {
+                        var jsonData = JSON.parse(result);
+                        if(jsonData.code == 1000){
+                            location.href = "${path!}/";
+                        }else {
+                            alert("用户名或者密码不正确，请重新输入。");
+                        }
+                    } catch (e) {
+                        alert("用户名或者密码不正确，请重新输入。");
+                    }
+                });
+            }
+        });
+    })
+
 
 </script>
 
