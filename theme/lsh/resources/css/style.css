@@ -528,7 +528,7 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 	margin-top: 12px;
 	display: block;
 }
-#news-info-ul{
+#news-info-ul li{
 	cursor: pointer;
 }
 .medias_nav{
