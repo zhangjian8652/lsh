@@ -1,10 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>${info.fields["tittle"]!}</title>
+    [#include "../meta.html"/]
+    [#include "../css.html"/]
+    [#include "../js.html"/]
 </head>
-<body>
 
+<body>
+[#include "../header/header.html"/]
+
+<div id="lymall-info-page">
+<div class="container">
+    <div style="width: 200px;margin: 30px 0px 30px 0px;display: inline-block;"><img src="${info.fields['image']!}"/></div>
+    <div style="width: 700px;display: inline-block;margin-left: 30px;margin-top: 30px;">
+        <p style="padding-bottom: .2em;line-height: 1;font-size: 25px;font-weight: 700;color: #000;margin: 30px;">${info.fields['tittle']!}</p>
+        <p style="margin: 30px;"><span>价格：</span><span style="color: #0b8749;font-size: 25px;">${info.fields['price']!}</span></p>
+        <p></p>
+    </div>
+    <div>
+        <div class="goods-detail">商品详情</div>
+        <div>${info.fields["describe"]!}</div>
+    </div>
+
+</div>
+</div>
+<script type="text/javascript">
+
+</script>
 </body>
 </html>
