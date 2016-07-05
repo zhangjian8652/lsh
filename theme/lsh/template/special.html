@@ -15,34 +15,8 @@
         <img src="${node.fields['head_image']!}">
     </div>
 
-    <div class="center">
-        [@ec_info queryType="list" nodeId="${node.id!}" groupName="default";list]
-        [#if list?? && (list?size >0)]
-        [#list list as info]
-        <div class="single-info">
-            <img src="${info.fields['image']!}"/>
-            <p>${info.fields['tittle']!}</p>
-
-            [#if info_index < (list?size -1) ]
-            <img src="${res!}/resources/images/special/hx.png" class="hx"/>
-            [/#if]
-        </div>
-        [/#list]
-        [/#if]
-        [/@ec_info]
-
-        <div class="page" style="width:400px;margin:20px auto 20px auto;">
-            <ul>
-                <li class="prev"><a href="#">上一页</a></li>
-                <li><a href="#" class="current">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">&hellip;</a></li>
-                <li><a href="#">6</a></li>
-                <li class="next"><a href="#">下一页</a></li>
-                <li class="sx"></li>
-            </ul>
-        </div>
+    <div class="center" id="info-page-data">
+        [#include "special/special_info_page.html"/]
     </div>
 </div>
 

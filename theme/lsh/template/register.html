@@ -37,6 +37,14 @@
                     <td><input type="text" name="loginId" id="loginId"/></td>
                 </tr>
                 <tr>
+                    <td><label>姓：</label></td>
+                    <td><input type="text" name="lastName" id="lastName"/></td>
+                </tr>
+                <tr>
+                    <td><label>名：</label></td>
+                    <td><input type="text" name="firstName" id="firstName"/></td>
+                </tr>
+                <tr>
                     <td><label>邮箱：</label></td>
                     <td><input type="text" name="email" id="email"/></td>
                 </tr>
@@ -59,21 +67,19 @@
             var loginId = $("#loginId").val();
             var password = $("#password").val();
             var email = $("#email").val();
-            if (loginId == null || password == null || email == null) {
-                alert("用户名、密码、邮箱不能为空");
+            var firstName = $("#firstName").val();
+            var lastName = $("#lastName").val();
+            if (loginId == null || password == null || email == null ||firstName == null || lastName == null) {
+                alert("用户名、密码、邮箱、姓、名不能为空");
             } else {
                 var uri = "${path!}/frontend/register"
-                $.post(uri, {loginId: loginId, password: password,email:email}, function (result) {
-                    try {
+                $.post(uri, {loginId: loginId, password: password,email:email,lastname:lastName,firstname:firstName}, function (result) {
+
                         var jsonData = JSON.parse(result);
-                        if(jsonData.code == 1000){
-                            location.href = "${path!}/";
-                        }else {
-                            alert("用户名或者密码不正确，请重新输入。");
-                        }
-                    } catch (e) {
-                        alert("用户名或者密码不正确，请重新输入。");
-                    }
+                        alert("注册成功");
+                        location.href = "${path!}/login";
+
+
                 });
             }
         });

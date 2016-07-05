@@ -1,0 +1,56 @@
+
+[@ec_node code="move_angel";nod]
+
+[@ec_info_page  nodeId="${nod.id!}" groupName="default" pageNum="${RequestParameters['pageNum']!1}" pagesize = "${RequestParameters['pageSize']!6}";page]
+
+
+<ul>
+    [#assign list = page.datas/]
+    [#if list?? && (list?size >0)]
+    [#list list as info]
+    <li>
+        <div>
+            <img src="${info.fields['image']!}">
+            <div class="tittle">
+                ${info.fields['tiitle']!}
+            </div>
+        </div>
+    </li>
+    [/#list]
+    [/#if]
+
+</ul>
+<div class="page" style="clear: both">
+    <ul>
+        [#if end>0]
+        [#if current>1]
+        <li class="prev"><a href="javascript:void(0);" data="${current - 1 }">上一页</a></li>
+        [/#if]
+        [#list 1..end as i]
+        [#if i == current]
+        <li><a href="javascript:void(0);" class="current" data="${i}">${i}</a></li>
+        [#else]
+        <li><a href="javascript:void(0);" data="${i}">${i}</a></li>
+        [/#if]
+        [/#list]
+        [#if end>current]
+        <li class="next"><a href="javascript:void(0);" data="${current + 1 }">下一页</a></li>
+        [/#if]
+        <li class="sx"></li>
+        [/#if]
+    </ul>
+</div>
+
+[/@ec_info_page]
+[/@ec_node]
+<script>
+    $(function () {
+        $(".page li>a").click(function () {
+            var pageNum = $(this).attr("data");
+            var url = "${path!}/angel_info_page?pageNum=" + pageNum;
+            $.get(url, function (data) {
+                $("#info-page-data").html(data);
+            });
+        });
+    });
+</script>

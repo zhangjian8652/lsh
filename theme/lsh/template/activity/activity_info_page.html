@@ -1,26 +1,34 @@
 [@ec_node code="work";nod]
 
-[@ec_info_page  nodeId="${nod.id!}" groupName="default" pageNum="${RequestParameters['pageNum']!1}" pagesize = "${RequestParameters['pageSize']!3}";page]
+[@ec_info_page  nodeId="${nod.id!}" groupName="activity_info" pageNum="${RequestParameters['pageNum']!1}" pagesize = "${RequestParameters['pageSize']!9}";page]
 
-[#assign list = page.datas/]
-[#if list?? && (list?size >0)]
-[#list list as info]
-<div class="single-info">
-    <div class="avator"><img src="${info.fields['avator']}"/></div>
-    <div class="detail">
-        <p>${info.fields['name']}</p>
-        <div class="describe">
-            ${info.fields['describe']}
-        </div>
-    </div>
-    <img src="${res!}/resources/images/about_eepau/hx.png">
-</div>
-[/#list]
-[/#if]
-
-
-<div class="page">
+<div class="activity-info">
     <ul>
+        [#assign list = page.datas/]
+        [#if list?? && (list?size >0)]
+        [#list list as info]
+        <li>
+            <div style="padding: 15px;">
+                <a href="${info.uri!}">
+                    <img src="${info.fields['image']!}">
+                    <div class="finish-percent">${info.fields['finishPercent']!}</div>
+                    <div class="tittle">
+                        ${info.fields['tittle']!}
+                    </div>
+                </a>
+            </div>
+        </li>
+        [/#list]
+        [/#if]
+
+    </ul>
+</div>
+
+
+
+<div class="page" style="clear: both">
+    <ul>
+        [#if end>0]
         [#if current>1]
         <li class="prev"><a href="javascript:void(0);" data="${current - 1 }">上一页</a></li>
         [/#if]
@@ -35,17 +43,19 @@
         <li class="next"><a href="javascript:void(0);" data="${current + 1 }">下一页</a></li>
         [/#if]
         <li class="sx"></li>
+        [/#if]
     </ul>
 </div>
+
 [/@ec_info_page]
 [/@ec_node]
 <script>
     $(function () {
         $(".page li>a").click(function () {
             var pageNum = $(this).attr("data");
-            var url = "${path!}/about_info_page?pageNum=" + pageNum;
+            var url = "${path!}/activity_info_page?pageNum=" + pageNum;
             $.get(url,function (data) {
-                $("#expert-consultant").html(data);
+                $("#info-page-data").html(data);
             });
         });
     });

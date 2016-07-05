@@ -1,0 +1,54 @@
+[@ec_node code="news";nod]
+[@ec_info_page  nodeId="${nod.id!}" groupName="content" pageNum="${RequestParameters['pageNum']!1}" pagesize = "${RequestParameters['pageSize']!3}";page]
+
+<ul>
+    [#assign list = page.datas/]
+    [#if list?? && (list?size >0)]
+    [#list list as info]
+    <li>
+        <div class="avator"><img src="${info.fields['image']!}"/></div>
+        <div class="content">
+            <p class="tittle">${info.fields['tittle']!}</p>
+            <div class="detail">${info.fields['describe']!}</div>
+            <span class="date">${info.fields['update_date']!} 更新</span>
+        </div>
+        <div class="hx"></div>
+    </li>
+    [/#list]
+    [/#if]
+
+</ul>
+<div class="page" style="clear: both">
+    <ul>
+        [#if end>0]
+        [#if current>1]
+        <li class="prev"><a href="javascript:void(0);" data="${current - 1 }">上一页</a></li>
+        [/#if]
+        [#list 1..end as i]
+        [#if i == current]
+        <li><a href="javascript:void(0);" class="current" data="${i}">${i}</a></li>
+        [#else]
+        <li><a href="javascript:void(0);" data="${i}">${i}</a></li>
+        [/#if]
+        [/#list]
+        [#if end>current]
+        <li class="next"><a href="javascript:void(0);" data="${current + 1 }">下一页</a></li>
+        [/#if]
+        <li class="sx"></li>
+        [/#if]
+    </ul>
+</div>
+[/@ec_info_page]
+[/@ec_node]
+
+<script>
+    $(function () {
+        $(".page li>a").click(function () {
+            var pageNum = $(this).attr("data");
+            var url = "${path!}/news_info_page?pageNum=" + pageNum;
+            $.get(url, function (data) {
+                $("#news-info").html(data);
+            });
+        });
+    });
+</script>
