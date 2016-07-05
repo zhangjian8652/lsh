@@ -528,6 +528,9 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 	margin-top: 12px;
 	display: block;
 }
+#news-info-ul{
+	cursor: pointer;
+}
 .medias_nav{
 	position: relative;
 	z-index: 100;
