@@ -1486,3 +1486,15 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 .lyhp-block div:nth-child(2){
 	padding: 20px 2px 0px 2px;
 }
+.goods-detail{
+	background: url("../images/activity/arrow_right_green.png") 0px no-repeat;
+	height: 29px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	color: #fff;
+	line-height: 29px;
+	padding-left: 20px;
+}
+#lymall-info-page{
+	background: url("../images/lymall/gray_bg.png");
+}
