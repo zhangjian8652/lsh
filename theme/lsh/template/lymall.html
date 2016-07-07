@@ -4,6 +4,11 @@
     <title>${node.name!}</title>
     [#include "meta.html"/]
     [#include "css.html"/]
+    <style>
+        ul li{
+            cursor: pointer;
+        }
+    </style>
     [#include "js.html"/]
 </head>
 
@@ -27,7 +32,7 @@
                             [@ec_info queryType="list" nodeId="${node.id!}" groupName="recommend";list]
                             [#if list?? && (list?size >0)]
                             [#list list as info]
-                            <li>
+                            <li uri="${path!}${info.uri}">
                                 <img src="${info.fields['image']!}"/>
                                 <p>${info.fields['tittle']!}</p>
                                 <p>${info.fields['price']!}</p>
@@ -47,7 +52,7 @@
                             [@ec_info queryType="list" nodeId="${node.id!}" groupName="exchange";list]
                             [#if list?? && (list?size >0)]
                             [#list list as info]
-                            <li>
+                            <li uri="${path!}${info.uri}">
                                 <div><img src="${info.fields['exchange_image']!}"/></div>
 
                                 <div>${info.fields['exchange_name']!}</div>
@@ -125,6 +130,10 @@
     $(function () {
         var height = ($(".recommend ul li").size() / 3) * $(".recommend ul li").eq(0).height() + 20;
         $(".recommend ul").height(height);
+
+        $("ul li").click(function () {
+            location.href = $(this).attr("uri");
+        });
     })
 
 </script>
