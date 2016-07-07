@@ -45,8 +45,8 @@ function Carousel(id, sizePerPage) {
     function rollingTimer($element, seconds, endIndex, startWidth, totalWidth) {
         var startWidth = startWidth;
         var interval = setInterval(function () {
-            console.log("index :" + i);
-            console.log("endIndex :" + endIndex);
+/*            console.log("index :" + i);
+            console.log("endIndex :" + endIndex);*/
             if (i == endIndex) {
                 $element.animate({"right": 0}, seconds * 1000);
                 //$element.css("right",0);
@@ -81,11 +81,11 @@ function Carousel(id, sizePerPage) {
         var endIndex = caculatePageCount(tagCount, sizePerPage);
         var totalTagWidth = caculateTotalTagWidth(endIndex, contentWidth);
 
-        console.log("tagCount:" + tagCount);
+/*        console.log("tagCount:" + tagCount);
         console.log("contentWidth:" + contentWidth);
         console.log("totalTagWidth:" + totalTagWidth);
         console.log("eachTagWidth:" + eachTagWidth);
-        console.log("endIndex:" + endIndex);
+        console.log("endIndex:" + endIndex);*/
 
         $(id).css("width", contentWidth).css("overflow", "hidden");
         $(id).find(".content").css("width", totalTagWidth).css("position", "relative");

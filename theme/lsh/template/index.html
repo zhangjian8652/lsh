@@ -47,70 +47,48 @@
     </div>
     <div class="news-right">
         <div class="head">
-            <div class="head1"><a table-id="recent">活动回顾</a></div>
-            <div class="head2"><a table-id="review">最新动态</a></div>
+            <div class="head1"  table-id="recent"><a>活动回顾</a></div>
+            <div class="head2" table-id="review"><a >最新动态</a></div>
         </div>
         <div class="content">
-
+            [@ec_node code="work";nod]
+            [@ec_info_page  nodeId="${nod.id!}" groupName="activity_info" pageNum="1" pagesize = "6";page]
             <table class="recent-news" id="recent">
                 <tbody>
+                [#assign list = page.datas/]
+                [#if list?? && (list?size >0)]
+                [#list list as info]
                 <tr>
-                    <td>2014年地球一小时--蓝天自造</td>
-                    <td>2014-03-01</td>
+                    <td>${info.name!}</td>
+                    <td>${info.updateDate?string("yyyy-MM-dd")}</td>
                 </tr>
-                <tr>
-                    <td>2013年地球一小时--我做率V客</td>
-                    <td>2013-03-23</td>
-                </tr>
-                <tr>
-                    <td>寻豚记--2012年长江全流域淡水豚类考擦</td>
-                    <td>2013-03-23</td>
-                </tr>
-                <tr>
-                    <td>守护东北虎，致敬野生虎巡护员</td>
-                    <td>2013-03-23</td>
-                </tr>
-                <tr>
-                    <td>湿地飞翔--我们 和候鸟的约定</td>
-                    <td>2013-03-23</td>
-                </tr>
-                <tr>
-                    <td>点亮东北虎回家之路</td>
-                    <td>2013-03-23</td>
-                </tr>
+                [/#list]
+                [/#if]
+
                 </tbody>
             </table>
+            [/@ec_info_page]
+            [/@ec_node]
+            [@ec_node code="move_angel";nod]
+            [@ec_info_page  nodeId="${nod.id!}" groupName="default" pageNum="1" pagesize = "6";page]
             <table class="activity-review" style="display:none;" id="review">
                 <tbody>
+                [#assign list = page.datas/]
+                [#if list?? && (list?size >0)]
+                [#list list as info]
                 <tr>
-                    <td>2014年地球一小时--蓝天自造</td>
-                    <td>2014-03-01</td>
+                    <td>${info.name!}</td>
+                    <td>${info.updateDate?string("yyyy-MM-dd")}</td>
                 </tr>
-                <tr>
-                    <td>2013年地球一小时--我做率V客</td>
-                    <td>2013-03-23</td>
-                </tr>
-                <tr>
-                    <td>守护东北虎，致敬野生虎巡护员</td>
-                    <td>2013-03-23</td>
-                </tr>
-                <tr>
-                    <td>湿地飞翔--我们 和候鸟的约定</td>
-                    <td>2013-03-23</td>
-                </tr>
-                <tr>
-                    <td>点亮东北虎回家之路</td>
-                    <td>2013-03-23</td>
-                </tr>
-                <tr>
-                    <td>寻豚记--2012年长江全流域淡水豚类考擦</td>
-                    <td>2013-03-23</td>
-                </tr>
+                [/#list]
+                [/#if]
                 </tbody>
             </table>
+            [/@ec_info_page]
+            [/@ec_node]
         </div>
         <div class="footer">
-            <a href="#"><img src="${res!}/resources/images/news_more.png">&nbsp;&nbsp;&nbsp;浏览更多</a>
+            <a href="${path!}/activity"><img src="${res!}/resources/images/news_more.png"/>&nbsp;&nbsp;&nbsp;浏览更多</a>
         </div>
     </div>
 </div>
@@ -133,11 +111,11 @@
                     <ul>
                         <li>
                             <div style=" width:620px; height:409px; margin-left: 0px">
-                                <video src="${res!}/resources/zgm.mp4" controls="controls">
+                                <video src="${node.fields['video']!}" controls="controls">
                                     不支持
                                 </video>
                             </div>
-                            <div class="video-tittle"><span>这是视频描述</span>
+                            <div class="video-tittle"><span>"${node.fields['video_describe']!}"</span>
                             </div>
                         </li>
                     </ul>
@@ -146,29 +124,17 @@
             <!-- -->
             <!-- 图片 -->
             <dl class="mediaphoto" id="image" style="display: none;">
-                [@ec_node code="image";nod]
                 <div class="mediaphoto-list tupian">
                     <ul>
-                        [@ec_info queryType="list" nodeId="${nod.id!}" groupName="default";list]
-                        [#if list?? && (list?size >0)]
-                        [#list list as info]
-                        [#if info_index == 0]
-                        [#assign class = "current"/]
-                        [#else]
-                        [#assign class = ""/]
-                        [/#if]
 
                         <li>
-                            <div><img width="650" src="${info.fields['image']!}"></div>
-                            <div class="photo-tittle"><span>${info.fields['tittle']!}</span>
+                            <div><img width="650" src="${node.fields['image']!}"></div>
+                            <div class="photo-tittle"><span>${node.fields['image_describe']!}</span>
                             </div>
                         </li>
-                        [/#list]
-                        [/#if]
-                        [/@ec_info]
+
                     </ul>
                 </div>
-                [/@ec_node]
             </dl>
             <!-- -->
 
@@ -234,7 +200,7 @@
                 [@ec_info queryType="list" nodeId="${nod.id!}" groupName="default";list]
                 [#if list?? && (list?size >0)]
                 [#list list as info]
-                <li>
+                <li uri="${info.uri!}" style="cursor: pointer;">
                     <div style="padding: 15px;">
                         <img src="${info.fields['image']!}">
                         <div class="describe">${info.fields['tittle']!}</div>
@@ -267,61 +233,31 @@
         <div class="content">
             <p>行动组织</p>
             <ul class="content-company-ul" style="height: 150px;">
+                [@ec_info queryType="list" nodeId="${node.id!}" groupName="organization";list]
+                [#if list?? && (list?size >0)]
+                [#list list as info]
                 <li>
                     <div style="padding: 15px;">
-                        <img src="${res!}/resources/images/company_icon/huawei.png">
+                        <img src="${info.fields['image']!}">
                     </div>
                 </li>
-                <li>
-                    <div style="padding: 15px;">
-                        <img src="${res!}/resources/images/company_icon/zxyh.png">
-                    </div>
-                </li>
-                <li>
-                    <div style="padding: 15px;">
-                        <img src="${res!}/resources/images/company_icon/omega.png">
-                    </div>
-                </li>
-                <li>
-                    <div style="padding: 15px;">
-                        <img src="${res!}/resources/images/company_icon/cocole.png">
-                    </div>
-                </li>
-                <li>
-                    <div style="padding: 15px;">
-                        <img src="${res!}/resources/images/company_icon/five_star.png">
-                    </div>
-                </li>
-
+                [/#list]
+                [/#if]
+                [/@ec_info]
             </ul>
             <p>绿芽天使</p>
             <ul class="content-angel-ul">
+                [@ec_info queryType="list" nodeId="${node.id!}" groupName="angel";list]
+                [#if list?? && (list?size >0)]
+                [#list list as info]
                 <li>
                     <div style="padding: 15px;">
-                        <img src="${res!}/resources/images/lyts_default.png">
+                        <img src="${info.fields['image']!}">
                     </div>
                 </li>
-                <li>
-                    <div style="padding: 15px;">
-                        <img src="${res!}/resources/images/lyts_default.png">
-                    </div>
-                </li>
-                <li>
-                    <div style="padding: 15px;">
-                        <img src="${res!}/resources/images/lyts_default.png">
-                    </div>
-                </li>
-                <li>
-                    <div style="padding: 15px;">
-                        <img src="${res!}/resources/images/lyts_default.png">
-                    </div>
-                </li>
-                <li>
-                    <div style="padding: 15px;">
-                        <img src="${res!}/resources/images/lyts_default.png">
-                    </div>
-                </li>
-
+                [/#list]
+                [/#if]
+                [/@ec_info]
             </ul>
         </div>
 
@@ -335,7 +271,7 @@
     $(document).ready(function () {
                 new Carousel("#news-carousel", 2).start();
                 new Carousel("#sua-carousel", 3).start();
-                $(".news-right .head a").click(function(){
+                $(".news-right .head div").click(function(){
                     var id = $(this).attr("table-id");
                     $("#" + id).show().siblings().hide();
                 });
@@ -343,6 +279,10 @@
                 $(".medias_nav li").click(function(){
                     var id = $(this).attr("media-id");
                     $("#" + id).show().siblings().hide();
+                });
+
+                $(".lyhp-content ul li").click(function(){
+                    location.href = $(this).attr("uri");
                 });
             }
     );

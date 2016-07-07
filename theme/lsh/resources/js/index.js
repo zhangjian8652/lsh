@@ -114,10 +114,10 @@ DY_scroll('.mediaphoto','.prev','.next','.tupian',1,false);// true为自动播�
   }();
 
 
-  var elem = document.getElementById('fixed');
+/*  var elem = document.getElementById('fixed');
   elem.style.right = '0px';
   elem.style.top = '150px';
-  position.fixed(elem);
+  position.fixed(elem);*/
 
 //控制字体大小
 $(function () { 
