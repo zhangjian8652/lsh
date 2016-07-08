@@ -28,7 +28,7 @@
                         <div><span>推荐商品</span><a href="#">更多>></a>
                             <img src="${res!}/resources/images/lymall/green_hx.png">
                         </div>
-                        <ul>
+                        <ul style="height: 610px;">
                             [@ec_info queryType="list" nodeId="${node.id!}" groupName="recommend";list]
                             [#if list?? && (list?size >0)]
                             [#list list as info]

@@ -16,7 +16,7 @@
     </div>
     <div class="left">
         <ol>
-            <li content-id="introduction">${node.fields['menu_1']!}</li>
+            <li content-id="introduction" class="active">${node.fields['menu_1']!}</li>
             <li content-id="expert-consultant">${node.fields['menu_2']!}</li>
             <li content-id="law-rule">${node.fields['menu_3']!}</li>
         </ol>
@@ -45,6 +45,7 @@
     $(".container .left li").click(function () {
         var targetId = $(this).attr("content-id");
         $("#" + targetId).show().siblings().hide();
+        $(this).addClass("active").siblings().removeClass("active");
     });
 
 </script>

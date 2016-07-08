@@ -11,7 +11,7 @@
 [#include "header/header.html"/]
 [#include "focus/focus.html"/]
 
-<div id="news">
+<div id="news" style="margin-top: 13px;">
     <div class="news-left" id="news-carousel" style="width: 564px;margin: 0px;">
         [@ec_node code="news";nod]
         <div class="head">
@@ -100,7 +100,7 @@
     <div class="right">
         <div class="medias_nav">
             <ul>
-                <li class="video" media-id="video"><a href="javascript:" >视频</a></li>
+                <li class="video_active" media-id="video"><a href="javascript:" >视频</a></li>
                 <li class="image" media-id="image"><a href="javascript:" >图片</a></li>
             </ul>
         </div>
@@ -128,7 +128,7 @@
                     <ul>
 
                         <li>
-                            <div><img width="650" src="${node.fields['image']!}"></div>
+                            <div style=" width:620px; height:409px; margin-left: 0px"><img width="650" src="${node.fields['image']!}"></div>
                             <div class="photo-tittle"><span>${node.fields['image_describe']!}</span>
                             </div>
                         </li>
@@ -144,7 +144,7 @@
 
 
 
-<div id="sua" style="width:100%;">
+<div id="sua" style="width:100%;margin-top: 12px;">
     [@ec_node code="work";nod]
     <div style="margin: auto;width: 940px;">
         <div class="head">
@@ -186,7 +186,7 @@
 
 </div>
 
-<div id="lyhp" style="margin: 30px auto auto;width: 940px;">
+<div id="lyhp" style="margin: 50px auto auto;width: 940px;">
     [@ec_node code="lymall";nod]
     <div class="head">
         <div class="area-1">
@@ -223,7 +223,7 @@
 
 
 <div id="xdts">
-<div  style="margin: 30px auto auto;width: 940px;">
+<div  style="margin: 25px auto auto;width: 940px;">
     <div class="head">
         <div class="area-1">
             <div class="area-2"><span>行动天使</span></div>
@@ -279,6 +279,17 @@
                 $(".medias_nav li").click(function(){
                     var id = $(this).attr("media-id");
                     $("#" + id).show().siblings().hide();
+
+                    if(id == "video"){
+                        $(this).removeClass("video").addClass("video_active");
+                        $(this).siblings().removeClass("image_active").addClass("image")
+                    }
+                    if(id == "image"){
+                        $(this).removeClass("image").addClass("image_active");
+                        $(this).siblings().removeClass("video_active").addClass("video");
+                    }
+
+
                 });
 
                 $(".lyhp-content ul li").click(function(){

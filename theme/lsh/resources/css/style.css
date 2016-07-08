@@ -99,7 +99,7 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 #info .info_content .activity{ padding-top:20px;}
 
 
-#medias{ width:940px;padding-top:47px;position:relative;margin:0px auto; overflow:hidden;}
+#medias{ width:940px;padding-top:0px;position:relative;margin:0px auto; overflow:hidden;}
 #medias .left{ float:left; width:287px; vertical-align:top;}
 #medias .right{ float:right; width:600px; overflow:hidden;padding-top: 6px;}
 #medias .right .media_nav{}
@@ -121,7 +121,7 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 .mediaphoto-list { position:relative; width:670px;overflow:hidden;}
 .mediaphoto-list ul { width:9999px;}
 .mediaphoto-list li { float:left; width:670px;cursor: pointer}
-.mediaphoto-list li img{ width:620px; height:389px; }
+.mediaphoto-list li img{ width:620px; height: 350px;}
 
 .mediaphoto-list li .phototitle{
 	float: left;
@@ -552,10 +552,19 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 	width: 107px;
 	margin-right: 15px;
 }
+.medias_nav .video_active{
+	background: url("../images/news_blue_arrow.png") 0px no-repeat;
+	width: 107px;
+	margin-right: 15px;
+}
 .medias_nav .image{
 	background: url("../images/medias_image.png") 0px no-repeat;
 	width: 123px;
 
+}
+.medias_nav .image_active{
+	background: url("../images/news_blue_arrow.png") 0px no-repeat;
+	width: 123px;
 }
 .video-tittle{
 	position: relative;
@@ -566,11 +575,10 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 }
 .photo-tittle{
 	position: relative;
-	top:-67px;
+	top: -140px;
 	color: white;
-	left: 31px;
+	left: 50px;
 	font-size: 24px;
-
 }
 #sua{
 	background: url("../images/sua_bg.png");
@@ -589,10 +597,10 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 	width: 292px;
 	margin: 0;
 	vertical-align: middle;
-	font-size: 30px;
+	font-size: 25px;
 	color: #45895b;
 	line-height: 45px;
-	padding-left: 20px;
+	padding-left: 30px;
 }
 #sua .tittle{
 	position: absolute;
@@ -694,6 +702,9 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 	margin-top: 5px;
 	padding-left: 20px;
 	cursor: pointer;
+}
+.container .left li.active{
+	color: black;
 }
 .container .left li:nth-child(1){
 	background: url("../images/about_eepau/left_menu_arrow_bg.png") 0px no-repeat;
@@ -955,7 +966,7 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 .activity-info ul>li{
 	float: left;
 	width: 313px;
-	margin-top: 10px;
+	margin-bottom: -8px;
 }
 
 .activity-info ul>li>div{

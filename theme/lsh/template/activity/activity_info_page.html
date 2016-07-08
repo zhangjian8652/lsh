@@ -1,9 +1,9 @@
 [@ec_node code="work";nod]
 
-[@ec_info_page  nodeId="${nod.id!}" groupName="activity_info" pageNum="${RequestParameters['pageNum']!1}" pagesize = "${RequestParameters['pageSize']!9}";page]
+[@ec_info_page  nodeId="${nod.id!}" groupName="activity_info" pageNum="${RequestParameters['pageNum']!1}" pagesize = "${RequestParameters['pageSize']!6}";page]
 
 <div class="activity-info">
-    <ul>
+    <ul >
         [#assign list = page.datas/]
         [#if list?? && (list?size >0)]
         [#list list as info]
@@ -27,7 +27,7 @@
 
 
 <div class="page" style="clear: both">
-    <ul>
+    <ul style="float: right;">
         [#if end>0]
         [#if current>1]
         <li class="prev"><a href="javascript:void(0);" data="${current - 1 }">上一页</a></li>
