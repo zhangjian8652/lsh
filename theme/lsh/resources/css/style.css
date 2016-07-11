@@ -9,7 +9,7 @@ a{ color:#0c884a; text-decoration:none;}
 a:hover{ text-decoration:underline;}
 br{ display:inherit;line-height:10px;}
 html{font-size:16px;}
-body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg.png) center -40px repeat-x; font-family: Microsoft YaHei;line-height:1.38em; }
+body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg.png) center -40px repeat; font-family: Microsoft YaHei;line-height:1.38em; }
 
 #top {margin:0px auto; padding-top: 14px; background: transparent url(../images/body_top.png) center 0 repeat-x;}
 #header{position:relative;width:940px;margin:0px auto; height:172px;}
