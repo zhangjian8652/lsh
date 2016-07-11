@@ -1,0 +1,86 @@
+body{
+    background-color: #ffffff;
+}
+.menu>a{
+    color: black;
+    text-decoration: none;
+}
+.margin-top-bottom-10{
+    margin: 10px 0px 10px 0px;
+}
+.tittle{
+    display: inline-block;
+    border: 1px solid #716251;
+    width: 55px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+}
+.avator{
+    border-radius: 20px;
+    width: 90%;
+}
+.info-block{
+    height: 140px;
+    border-bottom: 1px solid darkgray;
+    padding-top: 20px;
+}
+.info-block:nth-child(1){
+    border-top: 1px solid darkgray;
+}
+.info-block .describe{
+    font-size: 12px;
+    color: #999b9e;
+}
+.info-block .name{
+    font-size: 18px;
+    color: #716251;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.number-red{
+    color: #fd6512;
+}
+.no-padding{
+    padding: 0px;
+}
+#zhuanti .name{
+    color: #716251;
+    font-size: 14px;
+    height: 34px;
+    overflow: hidden;
+}
+#zhuanti .describe{
+    color: #999b9e;
+    font-size: 10px;
+    height: 18px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-top: 5px;
+}
+
+
+.percent{
+    height: 2px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.percent-background{
+    width: 90%;
+    background-color: #eaeae9;
+
+}
+.percent-front-ground{
+    width: 30%;
+    background-color: #ffb474;
+}
+
+#zhuanti table{
+    border: 1px solid #e8e6e2;
+    height: 135px;
+    padding: 0px;
+    box-shadow: 1px 2px #e8e6e2;
+
+}
