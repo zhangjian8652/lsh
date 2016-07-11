@@ -139,7 +139,7 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 .footer_bg{  margin-top:25px;}
 #bottom{ width:920px; padding-top:55px; overflow:hidden;}
 #bottom .dh{ float:left; width:920px; overflow:hidden;}
-#bottom .dh li{ float:left; width:192px;}
+#bottom .dh li{ float:left; width:100px;}
 #bottom .dh li h4{ color:#6a6a6a; font-size:100%;}
 #bottom .dh li ul{ margin-top:5px;}
 #bottom .dh li ul li{ float:none; font-size:82%; height:20px; line-height:20px;}

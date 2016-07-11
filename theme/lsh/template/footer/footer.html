@@ -1,34 +1,34 @@
+<div class="footer" style="margin:auto;width: 940px; clear: both;">
 [@ec_node code="footer";nod]
 <div class="footer_bg">
-    <div id="bottom">
+    <div>
+        <div style=" height: 50px;width: 550px;margin: auto;">
         <ul class="dh">
             [@ec_info queryType="list" nodeId="${nod.id!}" groupName="footer_info";list]
             [#if list?? && (list?size >0)]
             [#list list as info]
-            <li>
-                <h4>${info.fields['tittle']}</h4>
-                <ul>
-                    [@ec_node code="footer_info";nod2]
-                    [@ec_info queryType="list" nodeId="${nod2.id!}" groupName="${info.fields['sub_info_group']}";list]
-                    [#if list?? && (list?size >0)]
-                    [#list list as info2]
-                    <li><a href="#">${info2.fields['tittle']}</a></li>
-                    [/#list]
+            <li style="float: left;width: 110px;">
+                <h4>
+                    <a href="${info.fields['url']!}" style="color: gray;">${info.fields['tittle']}</a>
+
+                    [#if info?size > 1 && ((info_index + 1) < list?size)]
+                    <img src="${res!}/resources/images/footer_split.png" style="margin-left: 17px;margin-top: -5px;"/>
                     [/#if]
-                    [/@ec_info]
-                    [/@ec_node]
-                </ul>
+                </h4>
             </li>
             [/#list]
             [/#if]
             [/@ec_info]
         </ul>
-        <ul class="site1">
-            <li><a href="offices.php" style="margin-left: 0px;">${nod.fields['contact_us']!}</a></li><li><a href="#">${nod.fields['web_guid']!}</a></li><li><a href="search.php" style="background: none;">${nod.fields['search']!}</a></li></ul>
-        <div class="copyright">
-            ${nod.fields['copy_right']!}<br><p><a target="_blank" href="#"><img src="${res!}/resources/images/logo_wisegiving.png"></a></p>
+        </div>
+        <br/>
+        <div class="copyright" style="text-align: center;">
+            <p> ${nod.fields['copy_right']!}</p>
         </div>
     </div>
 </div>
-<div id="foot"></div>
+<script>
+
+</script>
 [/@ec_node]
+</div>

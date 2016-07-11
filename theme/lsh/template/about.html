@@ -17,7 +17,7 @@
     <div class="left">
         <ol>
             <li content-id="introduction" class="active">${node.fields['menu_1']!}</li>
-            <li content-id="expert-consultant">${node.fields['menu_2']!}</li>
+            <li content-id="expert-consultant" id="zjgw">${node.fields['menu_2']!}</li>
             <li content-id="law-rule">${node.fields['menu_3']!}</li>
         </ol>
     </div>
@@ -41,6 +41,7 @@
     </div>
 </div>
 
+[#include "footer/footer.html"/]
 <script type="text/javascript">
     $(".container .left li").click(function () {
         var targetId = $(this).attr("content-id");
@@ -48,7 +49,16 @@
         $(this).addClass("active").siblings().removeClass("active");
     });
 
+
 </script>
+
+[#if RequestParameters['t']??]
+     <script type="text/javascript">
+            $(function(){
+                $("#zjgw").click();
+            });
+     </script>
+[/#if]
 </body>
 </html>
 								

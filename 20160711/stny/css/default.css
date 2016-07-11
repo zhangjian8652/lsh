@@ -1,0 +1,308 @@
+#announcement
+{
+	width:100%;
+	height:20px;
+	margin:0px; 
+	padding:0px;
+	color:#333333;
+	font-size:13px;
+    text-align:center;
+}
+
+#cLeft
+{
+	float:left;
+	width:158px;
+	margin:0px;
+	padding:0px;
+	height:auto;
+     border: 1px solid #E0E0E0;
+}
+#cRight
+{
+  width:830px;
+   float:right;
+   padding:0px;
+   height:auto;
+    border: 1px solid #E0E0E0;
+}
+
+#cLeft .cLeftBox
+{
+	width:100%;
+	height:auto;
+    margin-top:0px;
+	padding:0px;
+   
+}
+#cLeft .cLeftBoxTop
+{
+	width:100%;
+	height:37px;
+	margin:0px;
+	padding:0px;
+   background: url('../template_files/images/member_dwt_h2top.jpg') no-repeat scroll 0% 0% transparent;
+    text-align:center;
+}
+#cLeft .cLeftBoxContent
+{
+	text-align:center;
+    margin-top:0px;
+    padding:0px;
+	width:100%;
+	height:auto;
+	border:0px;
+}
+
+#cRight #crTop
+{
+	width:100%;
+	height:271px;
+}
+
+#cRight #crTop #crtFlash
+{
+    float:left;
+	width:550px;
+	margin-left:0px;
+	margin-right:3px;
+	height:100%;
+}
+
+#cRight #crTop #crtInfo
+{
+	float:right;
+    width:180px;
+	height:100%;
+	padding:0px;
+}
+
+#crtInfoTop
+{
+	margin-left:2px;
+	padding:0px;
+	width:176px;
+	height:23px;
+	text-align:center;
+}
+
+#crtInfoTop ul
+{
+	margin:0px;
+	padding:0px;
+	height:100%;
+	float:left;
+}
+
+#crtInfoTop ul li
+{
+	margin:0px;
+	padding:0px;
+	width:88px;
+	height:23px;
+	float:left;
+	list-style-type:none;
+}
+
+#cit01
+{
+	margin:0px;
+	padding:0px;
+	width:88px;
+	height:23px;
+	background-image:url("../images/default/loginTop2.jpg");
+	background-repeat:no-repeat;
+}
+
+#cit02
+{
+	margin:0px;
+	padding:0px;
+	width:88px;
+	height:23px;
+	background-image:url("../images/default/loginTop1.jpg");
+	background-repeat:no-repeat;
+}
+
+#crtInfoContent
+{
+	margin:0px;
+	padding:0px;
+	width:100%;
+	height:175px;
+}
+
+#crtInfoBottom
+{
+	width:100%;
+	height:73px;
+    margin:0px;
+    padding:0px;
+}
+
+#crtInfoBottom ul
+{
+		margin:0px;
+	padding:0px;
+	height:100%;
+}
+
+#crtInfoBottom ul li
+{
+	width:60px;
+	height:73px;
+	list-style-type:none;
+	float:left;
+	margin:0px;
+	padding:0px;
+}
+
+#cic01
+{
+	width:180px;
+	height:100%;
+	margin:0px;
+	padding:0px;
+	border:1px solid #8db7e1;
+}
+
+#cic02
+{
+	display:none;
+	margin:0px;
+	padding:0px;
+	width:180px;
+	height:100%;
+	border:1px solid #8db7e1;
+}
+
+#cic02 ul
+{
+   padding:0px;
+	margin-left:8px;
+	padding-top:10px;
+	width:172px;
+	height:auto;
+}
+
+#cic02 ul li
+{
+		width:170px;
+	margin:0px;
+	padding:0px;
+	margin-top:10px;
+	float:left;
+	font-size:12px;
+	list-style-type:none;
+}
+
+#cRight .cRightBox
+{
+	margin-top:0px;
+	padding:0px;
+	width:100%;
+	height:auto;
+	margin-bottom:5px;	
+}
+
+#cRight .cRightBoxTop
+{
+	margin:0px;
+	padding:0px;
+		width:100%;
+	height:36px;
+	vertical-align:bottom;
+	 background: url('../template_files/images/membercenter_titlebg.png') repeat-x scroll 0% 0% transparent;
+}
+
+#cRight .cRightBoxContent
+{
+	width:100%;
+	height:auto;
+	vertical-align:bottom;
+	padding-top:3px;
+}
+
+.spanTop
+{
+	width: 140px;
+height: 36px;
+padding-left: 18px;
+line-height: 36px;
+color: #4E69AC;
+font-weight: 700;
+}
+
+.gvHref
+{
+	padding-left:3px;
+	font-size:13px;
+	color:#2f679b;
+}
+
+.hrefLink
+{
+	font-weight:bold;
+	font-size:12px;
+	color:#ffffff;
+	text-decoration:none;
+}
+.hrefLink:hover
+{
+	color:White;
+	text-decoration:none;
+}
+
+.topMore
+{
+	padding-left:3px;
+	font-size:13px;
+	color:#0d9ecf;
+	text-decoration:none;
+}
+
+.topMore:hover
+{
+	color:#0d9ecf;
+	text-decoration:underline;
+}
+.dataList
+{
+	width:100%;
+	height:auto;
+}
+.dlGoods
+{
+	text-align:center;
+	width:175px;
+	height:260px;
+	border:1px solid #8db7e1;
+}
+
+.goodsImg
+{
+	width:172px;
+	height:175px;
+}
+.goodsName
+{
+	color:Black;
+    font-size:13px;
+}
+.goodsName a
+{
+    font-size:13px;
+}
+.marketPrice
+{
+   font-size:12px;
+   color:#2f679b;
+   text-decoration:line-through;
+}
+
+.memberPrice
+{
+   font-size:12px;
+   color:red;
+   text-decoration:none;
+}
