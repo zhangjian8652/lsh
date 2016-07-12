@@ -3,11 +3,23 @@
 <head>
     <title>${info.fields["tittle"]!}</title>
     [#include "../meta.html"/]
+
+
+    [#-- 如果是手机则用资源文件 --]
+    [#if isMobileUA]
+    [#include "../mobile-css.html"/]
+    [#include "../mobile-js.html"/]
+    [#else]
     [#include "../css.html"/]
     [#include "../js.html"/]
+    [/#if]
 </head>
 
 <body>
+
+[#if isMobileUA]
+    [#include "../mobile/activity_info.html"/]
+[#else]
 [#include "../header/header.html"/]
 
 <div id="activity_info">
@@ -75,6 +87,6 @@
     <div style="height: 40px;width: 940px;"></div>
 </div>
 [#include "../footer/footer.html"/]
-
+[/#if]
 </body>
 </html>
