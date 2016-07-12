@@ -3,11 +3,24 @@
 <head>
     <title>${node.fields["tittle"]!}</title>
     [#include "meta.html"/]
+
+    [#-- 如果是手机则用资源文件 --]
+    [#if isMobileUA]
+    [#include "mobile-css.html"/]
+    [#include "mobile-js.html"/]
+    [#else]
     [#include "css.html"/]
     [#include "js.html"/]
+    [/#if]
+
 </head>
 
 <body>
+[#-- 如果是手机则用手机页面 --]
+[#if isMobileUA]
+    [#include "mobile/index.html"/]
+[#else]
+
 [#include "header/header.html"/]
 [#include "focus/focus.html"/]
 
@@ -47,12 +60,12 @@
     </div>
     <div class="news-right">
         <div class="head">
-            <div class="head1"  table-id="recent"><a>活动回顾</a></div>
-            <div class="head2" table-id="review"><a >最新动态</a></div>
+            <div class="head1" table-id="recent"><a>活动回顾</a></div>
+            <div class="head2" table-id="review"><a>最新动态</a></div>
         </div>
         <div class="content">
             [@ec_node code="work";nod]
-            [@ec_info_page  nodeId="${nod.id!}" groupName="activity_info" pageNum="1" pagesize = "6";page]
+            [@ec_info_page nodeId="${nod.id!}" groupName="activity_info" pageNum="1" pagesize = "6";page]
             <table class="recent-news" id="recent">
                 <tbody>
                 [#assign list = page.datas/]
@@ -70,7 +83,7 @@
             [/@ec_info_page]
             [/@ec_node]
             [@ec_node code="move_angel";nod]
-            [@ec_info_page  nodeId="${nod.id!}" groupName="default" pageNum="1" pagesize = "6";page]
+            [@ec_info_page nodeId="${nod.id!}" groupName="default" pageNum="1" pagesize = "6";page]
             <table class="activity-review" style="display:none;" id="review">
                 <tbody>
                 [#assign list = page.datas/]
@@ -100,8 +113,8 @@
     <div class="right">
         <div class="medias_nav">
             <ul>
-                <li class="video_active" media-id="video"><a href="javascript:" >视频</a></li>
-                <li class="image" media-id="image"><a href="javascript:" >图片</a></li>
+                <li class="video_active" media-id="video"><a href="javascript:">视频</a></li>
+                <li class="image" media-id="image"><a href="javascript:">图片</a></li>
             </ul>
         </div>
         <div class="media_content">
@@ -128,7 +141,9 @@
                     <ul>
 
                         <li>
-                            <div style=" width:620px; height:409px; margin-left: 0px"><img width="650" src="${node.fields['image']!}"></div>
+                            <div style=" width:620px; height:409px; margin-left: 0px"><img width="650"
+                                                                                           src="${node.fields['image']!}">
+                            </div>
                             <div class="photo-tittle"><span>${node.fields['image_describe']!}</span>
                             </div>
                         </li>
@@ -141,7 +156,6 @@
         </div>
     </div>
 </div>
-
 
 
 <div id="sua" style="width:100%;margin-top: 12px;">
@@ -161,13 +175,13 @@
                     [#list list as info]
                     <li>
                         <a href="${info.uri}">
-                        <div style="padding: 15px;">
-                            <img src="${info.fields['image']!}">
-                            <div class="finish-percent">${info.fields['finishPercent']!}</div>
-                            <div class="tittle" style="color: black;">
-                                ${info.fields['tittle']!}
+                            <div style="padding: 15px;">
+                                <img src="${info.fields['image']!}">
+                                <div class="finish-percent">${info.fields['finishPercent']!}</div>
+                                <div class="tittle" style="color: black;">
+                                    ${info.fields['tittle']!}
+                                </div>
                             </div>
-                        </div>
                         </a>
                     </li>
                     [/#list]
@@ -194,7 +208,7 @@
         </div>
         <div class="moore-goods">更多商品</div>
     </div>
-    <div class="lyhp-content"  style="margin: 0px;width:940px">
+    <div class="lyhp-content" style="margin: 0px;width:940px">
         <div class="content">
             <ul class="content-ul">
                 [@ec_info queryType="list" nodeId="${nod.id!}" groupName="default";list]
@@ -223,72 +237,72 @@
 
 
 <div id="xdts">
-<div  style="margin: 25px auto auto;width: 940px;">
-    <div class="head">
-        <div class="area-1">
-            <div class="area-2"><span>行动天使</span></div>
+    <div style="margin: 25px auto auto;width: 940px;">
+        <div class="head">
+            <div class="area-1">
+                <div class="area-2"><span>行动天使</span></div>
+            </div>
         </div>
-    </div>
-    <div class="xdts-content"  style="margin: 0px;width:940px">
-        <div class="content">
-            <p>行动组织</p>
-            <ul class="content-company-ul" style="height: 150px;">
-                [@ec_info queryType="list" nodeId="${node.id!}" groupName="organization";list]
-                [#if list?? && (list?size >0)]
-                [#list list as info]
-                <li>
-                    <div style="padding: 15px;">
-                        <img src="${info.fields['image']!}">
-                    </div>
-                </li>
-                [/#list]
-                [/#if]
-                [/@ec_info]
-            </ul>
-            <p>绿芽天使</p>
-            <ul class="content-angel-ul">
-                [@ec_info queryType="list" nodeId="${node.id!}" groupName="angel";list]
-                [#if list?? && (list?size >0)]
-                [#list list as info]
-                <li>
-                    <div style="padding: 15px;">
-                        <img src="${info.fields['image']!}">
-                    </div>
-                </li>
-                [/#list]
-                [/#if]
-                [/@ec_info]
-            </ul>
+        <div class="xdts-content" style="margin: 0px;width:940px">
+            <div class="content">
+                <p>行动组织</p>
+                <ul class="content-company-ul" style="height: 150px;">
+                    [@ec_info queryType="list" nodeId="${node.id!}" groupName="organization";list]
+                    [#if list?? && (list?size >0)]
+                    [#list list as info]
+                    <li>
+                        <div style="padding: 15px;">
+                            <img src="${info.fields['image']!}">
+                        </div>
+                    </li>
+                    [/#list]
+                    [/#if]
+                    [/@ec_info]
+                </ul>
+                <p>绿芽天使</p>
+                <ul class="content-angel-ul">
+                    [@ec_info queryType="list" nodeId="${node.id!}" groupName="angel";list]
+                    [#if list?? && (list?size >0)]
+                    [#list list as info]
+                    <li>
+                        <div style="padding: 15px;">
+                            <img src="${info.fields['image']!}">
+                        </div>
+                    </li>
+                    [/#list]
+                    [/#if]
+                    [/@ec_info]
+                </ul>
+            </div>
+
         </div>
 
     </div>
 
 </div>
 
-</div>
 
-
-    [#include "footer/footer.html"/]
+[#include "footer/footer.html"/]
 
 <script type="text/javascript" src="${res!}/resources/js/index.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
                 new Carousel("#news-carousel", 2).start();
                 new Carousel("#sua-carousel", 3).start();
-                $(".news-right .head div").click(function(){
+                $(".news-right .head div").click(function () {
                     var id = $(this).attr("table-id");
                     $("#" + id).show().siblings().hide();
                 });
 
-                $(".medias_nav li").click(function(){
+                $(".medias_nav li").click(function () {
                     var id = $(this).attr("media-id");
                     $("#" + id).show().siblings().hide();
 
-                    if(id == "video"){
+                    if (id == "video") {
                         $(this).removeClass("video").addClass("video_active");
                         $(this).siblings().removeClass("image_active").addClass("image")
                     }
-                    if(id == "image"){
+                    if (id == "image") {
                         $(this).removeClass("image").addClass("image_active");
                         $(this).siblings().removeClass("video_active").addClass("video");
                     }
@@ -296,12 +310,16 @@
 
                 });
 
-                $(".lyhp-content ul li").click(function(){
+                $(".lyhp-content ul li").click(function () {
                     location.href = $(this).attr("uri");
                 });
             }
     );
 </script>
+
+[/#if]
+
+
 
 </body>
 </html>

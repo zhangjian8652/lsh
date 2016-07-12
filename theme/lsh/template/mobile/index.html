@@ -1,0 +1,217 @@
+[@ec_node code="work";nod]
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12 menu margin-top-bottom-10">
+            <a href="javascript:void(0);"><i class="icon-reorder icon-2x"></i></a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+
+            <div id="carousel-index" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    [@ec_info queryType="list" nodeId="${nod.id!}" groupName="mobile_carousel";list]
+                    [#if list?? && (list?size >0)]
+                    [#list list as info]
+                    [#if info_index == 0]
+                    <li data-target="#carousel-index" data-slide-to="${info_index!}" class="active"></li>
+                    [#else]
+                    <li data-target="#carousel-index" data-slide-to="${info_index!}"></li>
+                    [/#if]
+                    [/#list]
+                    [/#if]
+                    [/@ec_info]
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                    [@ec_info queryType="list" nodeId="${nod.id!}" groupName="mobile_carousel";list]
+                    [#if list?? && (list?size >0)]
+                    [#list list as info]
+                    [#if info_index == 0]
+                    <div class="item active">
+                        <img src="${info.fields['image']!}" style="margin: auto;">
+                    </div>
+                    [#else]
+                    <div class="item">
+                        <img src="${info.fields['image']!}" style="margin: auto;">
+                    </div>
+                    [/#if]
+                    [/#list]
+                    [/#if]
+                    [/@ec_info]
+                </div>
+
+                <!-- Controls -->
+                <a class="left carousel-control" href="#carousel-index" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+                <a class="right carousel-control" href="#carousel-index" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-sm-12 margin-top-bottom-10">
+            <div class="row" id="zhuanti">
+                <div class="col-xs-6 no-padding">
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td rowspan="2" class="col-xs-6 no-padding"><img
+                                    src="${res!}/resources/images/mobile/avator_defaul.jpg" class="avator"/></td>
+                            <td class="name">关爱老人从我做起</td>
+                        </tr>
+                        <tr>
+                            <td class="describe">共621人捐助</td>
+                        </tr>
+                        <tr>
+                            <td class="describe" colspan="2">
+                                <div class="col-xs-12">
+                                    <div class="percent percent-background">
+                                        <div class="percent percent-front-ground"></div>
+                                    </div>
+                                    还差<span class="number-red">432.85</span>元募满
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-xs-6 no-padding">
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td rowspan="2" class="col-xs-6 no-padding"><img
+                                    src="${res!}/resources/images/mobile/avator_defaul.jpg" class="avator"/></td>
+                            <td class="name">关爱老人从我做起</td>
+                        </tr>
+                        <tr>
+                            <td class="describe">共621人捐助</td>
+                        </tr>
+                        <tr>
+                            <td class="describe" colspan="2">
+                                <div class="col-xs-12">
+                                    <div class="percent percent-background">
+                                        <div class="percent percent-front-ground"></div>
+                                    </div>
+                                    还差<span class="number-red">432.85</span>元募满
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-xs-12 margin-top-bottom-10">
+            <span class="tittle">活动项目</span>
+        </div>
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="col-xs-12 margin-top-bottom-10 info-block">
+
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td rowspan="3"><img src="${res!}/resources/images/mobile/avator_defaul.jpg" class="avator"/>
+                            </td>
+                            <td class="name">贫困孤儿助养</td>
+                        </tr>
+                        <tr>
+                            <td class="describe">1485元，为一名孤儿提供一年的生活和学习费用。</td>
+                        </tr>
+                        <tr>
+                            <td class="describe"><img src="${res!}/resources/images/mobile/icon_1.png">&nbsp;共<span
+                                    class="number-red">19898</span>人捐助
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-xs-12 margin-top-bottom-10 info-block">
+
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td rowspan="3"><img src="${res!}/resources/images/mobile/avator_defaul.jpg" class="avator"/>
+                            </td>
+                            <td class="name">贫困孤儿助养</td>
+                        </tr>
+                        <tr>
+                            <td class="describe">1485元，为一名孤儿提供一年的生活和学习费用。</td>
+                        </tr>
+                        <tr>
+                            <td class="describe"><img src="${res!}/resources/images/mobile/icon_1.png">&nbsp;共<span
+                                    class="number-red">19898</span>人捐助
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-xs-12 margin-top-bottom-10 info-block">
+
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td rowspan="3"><img src="${res!}/resources/images/mobile/avator_defaul.jpg" class="avator"/>
+                            </td>
+                            <td class="name">贫困孤儿助养</td>
+                        </tr>
+                        <tr>
+                            <td class="describe">1485元，为一名孤儿提供一年的生活和学习费用。</td>
+                        </tr>
+                        <tr>
+                            <td class="describe"><img src="${res!}/resources/images/mobile/icon_1.png">&nbsp;共<span
+                                    class="number-red">19898</span>人捐助
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-xs-12 margin-top-bottom-10 info-block">
+
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td rowspan="3"><img src="${res!}/resources/images/mobile/avator_defaul.jpg" class="avator"/>
+                            </td>
+                            <td class="name">贫困孤儿助养</td>
+                        </tr>
+                        <tr>
+                            <td class="describe">1485元，为一名孤儿提供一年的生活和学习费用。</td>
+                        </tr>
+                        <tr>
+                            <td class="describe"><img src="${res!}/resources/images/mobile/icon_1.png">&nbsp;共<span
+                                    class="number-red">19898</span>人捐助
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="row">
+                <div class="col-xs-4">
+                    <img src="${res!}/resources/images/logo.png" width="100%">
+                </div>
+                <div class="col-xs-8" style="font-size: 5px;text-align: right;">生态环境保护行动联盟 版权所有© 2016 EEPAU.com All rights reserved. 京ICP备XXXXh号</div>
+            </div>
+        </div>
+    </div>
+</div>
+[/@ec_node]
