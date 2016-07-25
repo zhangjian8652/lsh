@@ -19,14 +19,13 @@
     <div class="container" id="lymall-page">
         <table style="margin: 0px;">
             <tr>
-                <td><img src="${node.fields['adertise1']!}" width="640"/></td>
+                <td><img src="${node.fields['advertise1']!}" width="640"/></td>
                 <td><img src="${node.fields['advertise2']!}" height="280" style="margin-left: 20px;"></td>
             </tr>
             <tr>
                 <td>
                     <div class="recommend">
                         <div><span>推荐商品</span><a href="#">更多>></a>
-                            <img src="${res!}/resources/images/lymall/green_hx.png">
                         </div>
                         <ul style="height: 610px;">
                             [@ec_info queryType="list" nodeId="${node.id!}" groupName="recommend";list]
@@ -46,7 +45,6 @@
                 <td>
                     <div class="exchange">
                         <div><span>热门兑换</span>
-                            <img src="${res!}/resources/images/lymall/green_hx.png">
                         </div>
                         <ul>
                             [@ec_info queryType="list" nodeId="${node.id!}" groupName="exchange";list]
@@ -80,7 +78,6 @@
         <div class="lydb">
             <div>
                 <span>绿芽夺宝</span>
-                <img src="${res!}/resources/images/lymall/green_hx.png">
                 <a href="#">更多>></a>
             </div>
             [@ec_info queryType="list" nodeId="${node.id!}" groupName="lydb";list]
@@ -103,7 +100,6 @@
         <div class="zjmd">
             <div>
                 <span>中奖名单</span>
-                <img src="${res!}/resources/images/lymall/green_hx.png">
             </div>
             [@ec_info queryType="list" nodeId="${node.id!}" groupName="zjmd";list]
             [#if list?? && (list?size >0)]
@@ -121,7 +117,6 @@
         <div class="lyhp">
             <div>
                 <span>绿优好品</span>
-                <img src="${res!}/resources/images/lymall/green_hx.png">
                 <a href="#">更多>></a>
             </div>
             [@ec_info queryType="list" nodeId="${node.id!}" groupName="lyhp";list]

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <title>${info.fields["tittle"]!}</title>
     [#include "../meta.html"/]
@@ -18,72 +18,87 @@
 <body>
 
 [#if isMobileUA]
-    [#include "../mobile/activity_info.html"/]
+[#include "../mobile/activity_info.html"/]
 [#else]
 [#include "../header/header.html"/]
 
 <div id="activity_info">
     <div style="width: 940px;margin: auto;">
-    <div>
-        <table style="width: 100%;">
-            <tbody>
+        <div>
+            <table style="width: 100%;">
+                <tbody>
                 <tr>
-                    <td rowspan="4" style="width:320px;"><img src="${info.fields['avator']!}" style="margin-top: -60px;"></td>
+                    <td rowspan="4" style="width:320px;"><img src="${info.fields['avator']!}"
+                                                              style="margin-top: -60px;"></td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td><h3>${info.fields['tittle']!}</h3></td>
-                </tr>                <tr>
+                </tr>
+                <tr>
                     <td><h3>目前完成度&nbsp;${info.fields['money_percent']!}</h3></td>
                 </tr>
                 <tr>
-                    <td> <h3>发起者&nbsp;:&nbsp;${info.fields['sponsor']!}</h3></td>
+                    <td><h3>发起者&nbsp;:&nbsp;${info.fields['sponsor']!}</h3></td>
                 </tr>
-            </tbody>
-        </table>
-    </div>
-    <div>
-        <div>行动简介</div>
-        <div>${info.fields['content']!}</div>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <div>行动简介</div>
+            <div>${info.fields['content']!}</div>
+        </div>
+
+
+        <div>
+            <div>行动时间</div>
+            <div>${info.fields['sponsor_date']!}</div>
+        </div>
+        [#if info.groupName ?? && info.groupName == "activity_info"]
+        <div>
+            <div>参与方式</div>
+            <div>
+                <img src="${res!}/resources/images/activity/top_kk_green.png">
+                <div>需要资金：${info.fields['money_require']!}元</div>
+                <div>已获得<p>${info.fields['money_percent']!}</p></div>
+                <div>还差${info.fields['money_lack']!}元</div>
+                <div>
+                    <div>
+                        <div>立即捐赠</div>
+                        <div>获得10-200绿芽</div>
+                    </div>
+                </div>
+                <img src="${res!}/resources/images/activity/bottom_kk_green.png">
+            </div>
+            <div>
+                <img src="${res!}/resources/images/activity/top_kk_green.png">
+                <div>需要自愿者：${info.fields['people_require']!}人</div>
+                <div>已报名<p>${info.fields['people_percent']!}人</p></div>
+                <div>还差${info.fields['people_lack']!}人</div>
+                <div>
+                    <div>
+                        <div>立即报名</div>
+                        <div>获得1000绿芽</div>
+                    </div>
+                </div>
+                <img src="${res!}/resources/images/activity/bottom_kk_green.png">
+            </div>
+            <div>
+                <img src="${res!}/resources/images/activity/top_yellow_kk.png">
+                <div>传递无限行动力</div>
+                <div>赞</div>
+                <div>&nbsp;</div>
+                <div>
+                    <div>传递力量</div>
+                    <div>获得10绿芽</div>
+                </div>
+                <img src="${res!}/resources/images/activity/bottom_yellow_kk.png">
+            </div>
+        </div>
+        [/#if]
     </div>
 
 
-    <div>
-        <div>行动时间</div>
-        <div>${info.fields['sponsor_date']!}</div>
-    </div>
-    <div>
-        <div>参与方式</div>
-        <div>
-            <img src="${res!}/resources/images/activity/top_kk_green.png">
-            <div>需要资金：${info.fields['money_require']!}元</div>
-            <div>已获得<p>${info.fields['money_percent']!}</p></div>
-            <div>还差${info.fields['money_lack']!}元</div>
-            <div>
-                <div><div>立即捐赠</div><div>获得10-200绿芽</div></div>
-            </div>
-            <img src="${res!}/resources/images/activity/bottom_kk_green.png">
-        </div>
-        <div>
-            <img src="${res!}/resources/images/activity/top_kk_green.png">
-            <div>需要自愿者：${info.fields['people_require']!}人</div>
-            <div>已报名<p>${info.fields['people_percent']!}人</p></div>
-            <div>还差${info.fields['people_lack']!}人</div>
-            <div>
-                <div><div>立即报名</div><div>获得1000绿芽</div></div>
-            </div>
-            <img src="${res!}/resources/images/activity/bottom_kk_green.png">
-        </div>
-        <div>
-            <img src="${res!}/resources/images/activity/top_yellow_kk.png">
-            <div>传递无限行动力</div>
-            <div>赞</div>
-            <div>&nbsp;</div>
-            <div><div>传递力量</div><div>获得10绿芽</div></div>
-            <img src="${res!}/resources/images/activity/bottom_yellow_kk.png">
-        </div>
-    </div>
-    </div>
     <div style="height: 40px;width: 940px;"></div>
 </div>
 [#include "../footer/footer.html"/]

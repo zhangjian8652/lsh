@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <title>${node.name!}</title>
     [#include "meta.html"/]
@@ -19,11 +19,13 @@
                 [#if list?? && (list?size >0)]
                 [#list list as info]
                 <li>
-                    <div style="position: relative;padding: 0px;">
-                        <img src="${info.fields['image']!}"/>
-                        <div class="arrow-right"><span>${info.fields['finishPercent']!}</span>${info.fields['tittle']!}
+                    <a href="${info.uri!}">
+                        <div style="position: relative;padding: 0px;">
+                            <img src="${info.fields['image']!}"/>
+                            <div class="arrow-right"><span>${info.fields['finishPercent']!}</span>${info.fields['tittle']!}
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </li>
                 [/#list]
                 [/#if]

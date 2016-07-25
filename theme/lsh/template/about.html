@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <title>${node.fields["tittle"]!}</title>
     [#include "meta.html"/]
@@ -16,9 +16,15 @@
     </div>
     <div class="left">
         <ol>
+            [#if node.fields['menu_1']?? && node.fields['menu_1'] != ""]
             <li content-id="introduction" class="active">${node.fields['menu_1']!}</li>
+            [/#if]
+            [#if node.fields['menu_2']?? && node.fields['menu_2'] != ""]
             <li content-id="expert-consultant" id="zjgw">${node.fields['menu_2']!}</li>
+            [/#if]
+            [#if node.fields['menu_3']?? && node.fields['menu_3'] != ""]
             <li content-id="law-rule">${node.fields['menu_3']!}</li>
+            [/#if]
         </ol>
     </div>
     <div class="right">

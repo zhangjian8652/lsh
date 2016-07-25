@@ -108,7 +108,7 @@
 
 <div id="medias">
     <div class="left">
-        <a href="http://www.oxfam.org.cn/www/grow/"><img src="${node.fields['medias_image']!}"></a>
+        <a href="#"><img width="250px" src="${node.fields['medias_image']!}"></a>
     </div>
     <div class="right">
         <div class="medias_nav">
@@ -123,9 +123,9 @@
                 <div class="mediaphoto-list shipin">
                     <ul>
                         <li>
-                            <div style=" width:620px; height:409px; margin-left: 0px">
-                                <video src="${node.fields['video']!}" controls="controls">
-                                    不支持
+                            <div style=" width:640px; height:360px; margin-left: 0px;margin-top: -15px;">
+                                <video controls width="605px" height="350px">
+                                    <source src="${node.fields['video']!}" type="video/mp4">
                                 </video>
                             </div>
                             <div class="video-tittle"><span>"${node.fields['video_describe']!}"</span>
@@ -141,7 +141,7 @@
                     <ul>
 
                         <li>
-                            <div style=" width:620px; height:409px; margin-left: 0px"><img width="650"
+                            <div style=" width:620px; height:360px; margin-left: 0px"><img height="390"
                                                                                            src="${node.fields['image']!}">
                             </div>
                             <div class="photo-tittle"><span>${node.fields['image_describe']!}</span>

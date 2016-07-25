@@ -19,9 +19,11 @@
                     [#if list?? && (list?size >0)]
                     [#list list as info]
                     <li>
+                        <a href="${info.uri!}">
                         <div style="position: relative;padding: 0px;">
                             <img src="${info.fields['image']!}"/>
                         </div>
+                        </a>
                     </li>
                     [/#list]
                     [/#if]

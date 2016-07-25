@@ -47,7 +47,7 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 #header .nav{ float:left;}
 #header .nav ul {z-index: 350; position: relative; width:940px;}
 #header .nav ul li{ float:left; font-size:100%; text-align:center; position: relative;margin-right:2px;}
-#header .nav ul li a{ color:#FFF;background: #45895b; display:inline-block; height: 36px; width: 113px;font-weight:bold; text-decoration:none; line-height:38px; overflow:hidden;}
+#header .nav ul li a{ color:#FFF;background: #45895b; display:inline-block; height: 36px; width: 133px;font-weight:bold; text-decoration:none; line-height:38px; overflow:hidden;}
 #header .nav ul li a:hover{color:#FFF;background:#abc468;}
 #header .nav ul li a.current{color:#FFF;background:#abc468;}
 #header .nav ul .current a{color:#666666;background:#abc468;}
@@ -99,9 +99,9 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 #info .info_content .activity{ padding-top:20px;}
 
 
-#medias{ width:940px;padding-top:0px;position:relative;margin:0px auto; overflow:hidden;}
-#medias .left{ float:left; width:287px; vertical-align:top;}
-#medias .right{ float:right; width:600px; overflow:hidden;padding-top: 6px;}
+#medias{ width:940px;height: 400px;padding-top:0px;position:relative;margin:0px auto; overflow:hidden;}
+#medias .left{ float:left; width:250px; vertical-align:top;}
+#medias .right{ width:600px; overflow:hidden;padding-top: 6px;}
 #medias .right .media_nav{}
 #medias .right .media_nav ul{}
 #medias .right .media_nav ul li{background: url("../images/medias_video.png") 0px no-repeat;color: white;}
@@ -121,7 +121,7 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 .mediaphoto-list { position:relative; width:670px;overflow:hidden;}
 .mediaphoto-list ul { width:9999px;}
 .mediaphoto-list li { float:left; width:670px;cursor: pointer}
-.mediaphoto-list li img{ width:620px; height: 350px;}
+.mediaphoto-list li img{ width:620px; height: 331px;}
 
 .mediaphoto-list li .phototitle{
 	float: left;
@@ -704,14 +704,13 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 	cursor: pointer;
 }
 .container .left li.active{
-	color: black;
-}
-.container .left li:nth-child(1){
 	background: url("../images/about_eepau/left_menu_arrow_bg.png") 0px no-repeat;
 }
+
 .container .right{
 	width: 740px;
 	background:url("../images/about_eepau/sx.png") 0px repeat-y;
+	margin-bottom: 80px;
 }
 .container .right .content{
 	padding: 20px;
@@ -1295,7 +1294,7 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 }
 .recommend > div:nth-child(1){
 	height: 80px;
-	background: url("../images/lymall/yellow_hx.png") 0px no-repeat;
+	background: url("../images/lymall/blue_yellow.png") 0px no-repeat;
 	width: 600px;
 	margin-top: 10px;
 }
@@ -1336,7 +1335,7 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 }
 .exchange > div:nth-child(1){
 	height: 80px;
-	background: url("../images/lymall/yellow_hx.png") 0px no-repeat;
+	background: url("../images/lymall/blue_yellow.png") 0px no-repeat;
 	width: 230px;
 	margin-top: 10px;
 }
@@ -1387,7 +1386,7 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 	height: 350px;
 }
 .lydb>div:nth-child(1),.zjmd>div:nth-child(1),.lyhp>div:nth-child(1){
-	background: url("../images/lymall/yellow_hx.png") 0px 43px no-repeat;
+	background: url("../images/lymall/blue_yellow.png") 0px 43px no-repeat;
 	height: 45px;
 	line-height: 45px;
 }
@@ -1458,7 +1457,7 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 	margin-bottom: 15px;
 }
 .zjmd-block{
-
+	height: 105px;
 }
 .zjmd-block div{
 	float: left;
@@ -1508,4 +1507,43 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 }
 #lymall-info-page{
 	background: url("../images/lymall/gray_bg.png");
+}
+
+.box {
+	/* 可见视觉区域 */
+	width: 480px; height: 250px;
+	position: relative;
+	overflow: hidden;
+	cursor: pointer;
+}
+.size {
+	/* 广阔的海洋 */
+	width: 1000px; height: 1000px;
+	position: absolute; left: 50%; top: 50%;
+	margin: -500px 0 0 -500px;
+	/* 水平居中 */
+	text-align: center;
+}
+.zoom {
+	/* 缩放的元素 */
+	width: 480px; height: 250px;
+	vertical-align: middle;
+	-webkit-transition: -webkit-transform .2s;
+	transition: transform .2s;
+}
+.box:hover .zoom {
+	/* hover放大 */
+	-webkit-transform: scale(1.05);
+	-ms-transform: scale(1.05);
+	transform: scale(1.05);
+	zoom: 1.05;
+}
+:root .box:hover .zoom {
+	zoom: 1;
+}
+.middle {
+	/* 垂直居中 */
+	display: inline-block;
+	width: 0; height: 100%;
+	vertical-align: middle;
 }
