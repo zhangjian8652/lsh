@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<!-- saved from url=(0025)http://jifen.sina.com.cn/ -->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>EEPAU积分商城</title>
+    <meta name="keywords"
+          content="EEPAU商城">
+    <meta name="description" content="EEPAU积分商城">
+
+    <link type="text/css" href="${res!}/resources/sina/reset.css" rel="stylesheet">
+    <script src="${res!}/resources/sina/hm.js"></script>
+    <script language="JavaScript"> var base_url = 'http://jifen.sina.com.cn/'; </script>
+    <script src="${res!}/resources/sina/jquery-1.7.2.min.js"></script>
+    <script src="${res!}/resources/sina/jquery.inview.min.js"></script>
+    <script src="${res!}/resources/sina/jquery.easing.1.3.js" type="text/javascript"></script>
+    <script src="${res!}/resources/sina/task_common.js"></script>
+    <script src="${res!}/resources/sina/common.js"></script>
+    <script src="${res!}/resources/sina/head_foot.js"></script>
+    <script src="${res!}/resources/sina/taskloginv.js"></script>
+    <script src="${res!}/resources/sina/sso.js"></script>
+    <script src="${res!}/resources/sina/outlogin_layer.js" charset="UTF-8"></script>
+    <script src="${res!}/resources/sina/ssologin.js"></script>
+    <link rel="stylesheet" type="text/css" href="${res!}/resources/css/style.css">
+    <link rel="stylesheet" type="text/css" href="${res!}/resources/sina/base.css">
+    <link rel="stylesheet" type="text/css" href="${res!}/resources/sina/msg.css">
+
+    <link rel="stylesheet" type="text/css" href="${res!}/resources/sina/index_v1.5.css">
+    <style>
+        body {
+            min-width: 1200px
+        }
+    </style>
+
+    <script>
+        /*var is_login = parseInt('1');
+         SOL = {
+         init:function () {
+         var that = this;
+         SOL.loginLayer = window.SINA_OUTLOGIN_LAYER;
+         if (SOL.loginLayer) {
+         SOL.loginLayer.set('sso', {
+         entry:'igame'
+         }).register('login_success', function (a,b,c) {
+         that.login_action = false;
+         }).register('logout_success', function () {
+         window.location.reload(true);
+         }).init();
+
+         }
+         },
+         isLogin:function () {
+         return SOL.loginLayer.isLogin();
+         },
+         loginShow:function () {
+         SOL.loginLayer.show();
+         //showMaskDiv();
+         },
+         logout:function () {
+         SOL.loginLayer.logout();
+         }
+         }
+         */
+        /**
+         * 任龙 2012-08-17
+         * 文档页http://wiki.intra.sina.com.cn/pages/viewpage.action?pageId=7161107
+         * 依赖的JS文件 http://i.sso.sina.com.cn/js/ outlogin_layer.js
+         * 这是SSO的浮层登录SDK，仅供非微博产品线使用
+         * 有三个方法SOL.isLogin,SOL.loginShow,SOL.logout
+         */
+        function addCookie(name, value, expiresHours) {
+            var cookieString = name + "=" + escape(value);
+            //判断是否设置过期时间
+            if (expiresHours > 0) {
+                var date = new Date();
+                date.setTime(date.getTime + expiresHours * 3600 * 1000);
+                cookieString = cookieString + "; expires=" + date.toGMTString();
+            }
+            document.cookie = cookieString;
+        }
+
+        function getCookie(name) {
+            var strCookie = document.cookie;
+            var arrCookie = strCookie.split("; ");
+            for (var i = 0; i < arrCookie.length; i++) {
+                var arr = arrCookie[i].split("=");
+                if (arr[0] == name) return arr[1];
+            }
+            return "";
+        }
+
+        function deleteCookie(name) {
+            var date = new Date();
+            date.setTime(date.getTime() - 10000);
+            document.cookie = name + "=v; expires=" + date.toGMTString();
+        }
+        var is_login = parseInt('1');
+        SOL = {
+            init: function () {
+                var that = this;
+                SOL.loginLayer = window.SINA_OUTLOGIN_LAYER;
+                if (SOL.loginLayer) {
+                    SOL.loginLayer.set('sso', {
+                        entry: 'igame'
+                    }).register('login_success', function () {
+                        var sso_login = getCookie('sso_login');
+                        that.login_action = false;
+                    }).register('logout_success', function () {
+                        window.location.reload(true);
+                    }).init();
+                }
+            },
+            isLogin: function () {
+                return SOL.loginLayer.isLogin();
+            },
+            loginShow: function () {
+                SOL.loginLayer.show();
+                //showMaskDiv();
+            },
+            logout: function () {
+                SOL.loginLayer.logout();
+            }
+        }
+
+        reduce_sol = SOL;
+        $(function () {
+            SOL = reduce_sol;
+            SOL.init();
+        });
+
+
+        $(document).ready(function () {
+            $('.login_action').on('click', function () {
+                SOL.loginShow();
+                return;
+            });
+            $('.logout_action').on('click', function () {
+                SOL.logout();
+                return;
+            });
+
+            clear_search();
+
+            SG_hover("#SG_top_phone", "#SGtp_box_wrap");
+
+            disMove();
+        });
+    </script>
+    <script>
+        <!--
+        // 百度统计
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?79946fa318f4c525210d2574edc7d733";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+        -->
+    </script>
+    <style type="text/css">.outlogin_layerbox_bylx,
+    .outlogin_layerbox_bylx p,
+    .outlogin_layerbox_bylx div,
+    .outlogin_layerbox_bylx li,
+    .outlogin_layerbox_bylx input {
+    }
+
+    .outlogin_layerbox_bylx a {
+        color: #474747;
+    }
+
+    .outlogin_layerbox_bylx a:hover {
+        color: #FF4400
+    }
+
+    .outlogin_layerbox_bylx.outlogin_layerbox_bylx .hide {
+        display: none;
+    }
+
+    .outlogin_layerbox_bylx {
+        background-color: #ffffff;
+        border: 1px solid #dcdcdc;
+        box-shadow: 1px 2px 0 rgba(0, 0, 0, 0.1);
+        height: 230px;
+        padding: 36px 27px 27px;
+        position: absolute;
+        width: 516px;
+        position: absolute;
+        border-width: 1px !important;
+        border-style: solid !important;
+        text-align: left !important;
+        color: #474747;
+        font-size: 14px;
+    }
+
+    .outlogin_layerbox_bylx .cur_move {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 516px;
+        height: 26px;
+    }
+
+    #popclosed {
+        background: url("http://jifen.sina.com.cn/jifen/images/v1.5/x.jpg") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+        display: block;
+        height: 24px;
+        float: right;
+        width: 24px;
+    }
+
+    .outlogin_layerbox_bylx a.layerbox_close {
+        position: absolute !important;
+        right: 8px !important;
+        top: 8px !important;
+        width: 12px !important;
+        height: 11px !important;
+        padding: 5px !important;
+        font: 700 12px "Simsun" !important;
+        text-decoration: none !important;
+        overflow: hidden !important;
+        z-index: 10 !important;
+    }
+
+    .outlogin_layerbox_bylx .close_loginname {
+        position: absolute !important;
+        width: 11px !important;
+        height: 11px !important;
+        padding: 5px !important;
+        left: 180px !important;
+        top: 4px !important;
+        font: 700 12px "Simsun" !important;
+        text-decoration: none !important;
+        overflow: hidden !important;
+    }
+
+    .outlogin_layerbox_bylx a.layerbox_close:hover {
+        text-decoration: none !important;
+    }
+
+    .outlogin_layerbox_bylx .cright {
+        width: 282px !important;
+        display: inline !important;
+        float: right !important;
+    }
+
+    .outlogin_layerbox_bylx .cright .titletips {
+        padding: 8px 0 35px !important;
+    }
+
+    .outlogin_layerbox_bylx .cright
+    .outlogin_layerbox_bylx .cright h2 {
+        font-size: 16px;
+        font-weight: normal;
+        margin: 0 0 10px;
+    }
+
+    .outlogin_layerbox_bylx .cright label {
+        display: block;
+        height: 34px;
+        margin: 0 0 13px;
+        position: relative;
+    }
+
+    .outlogin_layerbox_bylx .cright label input {
+        border: none;
+        text-indent: 45px;
+        padding: 5px 8px 5px 0;
+        line-height: 24px;
+        font-size: 14px;
+        border: 1px solid #dcdcdc;
+        display: block;
+        width: 272px;
+        height: 24px;
+    }
+
+    .outlogin_layerbox_bylx .cright label i {
+        width: 36px;
+        height: 36px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: url(http://jifen.sina.com.cn/jifen/images/v1.5/logincoin.jpg) no-repeat;
+    }
+
+    .outlogin_layerbox_bylx .cright .password i {
+        background-position: 0 -36px;
+    }
+
+    .outlogin_layerbox_bylx .cright a.loginbtn {
+        display: block;
+        width: 100%;
+        height: 40px;
+        background-color: #ff4401;
+        text-align: center;
+        line-height: 40px;
+        font-size: 18px;
+        color: #ffffff;
+        margin: 14px 0 8px;
+    }
+
+    .outlogin_layerbox_bylx .cright a.loginbtn:hover {
+        background-color: #fa6b38;
+    }
+
+    .outlogin_layerbox_bylx .other1 a {
+        float: right;
+    }
+
+    .outlogin_layerbox_bylx .other1 .c {
+        vertical-align: middle;
+    }
+
+    .outlogin_layerbox_bylx .other2 a.weibologin {
+        display: inline-block;
+        line-height: 22px;
+        height: 22px;
+        background: url(http://jifen.sina.com.cn/jifen/images/v1.5/sprite.png) no-repeat 0 -191px;
+        padding-left: 30px;
+    }
+
+    .outlogin_layerbox_bylx .other2 a.register {
+        float: right;
+    }
+
+    .outlogin_layerbox_bylx .otwo_d_wrap {
+        float: left;
+        font-size: 16px;
+        overflow: hidden;
+        width: 192px;
+    }
+
+    .outlogin_layerbox_bylx .otwo_d_wrap img {
+        height: 192px;
+        width: 192px;
+        border: none !important;
+        display: inline !important;
+        margin-top: 10px;
+    }
+
+    .outlogin_layerbox_bylx .otwo_hlp {
+        position: absolute !important;
+        left: 175px !important;
+        top: 59px !important;
+        width: 229px !important;
+        height: 329px !important;
+        background: #ebebeb !important;
+        background: hsla(0, 0%, 0%, .08) !important;
+        z-index: 16 !important;
+    }
+
+    .outlogin_layerbox_bylx .otwo_hlp .hlp_cnt {
+        margin: 3px !important;
+        border: 1px solid #dadada !important;
+        height: 302px !important;
+        padding: 19px 0 0 15px !important;
+        background: #fff;
+    !important
+    }
+
+    .outlogin_layerbox_bylx .otwo_hlp .otwo_hlp_tl {
+        height: 23px !important;
+        line-height: 1 !important;
+    }
+
+    .outlogin_layerbox_bylx .otwo_hlp .ot_arrow {
+        position: absolute !important;
+        top: 68px !important;
+        left: -7px !important;
+        width: 11px !important;
+        height: 16px !important;
+        background: url(http://i.sso.sina.com.cn/images/login/arrow.png) no-repeat 0 0 !important;
+    }
+
+    .outlogin_layerbox_bylx .swip_check {
+        position: absolute !important;
+        left: 10px !important;
+        top: 25px !important;
+        border: 1px solid #ccc !important;
+        width: 204px !important;
+        height: 46px !important;
+        background: #fffae1 !important;
+        box-shadow: 0 0 3px hsla(0, 0%, 0%, .2) !important;
+        border-radius: 3px !important;
+    }
+
+    .outlogin_layerbox_bylx .swip_check_cls,
+    .outlogin_layerbox_bylx .swip_check_icon,
+    .outlogin_layerbox_bylx .swip_check_btmarow {
+        background-image: url(http://i.sso.sina.com.cn/images/login/swip_icon.gif) !important;
+        background-repeat: no-repeat !important;
+        overflow: hidden !important;
+    }
+
+    .outlogin_layerbox_bylx .swip_check_cls {
+        float: right !important;
+        display: inline !important;
+        margin: 9px !important;
+        width: 10px !important;
+        height: 10px !important;
+        background-position: 1px -27px !important;
+    }
+
+    .outlogin_layerbox_bylx .swip_check_icon {
+        float: left !important;
+        margin: 5px !important;
+        width: 15px !important;
+        height: 15px !important;
+        background-position: 0 -8px !important;
+    }
+
+    .outlogin_layerbox_bylx .swip_check_txt {
+        margin: 4px 0 0 !important;
+        overflow: hidden !important;
+        line-height: 18px !important;
+    }
+
+    .swip_check_btmarow {
+        position: absolute !important;
+        bottom: -6px !important;
+        left: 50% !important;
+        margin-left: -3px !important;
+        width: 10px !important;
+        height: 6px !important;
+        background-position: 0 0 !important;
+    }
+
+    .outlogin_layerbox_bylx .close_loginname {
+        color: #666;
+    }
+
+    .outlogin_layerbox_bylx .close_loginname:hover {
+        color: #DA0000;
+    }
+
+    .outlogin_layerbox_bylx .layerbox_left {
+        border-right-color: #fff;
+        background: #fff;
+    }
+
+    .outlogin_layerbox_bylx .layerbox_left input.styles {
+        border-color: #d0d0d0;
+        background: #FFF;
+    }
+
+    .outlogin_layerbox_bylx .layerbox_left .disability_voice {
+        background: url(http://i.sso.sina.com.cn/images/login/voice.gif) no-repeat 50% 50%;
+    }
+
+    .outlogin_layerbox_bylx .layerbox_left a.login_btn {
+        background: #ff8500;
+        color: #fff;
+    }
+
+    .outlogin_layerbox_bylx .layerbox_left a.login_btn:hover {
+        background: #ff931d;
+    }
+
+    .outlogin_layerbox_bylx .layerbox_left a.register_lnk {
+        color: #a87a2c;
+    }
+
+    .outlogin_layerbox_bylx .layerbox_left a.login_lnk:hover {
+        color: #a87a2c;
+    }
+
+    .outlogin_layerbox_bylx .layerbox_left a.forget_Pwd {
+        color: #a87a2c;
+    }
+
+    .outlogin_layerbox_bylx .association {
+        border-color: #ddd;
+        background: #fff;
+    }
+
+    .outlogin_layerbox_bylx .association .note_item {
+        color: #999;
+    }
+
+    .outlogin_layerbox_bylx .association a {
+        color: #999;
+    }
+
+    .outlogin_layerbox_bylx .association .current {
+        background: #f4f5f7;
+    }
+
+    .outlogin_layerbox_bylx .login_error_tips {
+        color: #DA0000;
+    }</style>
+</head>
+<body>
+<div id="top"></div>
+<div id="header">
+    [@ec_node code="header";nod]
+    [#include "header/header_top.html"/]
+    [/@ec_node]
+</div>
+<!-- 导航栏 -->
+<div id="Nav">
+    <div class="Nav_wrap">
+        <ul class="Nav_box clear">
+            [@ec_nav queryType="tree" group="lymall";nodes]
+            [#if nodes?? && (nodes?size > 0)]
+            [#list nodes as nod]
+            [#if node?? && node.name?? && nod.name?? && (node.name == nod.name)]
+            <li class="active"><a href="#">${nod.name!}<i></i></a></li>
+            [#elseif info?? && info.node?? && info.node.name?? && nod.name?? && (info.node.name == nod.name)]
+            <li class="active"><a href="#">${nod.name!}<i></i></a></li>
+            [#else]
+            <li ><a href="${nod.uri!}">${nod.name!}<i></i></a></li>
+            [/#if]
+            [/#list]
+            [/#if]
+            [/@ec_nav]
+        </ul>
+    </div>
+</div>
+<div class="ctWrap">
+    <!-- 	<div class="gg" style="display:none;">
+           <div class="tit">海量商品1积分抢<a href="javascript:void(0);" class="close">╳</a></div>
+           <div class="con clear">
+               <a href="#" target="_blank" title=""><img src="jifen/images/msg/img.jpg" alt=""></a>
+               <h6><a href="#" target="_blank" title="">每周一11:11海量商品</a></h6>
+               <p><a href="#" target="_blank" title="">新用户通过“专属邀请链接”进入EEPAU游戏积分商城首页首次签到成功即为好友关系成立直到原关系解除；</a></p>
+           </div>
+           <a href="#" target="_blank" title="" class="more">查看&gt;&gt;</a>
+       </div>
+
+       <div class="gg" style="display:none;">
+           <div class="tit">海量商品1积分抢<a href="javascript:void(0);" class="close">╳</a></div>
+           <div class="con nopic clear">
+               <h6><a href="#" target="_blank" title="">每周一11:11海量商品1积分抢</a></h6>
+               <p><a href="#" target="_blank" title="">新用户通过“专属邀请链接”进入EEPAU游戏积分商城首页首次签到成功即为好友关系成立；同一个新用户不可以被两个老用户同时邀请，即新用户一旦会再与其他人有好友关系，直到原关系解除；</a></p>
+           </div>
+           <a href="#" target="_blank" title="" class="more">查看&gt;&gt;</a>
+       </div>-->
+</div>
+<!-- 通用顶 end -->
+
+<div class="jf_warp">
+    <div class="hgroup clear">
+        <!-- 幻灯片 -->
+        <div class="ps_box">
+            <div class="pics_switch">
+                <ul class="pb" style="margin-left: -2457px; width: 4095px;">
+                    <li><a target="_blank" href="#"><img
+                            src="${res!}/resources/sina/186.jpg"></a></li>
+                    <li><a target="_blank" href="#"><img
+                            src="${res!}/resources/sina/18.png"></a></li>
+                    <li><a target="_blank" href="#"><img
+                            src="${res!}/resources/sina/359.jpg"></a></li>
+                    <li><a target="_blank" href="#"><img src="${res!}/resources/sina/552.jpg"></a>
+                    </li>
+                    <li><a target="_blank" href="#"><img
+                            src="${res!}/resources/sina/6.gif"></a></li>
+                </ul>
+                <div class="viewArrows va_prev" style="opacity: 0.6;">
+                </div>
+                <div class="viewArrows va_next" style="opacity: 0.6;">
+                </div>
+                <div class="pics_switch_clients">
+                    <ul style="width: 210px;">
+                        <span class="" style="opacity: 0.6;">1</span>
+                        <span class="" style="opacity: 0.6;">2</span>
+                        <span class="" style="opacity: 0.6;">3</span>
+                        <span class="hover" style="opacity: 1;">4</span>
+                        <span class="" style="opacity: 0.6;">5</span>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- 幻灯片 end-->
+        <!-- 签到 -->
+        <div class="checkbox">
+            <img src="/uploadFiles/images/lsh/%E7%BB%BF%E8%8A%BD%E5%95%86%E5%9F%8E/advertise2.png"/>
+        </div>
+   
+    </div>
+
+    <div class="artical artical1 clear">
+        <div class="section sectionleft">
+            <!--推荐商品-->
+            <h3 class="tit1"><a href="#" target="_blank"
+                                class="more">更多&gt;&gt;</a><em></em><i></i>推荐商品</h3>
+            <ul class="clear">
+
+                [@ec_info queryType="list" nodeId="${node.id!}" groupName="recommend";list]
+                [#if list?? && (list?size >0)]
+                [#list list as info]
+                <li>
+                    <div class="pic_label news"></div><!--最新标志--> <a href="${info.uri!}"
+                                                                     target="_blank" title="${info.fields['tittle']!}" class="a_img">
+                    <img src="${info.fields['image']!}"
+                         style="opacity: 1;">
+                </a>
+                    <div class="botm_text">
+                        <a href="${info.uri!}" target="_blank" title="${info.fields['tittle']!}">${info.fields['tittle']!}</a>
+                    </div>
+                    <b>${info.fields['price']!}</b>
+                </li>
+
+                [/#list]
+                [/#if]
+                [/@ec_info]
+
+            </ul>
+        </div><!--推荐商品 end-->
+        <div class="section sectionright"><!--热门兑换-->
+            <h3 class="tit1"><em></em><i></i>热门兑换</h3>
+            <div class="siderWp">
+                <div class="CarouselVer"
+                     style="visibility: visible; overflow: hidden; position: relative; z-index: 2; left: 0px; height: 800px;">
+                    <ul class="exchangelist"
+                        style="margin: 0px; padding: 0px; position: relative; list-style-type: none; z-index: 1; height: 2720px; top: -1760px;">
+                        [@ec_info queryType="list" nodeId="${node.id!}" groupName="exchange";list]
+                        [#if list?? && (list?size >0)]
+                        [#list list as info]
+                        <li style="overflow: hidden; float: none; width: 301px; height: 111px;">
+                            <div class="exitem clear">
+                                <a href="${info.uri!}" target="_blank" class="a_img">
+                                    <img width="88" height="104" src="${info.fields['exchange_image']!}" alt="${info.fields['exchange_stress']!}">
+                                </a>
+                                <p class="name">${info.fields['exchange_name']!}</p>
+                                <p>${info.fields['exchange_des']!}</p>
+                                <p class="ex_pro"><a href="${info.uri!}" target="_blank">${info.fields['exchange_stress']!}</a></p>
+                            </div>
+                        </li>
+                        [/#list]
+                        [/#if]
+                        [/@ec_info]
+                    </ul>
+                </div>
+
+            </div>
+        </div><!--热门兑换 end-->
+    </div>
+    <div class="artical artical2 clear">
+        <div class="section sectionleft"><!--积分夺宝-->
+            <h3 class="tit1"><a href="http://jifen.sina.com.cn/db" target="_blank"
+                                class="more">更多&gt;&gt;</a><em></em><i></i>积分夺宝</h3>
+            <div class="mainList clear">
+                <ul class="clear">
+                    [@ec_info queryType="list" nodeId="${node.id!}" groupName="lydb";list]
+                    [#if list?? && (list?size >0)]
+                    [#list list as info]
+
+                    <li>
+                        <div class="imgWrap imgScale">
+                            <a href="${info.uri}" target="_blank" title="${info.fields['tittle']!}">
+                                <img src="${info.fields['lydb_image']!}" alt="${info.fields['tittle']!}"
+                                     style="opacity: 1;"></a>
+                        </div>
+                        <p class="tit textover">
+                            <a href="${info.uri}" target="_blank" title="${info.fields['tittle']!0}">${info.fields['tittle']!}</a>
+                        </p>
+                        <p>总需：<strong>${info.fields['lydb_require']!0}人次</strong></p>
+
+                        <div class="progressBar">
+                            <i style="width: ${info.fields['lydb_percent']!0};"></i>
+                        </div>
+
+                        <p class="font12"><span class="fr">${info.fields['lydb_join']!0}</span>${info.fields['lydb_lack']!0}</p>
+                        <p class="gray font12"><span class="fr">剩余人次</span>已参与人次</p>
+                        <a href="#" target="_blank" title="查看详情"
+                           class="btn">查看详情</a>
+                    </li>
+                    [/#list]
+                    [/#if]
+                    [/@ec_info]
+                </ul>
+            </div>
+        </div><!--积分夺宝 end-->
+        <div class="section sectionright"><!--中奖名单-->
+            <h3 class="tit1"><em></em><i></i>中奖名单</h3>
+            <div class="siderWp">
+                <div class="CarouselVer"
+                     style="visibility: visible; overflow: hidden; position: relative; z-index: 2; left: 0px; height: 800px;">
+                    <ul class="exchangelist awardList"
+                        style="margin: 0px; padding: 0px; position: relative; list-style-type: none; z-index: 1; height: 9600px; top: -3680px;">
+                        [@ec_info queryType="list" nodeId="${node.id!}" groupName="zjmd";list]
+                        [#if list?? && (list?size >0)]
+                        [#list list as info]
+                        <li style="overflow: hidden; float: none; width: 301px; height: 111px;">
+                            <div class="exitem clear">
+                                <a href="${info.uri!}" target="_blank"
+                                   class="a_img"><img src="${info.fields['zjmd_image']!}" style="opacity: 1;"></a>
+                                <p class="name">${info.fields['zjmd_name']!}<span class="num">(${info.fields['zjmd_people']!0})</span></p>
+                                <p>${info.fields['zjmd_get']!}</p>
+                                <p class="ex_pro"><a href="${info.uri!}"
+                                                     target="_blank">(第100期）2014年国际足联世界杯吉祥物公仔</a></p>
+                            </div>
+                        </li>
+                        [/#list]
+                        [/#if]
+                        [/@ec_info]
+                    </ul>
+                </div>
+                <script src="${res!}/resources/sina/jquery.jcarousellite.js" type="text/javascript" charset="utf-8"></script>
+                <!--热门兑换和中奖名单滚动-->
+                <script type="text/javascript">
+                    $(function () {
+                        $(".CarouselVer").jCarouselLite({
+                            auto: 2000,
+                            speed: 1000,
+                            vertical: true,
+                            visible: 5,
+                            scroll: 1
+                        });
+                    })
+                </script>
+            </div>
+        </div><!--中奖名单 end-->
+    </div>
+    <div class="artical artical3">
+        <h3 class="tit1"><a href="http://jifen.sina.com.cn/task" target="_blank"
+                            class="more">更多&gt;&gt;</a><em></em><i></i>绿优好品</h3>
+        <ul class="clear">
+            [@ec_info queryType="list" nodeId="${node.id!}" groupName="lyhp";list]
+            [#if list?? && (list?size >0)]
+            [#list list as info]
+            <li>
+                <a href="#" target="_blank" class="sec_img">
+                    <img src="${info.fields['lyhp_image']!0}" style="opacity: 1;">
+                </a>
+
+                <p><a href="http://jifen.sina.com.cn/task/2761" target="_blank"
+                      class="sec_name">${info.fields['lyhp_name']!}</a><b>${info.fields['lyhp_price']!0}</b></p>
+            </li>
+            [/#list]
+            [/#if]
+            [/@ec_info]
+
+        </ul>
+    </div>
+
+</div>
+
+
+<!-- 签到 GO -->
+<!-- 签到 -->
+
+<style>
+    /*右侧签到*/
+    .checkbox {
+        width: 351px;
+        height: 350px;
+        float: right;
+        background-color: #ffffff;
+        position: relative;
+    }
+
+    .cb_btn {
+        padding: 28px 52px;
+        border-bottom: 1px solid #e9e9e9;
+    }
+
+    .cb_btn span {
+        display: block;
+        width: 100%;
+        height: 52px;
+        font-size: 24px;
+        color: #ffffff;
+        line-height: 52px;
+        background: url(/jifen/images/v1.5/sprite.png) no-repeat #ff4401;
+    }
+
+    .cb_btn span.unsign {
+        text-indent: 61px;
+        cursor: pointer;
+        background-position: 27px -51px;
+    }
+
+    .cb_btn span.signin {
+        text-indent: 80px;
+        background-position: 48px 0px;
+    }
+
+    .cb_btn span.unsign:hover {
+        background-color: #fa6b38;
+    }
+
+    .checkin_pop {
+        width: 555px;
+        height: 282px;
+        border: 1px solid gainsboro;
+        position: absolute;
+        background-color: white;
+        padding: 37px 27px;
+        display: none;
+        z-index: 999;
+    }
+
+    .checkin_pop .checkin_left {
+        width: 272px;
+        float: left;
+        font-size: 12px;
+    }
+
+    .checkin_pop .checkin_left p {
+        text-align: left;
+        font-size: 12px;
+        line-height: 28px;
+    }
+
+    .checkin_pop .checkin_left p span {
+        color: #ff4401;
+    }
+
+    .checkin_pop .checkin_left .checkin_sm {
+        line-height: 22px;
+        padding-left: 48px;
+    }
+
+    .checkin_pop .checkin_left .checkin_color {
+        width: 270px;
+        height: 12px;
+        font-size: 12px;
+        position: relative;
+        -webkit-border-radius: 12px;
+        -moz-border-radius: 12px;
+        -ms-border-radius: 12px;
+        border-radius: 12px;
+        border: 1px solid gainsboro;
+        background: url(/jifen/images/duty/color_bg.png) no-repeat;
+        margin: 110px 0 0;
+        position: relative;
+    }
+
+    .checkin_pop .checkin_left .checkin_color .checkin_color_area {
+        width: 130px;
+        background-color: #ff4401;
+        height: 100%;
+        -webkit-border-radius: 12px;
+        -moz-border-radius: 12px;
+        -ms-border-radius: 12px;
+        border-radius: 12px;
+    }
+
+    .checkin_pop .checkin_left .checkin_color p {
+        padding: 13px;
+        width: 74px;
+        height: 69px;
+        background: url(/jifen/images/duty/talk.png) no-repeat;
+        position: absolute;
+        line-height: 22px;
+        top: -99px;
+        left: 45px;
+    }
+
+    .checkin_pop .checkin_left .checkin_color p i {
+        font-style: normal;
+        color: #ff4401;
+    }
+
+    .checkin_pop .checkin_left .checkin_color .jf300 {
+        left: 158px;
+    }
+
+    .checkin_pop .checkin_btn {
+        display: block;
+        width: 270px;
+        height: 41px;
+        background-color: #ff4401;
+        font-weight: bold;
+        color: white;
+        line-height: 41px;
+        font-size: 18px;
+        text-align: center;
+        margin: 15px auto 0;
+    }
+
+    .checkin_pop #pop_close {
+        display: block;
+        width: 24px;
+        height: 24px;
+        background: url(/jifen/images/duty/x.jpg) no-repeat;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .checkin_pop #pop_close: hover {
+        background-position: 0 -24px;
+    }
+</style>
+
+<div id="checkin_pop" class="checkin_pop">
+    <div class="checkin_left">
+        <p class="checkin_name">亲爱的<span class="userinfo_name">用户昵称</span>：</p>
+        <p class="checkin_sm">今日签到奖励<span>100</span>积分<br>您已经连续签到<span id="daily_count"></span>天<br>获得额外奖励<span
+                id="daily_extra_bonus"></span>积分</p>
+        <div class="checkin_color">
+            <div id="progress_bar" class="checkin_color_area"></div>
+            <p id="daily_level_1" class="jf200">连续签到3天<br>每天签到奖励<i>200</i>积分</p>
+            <p id="daily_level_2" class="jf300">连续签到5天<br>每天签到奖励<i>300</i>积分</p>
+        </div>
+
+    </div>
+    <div id="date_input" class="checkin_right" style="float:left;padding:33px 0 0 33px;">
+
+    </div>
+    <div class="clear"></div>
+    <a id="pop_close" href="javascript: void 0"></a>
+    <a class="checkin_btn" href="http://jifen.sina.com.cn/help/" target="_blank">查看签到规则</a>
+</div>
+
+<script type="text/javascript" src="${res!}/resources/sina/date_input.js"></script>
+<link href="${res!}/resources/sina/date_input.css" rel="stylesheet" type="text/css">
+<script>
+
+    function sign_in(click_ele, call_func) {
+        $.extend(
+                DateInput.DEFAULT_OPTS, {
+                    month_names: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
+                    short_month_names: ["一", "二", "三", "四", "五", "六", "七", "八", "九", "十", "十一", "十二"],
+                    short_day_names: ["日", "一", "二", "三", "四", "五", "六"],
+                    dateToString: function (date) {
+                        var month = (date.getMonth() + 1).toString();//月份
+                        var dom = date.getDate().toString();//日
+                        if (month.length == 1) month = "0" + month;//控制月份为10一下的显示为01格式
+                        if (dom.length == 1) dom = "0" + dom;//同月份
+                        return date.getFullYear() + "-" + month + "-" + dom;
+                    },
+                    special_day: []
+                }
+        );
+
+        var credit_add_type = 1;
+        var is_login = parseInt('1');
+
+        $(click_ele).click(function (event) {
+            var that = this;
+            if (credit_add_type) {
+                $('.userinfo_name').html($('#userinfo_name').html());
+
+                if ($('#userinfo_icon').attr('src').length || is_login) {
+                    $.ajax({
+                        'url': '/task/day_credit',
+                        'type': 'POST',
+                        dataType: 'json',
+                        success: function (d) {
+                            $('#daily_count').html(d.data.daily_count);
+                            $('#daily_extra_bonus').html(d.data.daily_extra_bonus);
+                            if (d.data.daily_level_1) {
+                                $('#daily_level_1').html(d.data.daily_level_1);
+                            } else {
+                                $('#daily_level_1').remove();
+                            }
+                            $('#daily_level_2').html(d.data.daily_level_2);
+                            $('#progress_bar').css('width', d.data.progress_bar_width);
+
+                            $.extend(DateInput.DEFAULT_OPTS, {
+                                special_day: d.data.got_day
+                            });
+
+                            $('#date_input').html('').date_input();
+                            $('#checkin_pop').css('top', $(window).height() / 2 - $('#checkin_pop').height() / 2).css('left', $(window).width() / 2 - $('#checkin_pop').width() / 2).show();
+                            credit_add_type = 0;
+
+                            if (d.data.inviter_name) {
+                                alert(d.data.inviter_name + " 已成功邀请您");
+                            }
+
+                            if (call_func) {
+                                call_func();
+                            }
+                        }
+                    });
+                } else {
+                    SOL.loginShow();
+                }
+            } else {
+                if (!$('#userinfo_icon').attr('src').length) {
+                    SOL.loginShow();
+                }
+            }
+        });
+        $("#pop_close").click(function (event) {
+            $(this).parent().hide();
+        });
+
+    }
+
+</script>
+<!-- 签到end -->
+<!-- 签到 END -->
+<!-- 通底 -->
+[#include "footer/footer.html"/]
+<!-- 通底end -->
+
+<div id="fixedtop" class="off"><a href="http://jifen.sina.com.cn/#"></a></div>
+
+<!-- SUDA_CODE_START -->
+<script type="text/javascript" charset="utf-8" src="${res!}/resources/sina/suda4anywhere.js"></script>
+<!-- SUDA_CODE_END -->
+
+<!-- 统计代码 -->
+<script type="text/javascript">
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-45051727-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+<div node-type="box" class="outlogin_layerbox_bylx outlogin_layerbox_bylx_anrrow" style="display: none;">
+    <div class="hide">
+        <div node-type="qrcode_help" class="otwo_hlp" style="display:none;">
+            <div class="hlp_cnt">
+                <div class="otwo_hlp_tl">用此功能扫描二维码快速登录</div>
+                <div class="ot_wrap"><img src="${res!}/resources/sina/weibo_how_ot.png"></div>
+            </div>
+            <span class="ot_arrow"></span></div>
+        <p node-type="phone_tip" class="login_recom_tips" style="visibility:hidden;">绑定手机号也能登录了。<a
+                href="http://help.weibo.com/faq/q/1576/15471" target="_blank">详情</a></p>
+        <li class="ndrelativewrap" node-type="prelogin_area" style="display:none;"><span class="pre_name"
+                                                                                         node-type="prelogin_name">加载中...</span><a
+                href="javascript:;" class="chg_ac" node-type="prelogin_changeAccount">换个账号登录</a></li>
+        <li class="sub_wrap_r"><span class="qq_spanoption"><a class="qq_login_h" node-type="qq_login"
+                                                              href="https://passport.weibo.com/othersitebind/authorize?site=qq&amp;wl=1&amp;entry=igame&amp;callback=http%3A%2F%2Fjifen.sina.com.cn%2F"
+                                                              suda-uatrack="key=index_new_menu&amp;value=logon_qq"><span
+                class="qq_login_logo"></span><span class="qq_login">使用QQ登录</span></a></span></li>
+    </div>
+    <div class="cur_move" node-type="handle"><a id="popclosed" node-type="close" href="javascript:;"
+                                                onclick="return false;" class="layerbox_close"></a></div>
+    <div class="otwo_d_wrap" node-type="layerleft_qrcode">微博客户端扫描二维码登录<img node-type="qrcode_img"
+                                                                           src="${res!}/resources/sina/td.png"></div>
+    <div node-type="root" class="cright"><h2 node-type="titletips">帐号登录</h2>
+        <p node-type="tip" class="login_error_tips" style="visibility:hidden;"></p><label class="username"
+                                                                                          node-type="loginname_box"><input
+                node-type="loginname" name="loginname" class="styles" type="text" placeholder="EEPAU微博/EEPAU博客/EEPAU邮箱/手机号"
+                tabindex="1" maxlength="128" autocomplete="off" autocapitalize="off"><i></i></label><label
+                class="password" node-type="password_box"><input node-type="password" name="password" class="styles"
+                                                                 type="password" placeholder="请输入密码" tabindex="2"
+                                                                 maxlength="24"><i></i></label><label class="password"
+                                                                                                      node-type="door_box"
+                                                                                                      style="display:none;"><input
+                node-type="door" name="door" class="styles" type="text" tabindex="3" maxlength="6" autocomplete="off"
+                autocapitalize="off"><img node-type="door_img" class="yzm" alt="看不清？换一换"><a node-type="door_change"
+                                                                                            href="javascript:;"
+                                                                                            class="reload-code"
+                                                                                            title="看不清？换一换"></a><a
+                node-type="door_voice" href="javascript:;" class="disability_voice"
+                style="display:none;"></a></label><label class="password" node-type="vsn_box"
+                                                         style="display:none;"><input node-type="vsn" name="vsn"
+                                                                                      class="styles" type="text"
+                                                                                      tabindex="4" maxlength="6"
+                                                                                      placeholder="请输入微盾动态码"
+                                                                                      autocomplete="off"
+                                                                                      autocapitalize="off"></label>
+        <div class="other1"><a node-type="forgot_password"
+                               href="https://security.weibo.com/iforgot/loginname?entry=weibo" target="_blank"
+                               suda-uatrack="key=index_new_menu&amp;value=logon_forgot">忘记密码？</a><input type="checkbox"
+                                                                                                        class="c"
+                                                                                                        name="remember"
+                                                                                                        node-type="remember"
+                                                                                                        checked="checked"
+                                                                                                        autocomplete="off">
+            下次自动登录
+        </div>
+        <a href="javascript:;" tabindex="5" node-type="submit" class="loginbtn"
+           suda-uatrack="key=index_new_menu&amp;value=logon_login">登录</a>
+        <div class="other2"><a class="register" node-type="register_button" target="_blank"
+                               href="https://login.sina.com.cn/signup/signup.php?entry=igame"
+                               suda-uatrack="key=index_new_menu&amp;value=logon_register">免费注册</a><a class="weibologin"
+                                                                                                     href="http://weibo.com/">EEPAU微博登录</a>
+        </div>
+    </div>
+    <div class="otwo_d_wrap" node-type="layerleft_preloginThumb" style="display:none;">
+        <div class="otwo_tl"></div>
+        <div class="td_wrap"><span class="thumb"><img node-type="prelogin_img"
+                                                      src="${res!}/resources/sina/pre_loading.gif"></span></div>
+    </div>
+    <div node-type="qrcode_tip" class="swip_check" style="display:none;"><span class="swip_check_cls"
+                                                                               node-type="qrcode_tip_close"></span><span
+            class="swip_check_icon"></span>
+        <p class="swip_check_txt">扫描成功！<br>手机上点击确认以登录</p><span class="swip_check_btmarow"></span></div>
+    <div node-type="css_check" class="outlogin_checkload" style="display:none;"></div>
+</div>
+</body>
+</html>

@@ -32,7 +32,9 @@
                             [#if list?? && (list?size >0)]
                             [#list list as info]
                             <li uri="${path!}${info.uri}">
-                                <img src="${info.fields['image']!}"/>
+                                <div class="box">
+                                <img src="${info.fields['image']!}" class="zoom"/>
+                                </div>
                                 <p>${info.fields['tittle']!}</p>
                                 <p>${info.fields['price']!}</p>
                             </li>
@@ -85,7 +87,7 @@
             [#list list as info]
             <div class="lydb-block">
                 <div><img src="${res!}/resources/images/lymall/lydb.png"></div>
-                <div>（第109期）魔兽世界部......</div>
+                <div>${info.fields['tittle']!0}</div>
                 <div>总需：${info.fields['lydb_require']!0}人</div>
                 <div class="processing-all">
                     <div class="processing-percent" style="width: ${info.fields['lydb_percent']!0};"></div>

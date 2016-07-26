@@ -1,24 +1,30 @@
 [@ec_node code="bout";nod]
 
-[@ec_info_page  nodeId="${nod.id!}" groupName="default" pageNum="${RequestParameters['pageNum']!1}" pagesize = "${RequestParameters['pageSize']!3}";page]
+[@ec_info_page  nodeId="${nod.id!}" groupName="default" pageNum="${RequestParameters['pageNum']!1}" pagesize = "${RequestParameters['pageSize']!6}";page]
 
 [#assign list = page.datas/]
 [#if list?? && (list?size >0)]
 [#list list as info]
 <div class="single-info">
-    <div class="avator"><img src="${info.fields['avator']}"/></div>
-    <div class="detail">
+    <div class="avator">
+        <img src="${info.fields['avator']}"/>
         <p>${info.fields['name']}</p>
+    </div>
+    <div class="detail">
         <div class="describe">
             ${info.fields['describe']}
         </div>
     </div>
-    <img src="${res!}/resources/images/about_eepau/hx.png">
 </div>
+[#if (info_index % 2) = 0]
+<img src="${res!}/resources/images/about_eepau/block_sx.png" style="float: left; margin-top: 50px;margin-bottom: 15px;">
+[#else]
+<img src="${res!}/resources/images/about_eepau/block_hx.png" style="float: left">
+[/#if]
 [/#list]
 [/#if]
 
-
+<div style="clear: both;"></div>
 <div class="page">
     <ul>
         [#if current>1]

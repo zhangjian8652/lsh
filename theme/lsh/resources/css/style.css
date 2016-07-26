@@ -713,7 +713,7 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 	margin-bottom: 80px;
 }
 .container .right .content{
-	padding: 20px;
+	padding-left: 20px;
 	word-break: break-all;
 	word-wrap: break-word;
 }
@@ -723,23 +723,34 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 	margin-bottom: 20px;
 }
 .container .right .content .single-info{
-	margin-bottom: 30px;
+	margin: 20px;
+	width: 44%;
+	float: left;
 }
 .container .right .content .avator{
-	width: 30%;
+	width: 100%;
+	position: relative;
 }
 .container .right .content .detail{
-	width: 70%;
+	width: 100%;
 }
 .detail p{
 	font-weight: bold;
 	font-size: 20px;
 	margin-bottom: 10px;
 }
-
+.avator>p{
+	width: 100px;
+	position: absolute;
+	left: 200px;
+	top: 145px;
+	font-weight: bold;
+	font-size: 25px;
+}
 
 .page{
 	height: 35px;
+	margin-top: 20px;
 }
 
 .page li {
@@ -1511,22 +1522,15 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 
 .box {
 	/* 可见视觉区域 */
-	width: 480px; height: 250px;
+	width: 180px;
+	height: 210px;
 	position: relative;
 	overflow: hidden;
 	cursor: pointer;
 }
-.size {
-	/* 广阔的海洋 */
-	width: 1000px; height: 1000px;
-	position: absolute; left: 50%; top: 50%;
-	margin: -500px 0 0 -500px;
-	/* 水平居中 */
-	text-align: center;
-}
+
 .zoom {
 	/* 缩放的元素 */
-	width: 480px; height: 250px;
 	vertical-align: middle;
 	-webkit-transition: -webkit-transform .2s;
 	transition: transform .2s;

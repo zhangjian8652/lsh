@@ -9,7 +9,7 @@
             [#list list as info]
             <li style="float: left;width: 110px;">
                 <h4>
-                    <a href="${info.fields['url']!}" style="color: gray;">${info.fields['tittle']}</a>
+                    <a href="${info.fields['url']!}" style="color: #606060;">${info.fields['tittle']}</a>
 
                     [#if info?size > 1 && ((info_index + 1) < list?size)]
                     <img src="${res!}/resources/images/footer_split.png" style="margin-left: 17px;margin-top: -5px;"/>

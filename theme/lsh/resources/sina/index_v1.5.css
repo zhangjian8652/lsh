@@ -1,0 +1,208 @@
+.fl{ float: left;}
+.fr{ float: right;}
+.none{ display: none;}
+
+.jf_warp img {
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease; }
+
+.jf_warp img:hover {
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  transform: scale(1.2); }
+.jf_warp .ps_box img,.checkpop .cleft img{
+  -webkit-transform: none;
+  -moz-transform: none;
+  -o-transform: none;
+  -ms-transform: none;
+  transform: none; }
+.jf_warp { width: 100%; margin: 0; padding: 30px 0 80px; background-color: #f1f1f1; overflow: hidden; font-size: 14px; color:#474747;}
+.jf_warp  a{color: #474747; }
+.jf_warp  a:hover,.shearbun span:hover,.jf_warp h3.tit1 a.more:hover{color: #ff4400}
+.jf_warp .hgroup{ margin: 0 auto 30px; width: 1200px;}
+/* ps_box */
+.ps_box{width: 820px; height: 350px; float: left;}
+.ps_box .pics_switch_clients { width: 328px; height: 52px; position: absolute; right: 0; bottom: 0; overflow: hidden; }
+.ps_box .pics_switch_clients ul { height: 30px; margin: 0 auto; }
+.ps_box .pics_switch_clients ul span { display: block; float: left; margin-right: 9px; width: 30px; height: 30px; -webkit-border-radius: 50%; -moz-border-radius: 50%; -ms-border-radius: 50%; border-radius: 50%; text-align: center; color: black; line-height: 30px; background: white; cursor: pointer; }
+.ps_box .pics_switch_clients ul span.hover { background-color: #abc468; color: white; }
+.pics_switch { position: relative; width: 819px; height: 350px; overflow: hidden; }
+.pics_switch .pb { height: 350px; }
+.pics_switch .pb li { float: left; width: 819px; height: 350px; }
+.pics_switch .pb li img { width: 819px; height: 350px; }
+.viewArrows { display: block; width: 37px; height: 53px; cursor: pointer; position: absolute; top: 132px; background: url(../images/v1.5/12.12arrow.png) no-repeat; }
+.va_prev { left: 0; background-position: 0 0; }
+.va_next { right: 0; background-position: 0 -53px; }
+/*artical*/
+.jf_warp .artical{width: 1200px; overflow: hidden; margin: 0 auto 0;}
+
+.jf_warp h3.tit1{ height: 52px; border-bottom: 2px solid #f1f1f1;  line-height: 58px; font-size: 16px; position: relative; margin: 0 0 25px;}
+.jf_warp h3.tit1 a.more{float: right; color: #969696; font-size: 14px; font-weight: normal;}
+.jf_warp h3.tit1 i{display: block; width: 97px; height: 2px; background-color: #0b8749; position: absolute; bottom: -2px; left: 0;}
+.jf_warp h3.tit1 em{display: block; width: 22px; height: 20px; background: url(../images/v1.5/other.png) no-repeat 0 -125px; float: left; margin: 19px 10px 0 0;}
+.jf_warp .section1,.jf_warp .section2,.jf_warp .section3{ background: #fff;  padding: 0 25px; margin: 0 0 20px;}
+.jf_warp .section1 ul{width: 1176px;}
+.jf_warp .section1 li{width: 208px; height: 354px; overflow: hidden; float: left; margin-right: 27px; line-height: 22px;}
+.jf_warp .section1 a.a_img{width: 206px; height: 243px; border: 1px solid #e9e9e9; overflow: hidden; display: block;}
+.jf_warp .section1 a.a_img img{width: 206px; height: 243px;}
+.jf_warp .section1 li .botm_text{ padding: 12px 0 0; max-height: 44px; overflow: hidden; margin: 0 0 5px;}
+.jf_warp .section1 li b{color: #ff4400;}
+/**/
+.jf_warp .section2 ul{width: 1175px;}
+.jf_warp .section2 li { width: 367px; height: 327px; line-height: 30px; float: left; margin: 0 24px 0 0; }
+.jf_warp .section2 a.sec_img { display: block; width: 367px; height: 229px; overflow: hidden; margin: 0 0 14px; position: relative; }
+.jf_warp .section2 a.sec_img img { display: block; width: 367px; height: 229px; }
+.jf_warp .section2 a.sec_img b { display: block; padding: 13px 20px; background: url(../images/v1.5/op0.85.png); position: absolute; bottom: 0; left: 0; line-height: 22px; color: #474747; font-size: 14px; font-weight: normal; display: none; width: 327px; }
+.jf_warp .section2 a.sec_img:hover b { display: block; }
+
+.artical3 a.sec_img b{ display: block; padding: 13px 20px; background: url(../images/v1.5/op0.85.png); position: absolute; bottom: 0; left: 0; line-height: 22px; color: #474747; font-size: 14px; font-weight: normal; display: none; width: 327px; }
+.artical3 a.sec_img:hover b{ display: block; }
+
+
+.jf_warp .section2 p { overflow: hidden; font-size: 16px; }
+.jf_warp .section2 p a.sec_name { float: left; font-weight: bold; color: #48494b; max-width: 260px; overflow: hidden; height: 30px; }
+.jf_warp .section2 p a:hover { color: #ff4400; }
+.jf_warp .section2 p b { float: right; font-size: 14px; color: #ff4400; }
+.jf_warp .section2 .clock { height: 30px; font-size: 14px; text-indent: 23px; background: url(../images/v1.5/other.png) no-repeat 0 -280px; }
+.jf_warp .section2 .clock span { font-weight: bold; }
+.jf_warp .section2 .clock span em { font-style: normal; font-weight: normal; }
+/**/
+.section3 h3.tit1 em{background-position: 0 -450px; width: 22px; height: 23px; margin-top:17px; }
+#picarea{width: 100%; overflow: hidden; height: 302px;}
+#picarea ul{height: 302px;}
+#picarea li{ height: 302px; overflow: hidden; float: left; line-height: 22px; width: 197px;}
+#picarea a.a_img{width: 162px; height: 191px; border: 1px solid #e9e9e9; overflow: hidden; display: block;}
+#picarea a.a_img img{width: 162px; height: 191px;}
+#picarea .gmessage{width: 170px;}
+#picarea .gmessage span{ overflow: hidden; height: 22px; margin-right:7px; display: block; float: left;}
+#picarea .g_username{max-width: 54px; }
+#picarea .g_time{max-width: 60px;}
+#picarea .gname{height: 44px; overflow: hidden; width: 164px;}
+#picarea .gname a{color: #ff4400;}
+#picarea .gname a:hover{text-decoration: underline;}
+
+
+
+/*签到*/
+.cb_news {padding: 15px 52px 0px; }
+.cb_news h4{text-indent: 42px; height: 31px; font-size: 16px; line-height: 31px; overflow: hidden; background: url(../images/v1.5/sprite.png) no-repeat 0 -104px; margin: 0 0 3px;}
+.cb_news ul {background: url("../images/v1.5/newsbg.png") no-repeat scroll 10px top;overflow: hidden;padding-left: 35px;}
+.cb_news ul li.first{ margin-top: 7px;}
+.cb_news ul li{line-height: 28px; height: 28px; overflow: hidden;}
+.shearbun{padding: 13px 52px 0px; height: 28px;}
+.shearbun span{display: block;  height: 26px; border: 1px solid #e9e9e9; float: left; position: relative; text-indent: 37px; line-height: 26px; cursor: pointer;}
+.shearbun span i{display: block; width: 30px; height: 28px;  background: url(../images/v1.5/sprite.png) no-repeat 0 -135px; position: absolute; left: -1px; top: -1px;}
+.shearbun span.aqq{margin-right: 39px; width: 98px;}
+.shearbun span.aweibo{width: 105px;}
+.shearbun span.aweibo i{background-position: 0 -163px;}
+.checkpop{width: 516px; height: 230px; border: 1px solid #dcdcdc; position: absolute; left: -536px; top: 92px; background-color: #ffffff; z-index: 98; padding: 36px 27px 27px; box-shadow: 1px 2px 0 rgba(0,0,0,.1);}
+.checkpop .cleft{width: 192px; float: left; overflow: hidden; font-size: 16px;}
+.checkpop .cleft img{padding: 10px 0 0;}
+.checkpop .cright{width: 282px; float: right;}
+.cright h2{font-size: 16px; font-weight: normal; margin: 0 0 10px; }
+.cright label{display: block;  height: 34px; margin: 0 0 13px; position: relative; }
+.cright label input{border: none; text-indent: 45px; padding: 5px 8px 5px 0; line-height: 24px; font-size: 14px;  border: 1px solid #dcdcdc; display: block; width: 272px; height: 24px;}
+.cright label i{width: 36px; height: 36px; position: absolute; left: 0; top: 0; background: url(../images/v1.5/logincoin.jpg) no-repeat;}
+.cright .password i{background-position: 0 -36px;}
+.cright a.loginbtn{display: block; width: 100%; height: 40px; background-color: #ff4401; text-align: center; line-height: 40px; font-size: 18px; color: #ffffff; margin: 14px 0 8px;}
+.cright a.loginbtn:hover{background-color: #fa6b38;}
+.other1 a{float: right;}
+.other1 .c{vertical-align: middle;}
+.other2 a.weibologin{display: inline-block; line-height: 22px; height: 22px; background: url(../images/v1.5/sprite.png) no-repeat 0 -191px; padding-left: 30px;}
+.other2 a.register{float: right;}
+#popclosed{position: absolute; top: 0; right: 0; width: 24px; height: 24px; background: url(../images/v1.5/x.jpg) no-repeat; display: block;}
+#popclosed:hover{background-position: 0 -24px;}
+
+
+/* 改版 */
+.artical .section{ background: #fff; padding: 0 25px; margin: 0 0 20px;}
+.artical .section h3.tit1{ /*padding: 0 25px;*/}
+.sectionleft{ float: left; width: 770px;}
+.sectionright{ float: right; width: 301px;}
+.artical1 .sectionleft,.artical1 .sectionright{ height: 870px;}
+.artical1 .sectionleft ul{ width: 795px; margin-left: 2px;}
+.artical1 .sectionleft li{width: 235px; height: 386px; overflow: hidden; float: left; margin-right: 30px; line-height: 22px; position: relative;}
+.pic_label{ position: absolute; z-index: 2; top: 1px; left: 1px; width: 95px; height: 67px; background: url(../images/v1.5/pic_label.png) no-repeat;}
+.pic_label.news{ background-position: -97px 0;}
+.artical1 .sectionleft a.a_img{width: 233px; height: 275px; border: 1px solid #e9e9e9; overflow: hidden; display: block;}
+.artical1 .sectionleft a.a_img img{width: 233px; height: 275px;}
+.artical1 .sectionleft li .botm_text{ padding: 12px 0 0; max-height: 44px; overflow: hidden; margin: 0 0 5px;}
+.artical1 .sectionleft li b{color: #0b8749;}
+.artical1 .sectionleft li a{ transition: color .2s;}
+.artical1 .sectionright{}
+.artical1 .sectionright h3.tit1 em{background-position: 0 -450px; width: 22px; height: 23px; margin-top:17px; }
+.artical1 .sectionright .siderWp{ height: 797px;}
+.siderWp{ margin-top: -25px;}
+.siderWp,.CarouselVer{overflow: hidden; position: relative;}
+.exchangelist{/* margin-top: -25px;*/}
+.exchangelist li{ padding: 24px 0; border-bottom: solid 1px #f1f1f1;}
+.exchangelist .exitem .a_img{ display: block; float: left; width: 88px; height: 104px; border: solid 1px #f1f1f1; margin-right: 18px; overflow: hidden;}
+.exchangelist .exitem .a_img img{ width: 88px; height: 104px;}
+.exchangelist .exitem .name{ overflow: hidden; text-overflow: ellipsis; white-space: nowrap; margin: 5px 0;}
+.exchangelist .exitem .ex_pro{ line-height: 22px; height: 44px; overflow: hidden; margin-top: 10px;}
+.exchangelist .exitem .ex_pro a{ color: #abc468;}
+.exchangelist .exitem .ex_pro a:hover{ text-decoration: underline;}
+.exchangelist .exitem .name .num{ color: #abc468;}
+
+.artical2 .sectionleft,.artical2 .sectionright { height: 586px;}
+.artical2 h3.tit1 em{ background: url(../images/v1.5/titicon.png) no-repeat;}
+.artical2 .sectionleft h3.tit1 em{ width: 20px; height: 24px; margin-top: 17px; background-position: -49px 0;}
+.artical2 .mainList{ width: 790px;}
+.mainList{ }
+.textover{ overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+.font12{ font-size: 12px;}
+.gray{ color: #969696;}
+.mainList li{ width: 197px; height: 427px; margin-right: 19px; border: 1px solid #f1f1f1; float: left; padding: 22px;}
+.mainList li:hover{ border-color: #c8c8c8;}
+.mainList li .imgWrap{ width: 100%; height: 229px; margin-bottom: 14px; overflow: hidden;}
+.mainList li .imgWrap img{ display: block; width: 100%; height: 100%;}
+.mainList li p{ line-height: 24px;}
+.mainList li .progressBar{ width: 100%; height: 10px; border-radius: 5px; background-color: #f1f1f1; margin-top: 14px; margin-bottom: 10px; overflow: hidden;}
+.mainList li .progressBar i{ display: block; height: 100%; background-color: #0b8749;}
+.mainList li .progressBar i.full{ width: 100%; background: url(http://jifen.sina.com.cn/jifen/images/crowdfunding/progressBar.gif) repeat-x;}
+.mainList li .btn{ display: block; width: 157px; height: 40px; background-color: #0b8749; color: #fff; font-size: 16px; font-weight: bold; text-align: center; line-height: 40px; margin: 20px auto 0;}
+.mainList li .btn:hover{ background-color: #0b8749;}
+.artical2 .sectionright h3.tit1 em{ width: 20px; height: 25px; margin-top: 16px; background-position: 0 0;}
+.artical2 .sectionright { overflow: hidden;}
+.artical2 .awardList .exitem .ex_pro a{ color: #474747;}
+.artical2 .awardList .exitem .ex_pro a:hover{ color: #ff4400;}
+.artical2 .sectionright .siderWp{ height: 479px;}
+
+
+.jf_warp .artical3{ width: 1150px; background: #fff; padding: 0 25px; margin: 0 auto 20px;}
+.artical3 h3.tit1{ /*width: 1150px;*/}
+.artical3 h3.tit1 em{ background: url(../images/v1.5/titicon.png) no-repeat; background-position: -22px 0; width: 25px; height: 24px; margin-top: 17px;}
+.artical3 ul{width: 1175px;}
+.artical3 ul li { width: 367px; height: 327px; line-height: 30px; float: left; margin: 0 24px 0 0; }
+.artical3 ul a.sec_img { display: block; width: 367px; height: 229px; overflow: hidden; margin: 0 0 14px; position: relative; }
+.artical3 ul a.sec_img img { display: block; width: 367px; height: 229px; }
+.artical3 ul p{ overflow: hidden; font-size: 16px; }
+.artical3 ul p a.sec_name { float: left; font-weight: bold; color: #48494b; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 75%; height: 30px; }
+.artical3 ul p a:hover { color: #ff4400; }
+.artical3 ul p b{float: right; font-size: 16px; color: #0b8749; width: 23%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+
+/**/
+.jf_warp .section2 ul{width: 1175px;}
+.jf_warp .section2 li { width: 367px; height: 327px; line-height: 30px; float: left; margin: 0 24px 0 0; }
+.jf_warp .section2 a.sec_img { display: block; width: 367px; height: 229px; overflow: hidden; margin: 0 0 14px; position: relative; }
+.jf_warp .section2 a.sec_img img { display: block; width: 367px; height: 229px; }
+
+.jf_warp .section2 a.sec_img b { display: block; padding: 13px 20px; background: url(../images/v1.5/op0.85.png); position: absolute; bottom: 0; left: 0; line-height: 22px; color: #474747; font-size: 14px; font-weight: normal; display: none; width: 327px; }
+.jf_warp .section2 a.sec_img:hover b { display: block; }
+
+.jf_warp .section2 p { overflow: hidden; font-size: 16px; }
+.jf_warp .section2 p a.sec_name { float: left; font-weight: bold; color: #48494b; max-width: 260px; overflow: hidden; height: 30px; }
+.jf_warp .section2 p a:hover { color: #ff4400; }
+.jf_warp .section2 p b { float: right; font-size: 14px; color: #ff4400; }
+.jf_warp .section2 .clock { height: 30px; font-size: 14px; text-indent: 23px; background: url(../images/v1.5/other.png) no-repeat 0 -280px; }
+.jf_warp .section2 .clock span { font-weight: bold; }
+.jf_warp .section2 .clock span em { font-style: normal; font-weight: normal; }
+
+
+
+.aaa {}

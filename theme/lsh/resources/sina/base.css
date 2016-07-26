@@ -1,0 +1,200 @@
+/*新浪通用顶*/
+.clearfix:after{content:".";display:block; height:0; clear:both;visibility:hidden;}
+.clearfix{*zoom:1}
+
+/*---- 通用顶部 -----*/
+.SG_top_wrap{ width: 100%; background-color: #f3f3f3; position:relative; z-index:10000;}
+.SG_top{ width: 1200px; height: 38px; font: 14px/38px "Microsoft Yahei"; color: #474747; margin: 0 auto;}
+.SG_top a{ color: #474747; cursor: pointer; text-decoration: none;}
+.SG_top a:hover{ color: #ff8400;}
+.SG_top_menu{ float: left;}
+.SG_top_menu a{ margin-right: 25px;}
+
+.SG_top_div a.SG_top_link{ background: url(../images/head_foot/JfTop.png) no-repeat;}
+.SG_box_wrap{background: url(http://i0.sinaimg.cn/gm/home/2014/gray.png) repeat;}
+
+.SG_top_div{ width: 110px; float: left; position: relative; }
+.SG_top_div a.SG_top_link{ display: block; width: 60px; padding: 0 25px; text-align: center;}
+.SG_box_wrap{ padding-top: 14px; position: absolute; left: 2px; top: 38px; display: none;  z-index:1000; }
+.SG_box_wrap .SG_box{ background-color: #fff; border: 1px solid #d1d1d1; }
+.SG_box_wrap .SG_box a{ color:#4d4d4d; text-decoration:none; }
+.SG_box_wrap .SG_box a:hover{ color:#ff8400; }
+.SG_arrtop{ display: block; width: 11px; height: 6px; background:url(../images/head_foot/JfTopArr.png) no-repeat; position: absolute; left: 24px; top: 9px; overflow: hidden; }
+.SG_botbg{ display: block; width: 100%; height: 2px; font-size: 0px; background-color: #000; opacity: 0.1; filter:alpha( opacity = 10);}
+
+.SG_top_phone a.SG_top_link{ background-position: 0 0px; }
+.SG_top_phone a.SG_top_link:hover,.SG_top_phone a.SG_top_link.hover{ color: #ff8400; background-position: 0 -38px;}
+
+.SGtp_box_wrap{ width: 470px;}
+.SGtp_box_wrap .SG_box{ width: 448px; padding: 0 0 20px 20px;}
+.SGtp_box_wrap .SG_box ul{ zoom:1;}
+.SGtp_box_wrap .SG_box ul:after {visibility:hidden;display:block;font-size:0;content:"";clear:both;height:0;}
+.SGtp_box_wrap .SG_box li{ width: 223px; height: 50px; margin-top: 20px; float: left;}
+.SGtp_box_wrap .SG_box li img{ float: left;}
+.SGtp_box_wrap .SG_box li p{ width: 158px; height: 28px; font-size: 14px; font-weight: bold; line-height: 28px; float: left; padding-left: 15px;}
+.SGtp_box_wrap .SG_box li span{ display: block; width: 158px; height: 22px; font-size: 12px; line-height: 22px; color: #e4e4e4; float: left; padding-left: 15px;}
+.SGtp_box_wrap .SG_box li span a{ color: #ff8400;}
+.SGtp_box_wrap .SG_box li span a:hover{ color: #ff8400; text-decoration: underline;}
+
+#SG_top_notice{width: 321px; overflow: hidden; float: right; padding-left: 30px; background: url(../images/head_foot/notice.png) no-repeat; height: 38px;}
+#SG_top_notice ul {float: right; width: 274px; }
+#SG_top_notice ul li{width: 100%; height: 38px;}
+
+/*积分顶部*/
+#Head{ width:100%; height:92px; margin:0 auto; background-color: #fff;}
+#Head .Head_box{ width:1200px;  height:100%; margin:0 auto;}
+#Head a.logo{ display:block; width:172px; height:92px; float:left; background: url(http://jifen.sina.com.cn/jifen/images/duty/jf_logo.jpg) no-repeat center center; overflow:hidden;}
+#Head .search{ width:351px; float:right;  margin-top:32px; line-height:28px; vertical-align:middle; height:29px;overflow:hidden;}/*15.0825修改*/
+#Head .topSearchTxt{ display:block; width:259px; color:#a0a1a1; padding:0px 10px 0px 10px; height:29px; line-height:28px; vertical-align:middle; background:url(http://jifen.sina.com.cn/jifen/images/duty/so_bg2.jpg) left top no-repeat; border:0px; float:left; overflow:hidden;}
+#Head .topSearchBtn{ display:block; width:72px; height:29px; border:0px; cursor:pointer; background-color: #abc468; text-align: center; float:left; overflow:hidden; font-size: 16px; color: #fff;}
+
+
+.jfdbwp{ width: 120px; height: 65px; float: left; margin: 13px 40px 0 18px; position: relative;visibility:hidden;}/*15.0825改*/
+.jfdbwp a{ display: block; width: 100%; height: 100%;}
+.jfdbwp .jfbg,.jfdbwp .jfpack{ position: absolute; left: 0; top: 0; width: 100%; height: 100%;}
+.jfdbwp .jfbg{ background: url(../images/v1.5/jfdb_bg.png) center center;}/*15.0825改*/
+.jfdbwp .jfpack{ background: url(../images/v1.5/jfdb_pack.png) center center;}
+.jftopadwp{ float: left; margin-top: 24px; width: 446px; height: 43px; overflow: hidden;}
+.jftopadwp img{
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease; 
+}
+.jftopadwp img:hover {
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  transform: scale(1.2); 
+}
+@-webkit-keyframes tada {
+  0%, 10% {
+    -webkit-transform: scale3d(.9, .9, .9);
+    transform: scale3d(.9, .9, .9);
+  }
+
+  15%, 25%, 35%, 45% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  }
+
+  20%, 30%, 40% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  }
+  50% ,100% {
+    -webkit-transform: scale3d(.9, .9, .9);
+    transform: scale3d(.9, .9, .9);
+  }
+}
+
+@keyframes tada {
+  0%, 10% {
+    -webkit-transform: scale3d(.9, .9, .9);
+    transform: scale3d(.9, .9, .9);
+  }
+
+  15%, 25%, 35%, 45% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  }
+
+  20%, 30%, 40% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  }
+  50% ,100% {
+    -webkit-transform: scale3d(.9, .9, .9);
+    transform: scale3d(.9, .9, .9);
+  }
+}
+
+.tada {
+  animation: tada 2.5s infinite;
+  -webkit-animation: tada 2.5s infinite;
+}
+
+/*-- 导航 --*/
+#Nav{ width:100%; height:42px; background-color:#0b8749; color:#fff; line-height:42px; position: relative; z-index: 999;}
+.Nav_wrap{ width:1300px; height:100%; margin:0 auto; position: relative;}
+.Nav_box{ font-size:18px; float: left;}
+.Nav_box li{ display:block; float:left;}
+.Nav_box a{ display:block; width:145px; height:100%; float:left; text-align:center; color:#fff; position: relative;}
+.Nav_box a:hover{ background-color: #abc468; color: #fff; font-weight: bold;}
+.Nav_box a i{ display: block; width: 1px; height: 15px; background-color: #0b8749; font-size: 0; position: absolute; right: 0; top: 14px;}
+.Nav_box a:hover i{ display: none;}
+.Nav_box li.active{ background-color: #abc468; color: #fff; font-weight: bold;}
+.Nav_box li.active i{ display: none;}
+
+.login-out,.login-in{ width: 127px; height: 30px; font-size: 16px; position: absolute; right: 184px;}
+.login-out p{background: url(http://jifen.sina.com.cn/jifen/images/duty/other.png) no-repeat 7px -150px; text-indent: 42px; line-height: 42px; cursor: pointer;}
+.login-in{ z-index: 9; padding: 6px 30px;}
+.login-in.inblack{background-color: #474747}
+.login-in.inblack span.msgnum{ display: none;}
+.login-in p{line-height: 30px;}
+.login-in span.msgnum{ display: block; width: 24px; height: 22px; background: url(../images/head_foot/msgnum.png) no-repeat; font-size: 12px; color:#fff; text-align: center; line-height: 22px; position: absolute; right: -13px; top: 4px;}
+.login-in p.in_top{ background:  url(http://jifen.sina.com.cn/jifen/images/duty/other.png) no-repeat  -10px -188px;}
+.login-in p.up{background-position: 115px -188px}
+.login-in p img{ width: 30px; height: 30px; border-radius: 50%; float: left; display: block; margin-right: 12px;}
+.login-in .in_details{padding: 0 20px 18px; width: 312px; height: 194px; background-color:#474747; position: absolute; left: 0; z-index: 999; display: none; top: 42px;}
+.login-in .in_details p{line-height: 34px}
+.login-in .in_details p a{ color: #fff;}
+.login-in .in_details .in_jf a{ color: #abc468}
+.login-in li{width: 150px; line-height: 30px; height: 30px; overflow: hidden; text-indent: 28px; background: url(../images/login.png) no-repeat; float: left; font-size: 14px;}
+.login-in li a{color: #f1f1f1;}
+.login-in li a:hover{color: #ff4401;}
+.login-in li.li_1,.login-in li.li_3,.login-in li.li_5,.login-in li.li_7{width: 160px;}
+.login-in li.li_2{background-position: 0 -120px}
+.login-in li.li_3{background-position: 0 -30px}
+.login-in li.li_4{background-position: 0 -150px}
+.login-in li.li_5{background-position: 0 -60px}
+.login-in li.li_6{background-position: 0 -180px}
+.login-in li.li_7{background-position: 0 -90px}
+.login-in li.li_8{background-position: 0 -210px}
+
+.login-in span.msgnum {background: rgba(0, 0, 0, 0) url("../images/msgnum.png") no-repeat scroll 0 0;color: #fff;display: block;font-size: 12px;height: 22px;line-height: 22px;position: absolute;right: 0px;text-align: center;top: 4px;width: 24px;}
+
+/*通用底部*/
+.Jfooter{width:100%;margin:0;padding:0;background-color:#dcdcdc;padding:31px 0 0;}
+.jfcon{width:1200px;margin:0 auto;height:261px;}
+.jfcon .condiv{width:186px;height:233px;background-color:#d2d2d2;float:left;margin-right:28px;overflow:hidden;}
+.jfcon .condiv .icon{display:block;width:88px;height:88px;background:url(../images/head_foot/pcficon.png) no-repeat 0 0;margin:24px auto 15px;}
+.jfcon .cd2 .icon{background-position:0 -88px;}
+.jfcon .cd3 .icon{background-position:0 -176px;}
+.jfcon .cd4 .icon{background-position:0 -264px;}
+.jfcon .cd4{margin-right:0;}
+.jfcon .condiv p{text-align:center;}
+.jfcon .condiv p span{display:block;line-height:32px;font-size:16px;color:#474747;}
+.jfcon .condiv p a{display:block;font-size:14px;line-height:24px;color:#707070;vertical-align:middle;margin:0 auto;}
+.jfcon .condiv p a:hover{color:#abc468;}
+.jfcon .conright{width:356px;height:233px;float:right;overflow:hidden;text-align:center;font-size:16px;color:#474747;line-height:32px;}
+.jfcon .conright .v2code{width:100%;height:168px;background:url(../images/head_foot/line.png) no-repeat center bottom;line-height:44px;}
+.jfcon .conright .v2code img{display:block;width:90px;height:90px;margin:0 auto;-webkit-transform:none;-moz-transform:none;-o-transform:none;-ms-transform:none;transform:none;}
+.jfcon .conright span{color:#969696;}
+#Gtrail{width:980px;padding:33px 0 36px;margin:0 auto;overflow:hidden;}
+#Gtrail #ZWTrail{font-size:14px;color:#707070;line-height:16px;text-align:center;}
+#Gtrail #ZWTrail a,#Gtrail #ZWTrail a:visited{color:#707070;text-decoration:none;}
+#Gtrail #ZWTrail a:hover{color:#abc468;text-decoration:none;}
+.Gfooter{width:100%;margin:0;padding:0;background:#c9c9c9;}
+.news_center{width:530px;margin:0 auto;}
+.listLi1{float:left;}
+.listTitle1{float:left;}
+.listDateTime1{text-align:right;float:right;}
+#fixedtop{position:fixed;right:15px;bottom:10px;z-index:99992;width:60px;-webkit-transition:opacity .4s ease-in-out;-moz-transition:opacity .4s ease-in-out;-o-transition:opacity .4s ease-in-out;opacity:1;}
+#fixedtop.off{visibility:hidden;opacity:0;}
+#fixedtop a{display:block;margin-bottom:10px;width:60px;height:50px;border-radius:2px;background:url(http://jifen.sina.com.cn/jifen/images/duty/icon_top.png) center center no-repeat;background-color:#444;background-color:rgba(0,0,0,.2);cursor:pointer;box-shadow:0 1px 3px rgba(0,0,0,.2);}
+#fixedtop a:hover{background-color:rgba(0,0,0,.5);}
+
+/*返回顶部*/
+#backtop{ position: fixed; right: 15px; bottom: 10px; z-index: 99992; width: 60px; -webkit-transition: opacity .4s ease-in-out; -moz-transition: opacity .4s ease-in-out; -o-transition: opacity .4s ease-in-out; opacity: 1; }
+#backtop.off{ visibility: hidden; opacity: 0; }
+#backtop a{ display: block; margin-bottom: 10px; width: 60px; height: 50px; border-radius: 2px; background: url(http://jifen.sina.com.cn/jifen/images/duty/icon_top.png) center center no-repeat; background-color: #444; background-color: rgba(0,0,0,.6); cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,.2); }
+#backtop a:hover{ background-color: rgba(0,0,0,.7); }
+
+
+body{ background-color: #f1f1f1;color: #474747;font-family: "Microsoft Yahei";font-size: 14px;}
+body a{color: #474747;}
+/*消息数量 样式*/
+.msgnum,.msg_num{display:none;}
