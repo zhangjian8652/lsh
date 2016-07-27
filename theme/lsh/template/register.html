@@ -18,8 +18,9 @@
 
         input[type='button'] {
             display: block;
-            width: 100%;
+            width: 120px;
             height: 35px;
+            cursor: pointer;
         }
     </style>
     [#include "js.html"/]
@@ -28,7 +29,7 @@
 <body>
 [#include "header/header.html"/]
 
-<div style="width: 940px;">
+<div style="width: 940px;    margin-top: 60px;margin-bottom: 60px;">
     <form>
         <div>
             <table style="width: 350px;">
@@ -38,13 +39,10 @@
                     <td><input type="text" name="loginId" id="loginId"/></td>
                 </tr>
                 <tr>
-                    <td><label>姓：</label></td>
-                    <td><input type="text" name="lastName" id="lastName"/></td>
+                    <td><label>手机号：</label></td>
+                    <td><input type="text" name="phoneNumber" id="phoneNumber"/></td>
                 </tr>
-                <tr>
-                    <td><label>名：</label></td>
-                    <td><input type="text" name="firstName" id="firstName"/></td>
-                </tr>
+
                 <tr>
                     <td><label>邮箱：</label></td>
                     <td><input type="text" name="email" id="email"/></td>
@@ -52,6 +50,18 @@
                 <tr>
                     <td><label>密码：</label><br/></td>
                     <td><input type="password" name="password" id="password"/></td>
+                </tr>
+
+                <tr>
+                    <td><label>密码确认：</label><br/></td>
+                    <td><input type="password" name="confirmPassword" id="confirmPassword"/></td>
+                </tr>
+                <tr>
+                    <td><label><img src="data:image/jpg;base64,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"/></label><br/></td>
+                    <td><input type="text" name="code" id="code"/></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="checkbox" name="terms" style="    height: 16px;"/> <span style="color: gray;">我已经阅读</span><a href="#">《EEPAU服务协议》</a></td>
                 </tr>
                 <tr>
                     <td colspan="2"><input type="button" value="登录" id="login-btn"/></td>
@@ -69,8 +79,10 @@
             var loginId = $("#loginId").val();
             var password = $("#password").val();
             var email = $("#email").val();
-            var firstName = $("#firstName").val();
-            var lastName = $("#lastName").val();
+            var firstName = loginId;
+            var lastName = loginId;
+            var phoneNumber = $("#phoneNumber").val();
+            var confirmPassword = $("#confirmPassword").val();
             if (loginId == null || password == null || email == null || firstName == null || lastName == null) {
                 alert("用户名、密码、邮箱、姓、名不能为空");
             } else {
@@ -80,13 +92,18 @@
                     password: password,
                     email: email,
                     lastname: lastName,
-                    firstname: firstName
+                    firstname: firstName,
+                    phoneNumber: phoneNumber,
                 }, function (result) {
 
-                    var jsonData = JSON.parse(result);
-                    alert("注册成功");
-                    location.href = "${path!}/login";
-
+                    try {
+                        var jsonData = JSON.parse(result);
+                        if(jsonData.code == "-1000")
+                        alert("注册失败，请稍后再试!");
+                    } catch (e) {
+                        alert("注册成功!")
+                        location.href = "${path!}/login";
+                    }
 
                 });
             }

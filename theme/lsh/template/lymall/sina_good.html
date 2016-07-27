@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<!-- saved from url=(0037)http://jifen.sina.com.cn/product/1786 -->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>EEPAU积分商城</title>
+    <meta name="keywords"
+          content="EEPAU商城">
+    <meta name="description" content="EEPAU积分商城">
+
+    <link type="text/css" href="${res!}/resources/sina/reset.css" rel="stylesheet">
+    <script src="${res!}/resources/sina/hm.js"></script>
+    <script language="JavaScript"> var base_url = '${path!}'; </script>
+    <script src="${res!}/resources/sina/jquery-1.7.2.min.js"></script>
+    <script src="${res!}/resources/sina/jquery.inview.min.js"></script>
+    <script src="${res!}/resources/sina/jquery.easing.1.3.js" type="text/javascript"></script>
+    <script src="${res!}/resources/sina/task_common.js"></script>
+    <script src="${res!}/resources/sina/common.js"></script>
+    <script src="${res!}/resources/sina/head_foot.js"></script>
+    <script src="${res!}/resources/sina/taskloginv.js"></script>
+    <script src="${res!}/resources/sina/sso.js"></script>
+    <script src="${res!}/resources/sina/outlogin_layer.js" charset="UTF-8"></script>
+    <script src="${res!}/resources/sina/ssologin.js"></script>
+    <link rel="stylesheet" type="text/css" href="${res!}/resources/css/style.css">
+    <link rel="stylesheet" type="text/css" href="${res!}/resources/sina/base.css">
+    <link rel="stylesheet" type="text/css" href="${res!}/resources/sina/msg.css">
+
+    <link rel="stylesheet" type="text/css" href="${res!}/resources/sina/information_v1.5.css">
+    <style>
+        body {
+            min-width: 1200px
+        }
+    </style>
+
+    <script>
+        /*var is_login = parseInt('1');
+         SOL = {
+         init:function () {
+         var that = this;
+         SOL.loginLayer = window.SINA_OUTLOGIN_LAYER;
+         if (SOL.loginLayer) {
+         SOL.loginLayer.set('sso', {
+         entry:'igame'
+         }).register('login_success', function (a,b,c) {
+         that.login_action = false;
+         }).register('logout_success', function () {
+         window.location.reload(true);
+         }).init();
+
+         }
+         },
+         isLogin:function () {
+         return SOL.loginLayer.isLogin();
+         },
+         loginShow:function () {
+         SOL.loginLayer.show();
+         //showMaskDiv();
+         },
+         logout:function () {
+         SOL.loginLayer.logout();
+         }
+         }
+         */
+        /**
+         * 任龙 2012-08-17
+         * 文档页http://wiki.intra.sina.com.cn/pages/viewpage.action?pageId=7161107
+         * 依赖的JS文件 http://i.sso.sina.com.cn/js/ outlogin_layer.js
+         * 这是SSO的浮层登录SDK，仅供非微博产品线使用
+         * 有三个方法SOL.isLogin,SOL.loginShow,SOL.logout
+         */
+        function addCookie(name, value, expiresHours) {
+            var cookieString = name + "=" + escape(value);
+            //判断是否设置过期时间
+            if (expiresHours > 0) {
+                var date = new Date();
+                date.setTime(date.getTime + expiresHours * 3600 * 1000);
+                cookieString = cookieString + "; expires=" + date.toGMTString();
+            }
+            document.cookie = cookieString;
+        }
+
+        function getCookie(name) {
+            var strCookie = document.cookie;
+            var arrCookie = strCookie.split("; ");
+            for (var i = 0; i < arrCookie.length; i++) {
+                var arr = arrCookie[i].split("=");
+                if (arr[0] == name) return arr[1];
+            }
+            return "";
+        }
+
+        function deleteCookie(name) {
+            var date = new Date();
+            date.setTime(date.getTime() - 10000);
+            document.cookie = name + "=v; expires=" + date.toGMTString();
+        }
+        var is_login = parseInt('1');
+        SOL = {
+            init: function () {
+                var that = this;
+                SOL.loginLayer = window.SINA_OUTLOGIN_LAYER;
+                if (SOL.loginLayer) {
+                    SOL.loginLayer.set('sso', {
+                        entry: 'igame'
+                    }).register('login_success', function () {
+                        var sso_login = getCookie('sso_login');
+                        that.login_action = false;
+                    }).register('logout_success', function () {
+                        window.location.reload(true);
+                    }).init();
+                }
+            },
+            isLogin: function () {
+                return SOL.loginLayer.isLogin();
+            },
+            loginShow: function () {
+                SOL.loginLayer.show();
+                //showMaskDiv();
+            },
+            logout: function () {
+                SOL.loginLayer.logout();
+            }
+        }
+
+        reduce_sol = SOL;
+        $(function () {
+            SOL = reduce_sol;
+            SOL.init();
+        });
+
+
+        $(document).ready(function () {
+            $('.login_action').on('click', function () {
+                SOL.loginShow();
+                return;
+            });
+            $('.logout_action').on('click', function () {
+                SOL.logout();
+                return;
+            });
+
+            clear_search();
+
+            SG_hover("#SG_top_phone", "#SGtp_box_wrap");
+
+            disMove();
+        });
+    </script>
+    <script>
+        <!--
+        // 百度统计
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?79946fa318f4c525210d2574edc7d733";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+        -->
+    </script>
+    <style type="text/css">.outlogin_layerbox_bylx,
+    .outlogin_layerbox_bylx p,
+    .outlogin_layerbox_bylx div,
+    .outlogin_layerbox_bylx li,
+    .outlogin_layerbox_bylx input {
+    }
+
+    .outlogin_layerbox_bylx a {
+        color: #474747;
+    }
+
+    .outlogin_layerbox_bylx a:hover {
+        color: #FF4400
+    }
+
+    .outlogin_layerbox_bylx.outlogin_layerbox_bylx .hide {
+        display: none;
+    }
+
+    .outlogin_layerbox_bylx {
+        background-color: #ffffff;
+        border: 1px solid #dcdcdc;
+        box-shadow: 1px 2px 0 rgba(0, 0, 0, 0.1);
+        height: 230px;
+        padding: 36px 27px 27px;
+        position: absolute;
+        width: 516px;
+        position: absolute;
+        border-width: 1px !important;
+        border-style: solid !important;
+        text-align: left !important;
+        color: #474747;
+        font-size: 14px;
+    }
+
+    .outlogin_layerbox_bylx .cur_move {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 516px;
+        height: 26px;
+    }
+
+    #popclosed {
+        background: url("http://jifen.sina.com.cn/jifen/images/v1.5/x.jpg") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+        display: block;
+        height: 24px;
+        float: right;
+        width: 24px;
+    }
+
+    .outlogin_layerbox_bylx a.layerbox_close {
+        position: absolute !important;
+        right: 8px !important;
+        top: 8px !important;
+        width: 12px !important;
+        height: 11px !important;
+        padding: 5px !important;
+        font: 700 12px "Simsun" !important;
+        text-decoration: none !important;
+        overflow: hidden !important;
+        z-index: 10 !important;
+    }
+
+    .outlogin_layerbox_bylx .close_loginname {
+        position: absolute !important;
+        width: 11px !important;
+        height: 11px !important;
+        padding: 5px !important;
+        left: 180px !important;
+        top: 4px !important;
+        font: 700 12px "Simsun" !important;
+        text-decoration: none !important;
+        overflow: hidden !important;
+    }
+
+    .outlogin_layerbox_bylx a.layerbox_close:hover {
+        text-decoration: none !important;
+    }
+
+    .outlogin_layerbox_bylx .cright {
+        width: 282px !important;
+        display: inline !important;
+        float: right !important;
+    }
+
+    .outlogin_layerbox_bylx .cright .titletips {
+        padding: 8px 0 35px !important;
+    }
+
+    .outlogin_layerbox_bylx .cright
+    .outlogin_layerbox_bylx .cright h2 {
+        font-size: 16px;
+        font-weight: normal;
+        margin: 0 0 10px;
+    }
+
+    .outlogin_layerbox_bylx .cright label {
+        display: block;
+        height: 34px;
+        margin: 0 0 13px;
+        position: relative;
+    }
+
+    .outlogin_layerbox_bylx .cright label input {
+        border: none;
+        text-indent: 45px;
+        padding: 5px 8px 5px 0;
+        line-height: 24px;
+        font-size: 14px;
+        border: 1px solid #dcdcdc;
+        display: block;
+        width: 272px;
+        height: 24px;
+    }
+
+    .outlogin_layerbox_bylx .cright label i {
+        width: 36px;
+        height: 36px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: url(http://jifen.sina.com.cn/jifen/images/v1.5/logincoin.jpg) no-repeat;
+    }
+
+    .outlogin_layerbox_bylx .cright .password i {
+        background-position: 0 -36px;
+    }
+
+    .outlogin_layerbox_bylx .cright a.loginbtn {
+        display: block;
+        width: 100%;
+        height: 40px;
+        background-color: #ff4401;
+        text-align: center;
+        line-height: 40px;
+        font-size: 18px;
+        color: #ffffff;
+        margin: 14px 0 8px;
+    }
+
+    .outlogin_layerbox_bylx .cright a.loginbtn:hover {
+        background-color: #fa6b38;
+    }
+
+    .outlogin_layerbox_bylx .other1 a {
+        float: right;
+    }
+
+    .outlogin_layerbox_bylx .other1 .c {
+        vertical-align: middle;
+    }
+
+    .outlogin_layerbox_bylx .other2 a.weibologin {
+        display: inline-block;
+        line-height: 22px;
+        height: 22px;
+        background: url(http://jifen.sina.com.cn/jifen/images/v1.5/sprite.png) no-repeat 0 -191px;
+        padding-left: 30px;
+    }
+
+    .outlogin_layerbox_bylx .other2 a.register {
+        float: right;
+    }
+
+    .outlogin_layerbox_bylx .otwo_d_wrap {
+        float: left;
+        font-size: 16px;
+        overflow: hidden;
+        width: 192px;
+    }
+
+    .outlogin_layerbox_bylx .otwo_d_wrap img {
+        height: 192px;
+        width: 192px;
+        border: none !important;
+        display: inline !important;
+        margin-top: 10px;
+    }
+
+    .outlogin_layerbox_bylx .otwo_hlp {
+        position: absolute !important;
+        left: 175px !important;
+        top: 59px !important;
+        width: 229px !important;
+        height: 329px !important;
+        background: #ebebeb !important;
+        background: hsla(0, 0%, 0%, .08) !important;
+        z-index: 16 !important;
+    }
+
+    .outlogin_layerbox_bylx .otwo_hlp .hlp_cnt {
+        margin: 3px !important;
+        border: 1px solid #dadada !important;
+        height: 302px !important;
+        padding: 19px 0 0 15px !important;
+        background: #fff;
+    !important
+    }
+
+    .outlogin_layerbox_bylx .otwo_hlp .otwo_hlp_tl {
+        height: 23px !important;
+        line-height: 1 !important;
+    }
+
+    .outlogin_layerbox_bylx .otwo_hlp .ot_arrow {
+        position: absolute !important;
+        top: 68px !important;
+        left: -7px !important;
+        width: 11px !important;
+        height: 16px !important;
+        background: url(http://i.sso.sina.com.cn/images/login/arrow.png) no-repeat 0 0 !important;
+    }
+
+    .outlogin_layerbox_bylx .swip_check {
+        position: absolute !important;
+        left: 10px !important;
+        top: 25px !important;
+        border: 1px solid #ccc !important;
+        width: 204px !important;
+        height: 46px !important;
+        background: #fffae1 !important;
+        box-shadow: 0 0 3px hsla(0, 0%, 0%, .2) !important;
+        border-radius: 3px !important;
+    }
+
+    .outlogin_layerbox_bylx .swip_check_cls,
+    .outlogin_layerbox_bylx .swip_check_icon,
+    .outlogin_layerbox_bylx .swip_check_btmarow {
+        background-image: url(http://i.sso.sina.com.cn/images/login/swip_icon.gif) !important;
+        background-repeat: no-repeat !important;
+        overflow: hidden !important;
+    }
+
+    .outlogin_layerbox_bylx .swip_check_cls {
+        float: right !important;
+        display: inline !important;
+        margin: 9px !important;
+        width: 10px !important;
+        height: 10px !important;
+        background-position: 1px -27px !important;
+    }
+
+    .outlogin_layerbox_bylx .swip_check_icon {
+        float: left !important;
+        margin: 5px !important;
+        width: 15px !important;
+        height: 15px !important;
+        background-position: 0 -8px !important;
+    }
+
+    .outlogin_layerbox_bylx .swip_check_txt {
+        margin: 4px 0 0 !important;
+        overflow: hidden !important;
+        line-height: 18px !important;
+    }
+
+    .swip_check_btmarow {
+        position: absolute !important;
+        bottom: -6px !important;
+        left: 50% !important;
+        margin-left: -3px !important;
+        width: 10px !important;
+        height: 6px !important;
+        background-position: 0 0 !important;
+    }
+
+    .outlogin_layerbox_bylx .close_loginname {
+        color: #666;
+    }
+
+    .outlogin_layerbox_bylx .close_loginname:hover {
+        color: #DA0000;
+    }
+
+    .outlogin_layerbox_bylx .layerbox_left {
+        border-right-color: #fff;
+        background: #fff;
+    }
+
+    .outlogin_layerbox_bylx .layerbox_left input.styles {
+        border-color: #d0d0d0;
+        background: #FFF;
+    }
+
+    .outlogin_layerbox_bylx .layerbox_left .disability_voice {
+        background: url(http://i.sso.sina.com.cn/images/login/voice.gif) no-repeat 50% 50%;
+    }
+
+    .outlogin_layerbox_bylx .layerbox_left a.login_btn {
+        background: #ff8500;
+        color: #fff;
+    }
+
+    .outlogin_layerbox_bylx .layerbox_left a.login_btn:hover {
+        background: #ff931d;
+    }
+
+    .outlogin_layerbox_bylx .layerbox_left a.register_lnk {
+        color: #a87a2c;
+    }
+
+    .outlogin_layerbox_bylx .layerbox_left a.login_lnk:hover {
+        color: #a87a2c;
+    }
+
+    .outlogin_layerbox_bylx .layerbox_left a.forget_Pwd {
+        color: #a87a2c;
+    }
+
+    .outlogin_layerbox_bylx .association {
+        border-color: #ddd;
+        background: #fff;
+    }
+
+    .outlogin_layerbox_bylx .association .note_item {
+        color: #999;
+    }
+
+    .outlogin_layerbox_bylx .association a {
+        color: #999;
+    }
+
+    .outlogin_layerbox_bylx .association .current {
+        background: #f4f5f7;
+    }
+
+    .outlogin_layerbox_bylx .login_error_tips {
+        color: #DA0000;
+    }
+
+    #header{
+            width: 1200px;
+    }
+    </style>
+</head>
+<body>
+<div id="top"></div>
+<div id="header">
+    [@ec_node code="header";nod]
+    [#include "../header/header_top.html"/]
+    [/@ec_node]
+</div>
+<!-- 导航栏 -->
+<div id="Nav">
+    <div class="Nav_wrap">
+        <ul class="Nav_box clear">
+            [@ec_nav queryType="tree" group="lymall";nodes]
+            [#if nodes?? && (nodes?size > 0)]
+            [#list nodes as nod]
+            [#if node?? && node.name?? && nod.name?? && (node.name == nod.name)]
+            <li class="active"><a href="#">${nod.name!}<i></i></a></li>
+            [#elseif info?? && info.node?? && info.node.name?? && nod.name?? && (info.node.name == nod.name)]
+            <li class="active"><a href="#">${nod.name!}<i></i></a></li>
+            [#else]
+            <li><a href="#">${nod.name!}<i></i></a></li>
+            [/#if]
+            [/#list]
+            [/#if]
+            [/@ec_nav]
+        </ul>
+    </div>
+</div>
+<div class="ctWrap">
+    <!-- 	<div class="gg" style="display:none;">
+           <div class="tit">海量商品1积分抢<a href="javascript:void(0);" class="close">╳</a></div>
+           <div class="con clear">
+               <a href="#" target="_blank" title=""><img src="jifen/images/msg/img.jpg" alt=""></a>
+               <h6><a href="#" target="_blank" title="">每周一11:11海量商品</a></h6>
+               <p><a href="#" target="_blank" title="">新用户通过“专属邀请链接”进入新浪游戏积分商城首页首次签到成功即为好友关系成立直到原关系解除；</a></p>
+           </div>
+           <a href="#" target="_blank" title="" class="more">查看&gt;&gt;</a>
+       </div>
+
+       <div class="gg" style="display:none;">
+           <div class="tit">海量商品1积分抢<a href="javascript:void(0);" class="close">╳</a></div>
+           <div class="con nopic clear">
+               <h6><a href="#" target="_blank" title="">每周一11:11海量商品1积分抢</a></h6>
+               <p><a href="#" target="_blank" title="">新用户通过“专属邀请链接”进入新浪游戏积分商城首页首次签到成功即为好友关系成立；同一个新用户不可以被两个老用户同时邀请，即新用户一旦会再与其他人有好友关系，直到原关系解除；</a></p>
+           </div>
+           <a href="#" target="_blank" title="" class="more">查看&gt;&gt;</a>
+       </div>-->
+</div>
+<!-- 通用顶 end -->
+
+
+<div class="jf_warp">
+    <div class="hgroup">
+        <div class="jstep">
+            <a href="#" target="_blank">全部商品</a> &gt; <a
+                href="#" target="_blank">积分商品</a> &gt; <span>${info.name!}</span>
+        </div>
+        <div class="clear">
+            <div class="imgarea">
+                <div class="pic_label news"></div><!--限量标志--> <img width="338" height="398"
+
+                                                                   src="${info.fields['image']!}"
+                                                                   alt="${info.name!}">
+            </div>
+            <div class="goodinfor">
+                <h1>${info.name!}</h1>
+                兑换价格： <strong>${info.fields['price']!}</strong><br>
+                市场价格： <span class="price">¥${info.fields['real_price']!}</span><br>
+                库存情况： <span class="inventory">${info.fields['store']!}</span><br>
+                <div class="nubarea">
+                    <span class="jtext">兑换数量：</span>
+                    <span class="minus">-</span><span class="nub">1</span><span class="add">+</span><span class="sign">每日限兑1件</span>
+                    <input type="hidden" title="请输入购买量" name="count" id="qty" value="1">
+                </div>
+                <a id="buy" class="dhbtn" href="javascript:void(0)">立即兑换</a>
+            </div>
+        </div>
+    </div>
+    <div class="article">
+        <div class="art_left">
+           ${info.fields['describe']!}
+        </div>
+        <div class="art_right">
+            <h2>热门商品</h2>
+            <div class="tab_tit" id="tab2">
+                <span class="on">推荐</span><!--<span>最新上架</span>-->
+                <i class="topborder"></i>
+            </div>
+            <!-- 推荐 -->
+            <ul class="tab_con" style="display:block;">
+                [@ec_node code="lymall";nod]
+                [@ec_info queryType="list" nodeId="${nod.id!}" groupName="recommend";list]
+                [#if list?? && (list?size >0)]
+                [#list list as info]
+                <li class="top bot0">
+                    <em class="g_nub">${info_index + 1}</em>
+                    <a href="${info.uri!}" target="_blank" class="g_img"><img
+                            src="${info.fields['image']!}"></a>
+                    <div class="g_infor">
+                        <a href="${info.uri!}" target="_blank"
+                           class="g_name">${info.fields['tittle']!}</a>
+                        <span>${info.fields['price']!}</span>
+                        <!--<i>￥</i>-->
+                    </div>
+                </li>
+
+                [/#list]
+                [/#if]
+                [/@ec_info]
+                [/@ec_node]
+            </ul>
+            <!-- 最新上架 -->
+          <!--  <ul class="tab_con" style="display:none;">
+                <li class="top bot0">
+                    <em class="g_nub">1</em>
+                    <a href="http://jifen.sina.com.cn/product/single/product_id/1787" target="_blank" class="g_img"><img
+                            onerror="this.src=&#39;http://mall.sina.com.cn/shop/images/none_329.gif&#39;"
+                            src="./sina_good_files/201607_329.jpg"></a>
+                    <div class="g_infor">
+                        <a href="http://jifen.sina.com.cn/product/single/product_id/1787" target="_blank"
+                           class="g_name">五常大米 38元优惠券</a>
+                        <span>100 积分</span>
+                        &lt;!&ndash;<i>￥38.00</i>&ndash;&gt;
+                    </div>
+                </li>
+                <li class="top ">
+                    <em class="g_nub">2</em>
+                    <a href="http://jifen.sina.com.cn/product/single/product_id/1786" target="_blank" class="g_img"><img
+                            onerror="this.src=&#39;http://mall.sina.com.cn/shop/images/none_329.gif&#39;"
+                            src="./sina_good_files/201607_329(1).jpg"></a>
+                    <div class="g_infor">
+                        <a href="http://jifen.sina.com.cn/product/single/product_id/1786" target="_blank"
+                           class="g_name">尼泊尔金刚菩提手链兑换券</a>
+                        <span>500 积分</span>
+                        &lt;!&ndash;<i>￥119.00</i>&ndash;&gt;
+                    </div>
+                </li>
+                <li class="top ">
+                    <em class="g_nub">3</em>
+                    <a href="http://jifen.sina.com.cn/product/single/product_id/1782" target="_blank" class="g_img"><img
+                            onerror="this.src=&#39;http://mall.sina.com.cn/shop/images/none_329.gif&#39;"
+                            src="./sina_good_files/201607_329(2).jpg"></a>
+                    <div class="g_infor">
+                        <a href="http://jifen.sina.com.cn/product/single/product_id/1782" target="_blank"
+                           class="g_name">水果造型饮料托</a>
+                        <span>700,000 积分</span>
+                        &lt;!&ndash;<i>￥70.00</i>&ndash;&gt;
+                    </div>
+                </li>
+                <li class=" ">
+                    <em class="g_nub">4</em>
+                    <a href="http://jifen.sina.com.cn/product/single/product_id/1783" target="_blank" class="g_img"><img
+                            onerror="this.src=&#39;http://mall.sina.com.cn/shop/images/none_329.gif&#39;"
+                            src="./sina_good_files/201607_329(3).jpg"></a>
+                    <div class="g_infor">
+                        <a href="http://jifen.sina.com.cn/product/single/product_id/1783" target="_blank"
+                           class="g_name">甜甜圈泳圈</a>
+                        <span>2,500,000 积分</span>
+                        &lt;!&ndash;<i>￥250.00</i>&ndash;&gt;
+                    </div>
+                </li>
+                <li class=" ">
+                    <em class="g_nub">5</em>
+                    <a href="http://jifen.sina.com.cn/product/single/product_id/1784" target="_blank" class="g_img"><img
+                            onerror="this.src=&#39;http://mall.sina.com.cn/shop/images/none_329.gif&#39;"
+                            src="./sina_good_files/201607_329(4).jpg"></a>
+                    <div class="g_infor">
+                        <a href="http://jifen.sina.com.cn/product/single/product_id/1784" target="_blank"
+                           class="g_name">冰淇淋造型玩具</a>
+                        <span>1,000,000 积分</span>
+                        &lt;!&ndash;<i>￥100.00</i>&ndash;&gt;
+                    </div>
+                </li>
+            </ul>-->
+        </div>
+    </div>
+</div>
+
+<script language="JavaScript"> var base_url = '${path!}';
+var taskid = '0';</script>
+<script type="text/javascript" src="${res!}/resources/sina/home_1.5.js"></script>
+<script type="text/javascript">
+    //商品详情页加减货按钮
+    function nubChange(m, idx) {
+        var index = idx;
+        $(".goodinfor .add").click(function (event) {
+            if (index < m) index++;
+            $(".goodinfor .nub").text(index);
+            $('#qty').val(index);
+        });
+
+        $(".goodinfor .minus").click(function (event) {
+            if (index > 0) index--;
+            $(".goodinfor .nub").text(index);
+            $('#qty').val(index);
+        });
+
+        $('#qty').val(index);
+        //
+        $(".goodinfor .sign").text('每日限兑' + m + '件')
+    }
+    nubChange(1, 1);//虚拟物品为参数是10，实物参数是20
+
+    $(document).ready(function () {
+        // 商品访问量。
+        $.get('#');
+    });
+
+</script>
+
+
+
+<script type="text/javascript">
+    $(function () {
+        $(".popclose,.popBtn").click(function () {
+            $(this).parents(".pop_inner").hide();
+            $(".pop").fadeOut();
+        })
+
+        function do_check() {
+            $(".pop").fadeIn();
+            $(".t_progess").show();
+            $.ajax({
+                type: "POST",
+                dataType: "json",
+                url: "/task/do_check",
+                data: {'taskid': taskid},
+                success: function (res) {
+                    //	$('.popclose').trigger("click");
+                    $('.t_progess').hide();
+
+                    if (res.code == '200') {
+                        setTimeout(function () {
+                            $(".pop").fadeIn();
+                            $(".success").show();
+                        }, 500)
+
+                        $("#buy").unbind('click');
+                        $('#buy').on('click', function () {
+                            doAlert('1786');
+                        });
+                    } else if (res.code == '201') {//验证失败
+                        setTimeout(function () {
+                            $(".pop").fadeIn();
+                            $(".failed").show();
+                        }, 1000)
+                    }
+                }
+            });
+        }
+
+        function do_task() {
+            $.ajax({
+                type: "POST",
+                dataType: "json",
+                url: "/task/do_task",
+                data: {'taskid': taskid},
+                success: function (res) {
+                    if (res.code == '200') {
+                        if (res.type == 1) {
+                            $('.two2v_main img').attr('src', res.image);
+                            setTimeout(function () {
+                                $(".pop").fadeIn();
+                                $(".twovwp").show();
+                            }, 500)
+                        } else if (res.type == 2 || res.type == 3) {
+                            window.open(res.url);//广告或激活码类
+                        }
+                        $("#docheck").unbind('click');
+                        //点击去做任务 激活 验证按钮
+                        $("#docheck").click(function () {  //验收任务按钮点击事件
+                            do_check();//检测任务 是否 完成
+                        })
+                    } else if (res.code == '201') {
+                        alert('系统错误~');
+                    }
+                }
+            });
+        }
+
+
+        //控制弹层进度条长度
+        var progressbgW = $(".progressbg").width();
+        var pbarNum = $("#proNum").html();
+        var pbarW = parseFloat(pbarNum) * progressbgW / 100;
+        $("#tProgress").width(pbarW)
+
+
+        // buy action
+        // 库存足够
+        $('#buy').on('click', function () {
+            doAlert('1786');
+        });
+
+
+    })
+</script>
+
+
+<!--费代码  测试用-->
+<style type="text/css">
+    .textbtn {
+        position: fixed;
+        bottom: 20px;
+        left: 50px;
+    }
+
+    .textbtn a {
+        display: block;
+        float: left;
+        line-height: 40px;
+        padding: 0 15px;
+        background: #FF4401;
+        color: #fff;
+        margin-right: 5px;
+    }
+</style>
+
+<script type="text/javascript">
+    $(function () {
+        $("#btn1").click(function () {
+            $(".pop").fadeIn();
+            $(".t_progess").show();
+        })
+        $("#btn2").click(function () {
+            $(".pop").fadeIn();
+            $(".success").show();
+        })
+        $("#btn3").click(function () {
+            $(".pop").fadeIn();
+            $(".failed").show();
+        })
+        $("#btn4").click(function () {
+            $(".pop").fadeIn();
+            $(".twovwp").show();
+        })
+    })
+</script>
+<!-- 通底 -->
+[#include "../footer/footer.html"/]
+<!-- 通底end -->
+
+<div id="fixedtop" class=""><a href="#"></a></div>
+
+<!-- SUDA_CODE_START -->
+<script type="text/javascript" charset="utf-8" src="./sina_good_files/suda4anywhere.js"></script>
+<!-- SUDA_CODE_END -->
+
+<!-- 统计代码 -->
+<script type="text/javascript">
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-45051727-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>

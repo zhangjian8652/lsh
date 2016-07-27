@@ -11,7 +11,7 @@
 
     <link type="text/css" href="${res!}/resources/sina/reset.css" rel="stylesheet">
     <script src="${res!}/resources/sina/hm.js"></script>
-    <script language="JavaScript"> var base_url = 'http://jifen.sina.com.cn/'; </script>
+    <script language="JavaScript"> var base_url = '${path!}'; </script>
     <script src="${res!}/resources/sina/jquery-1.7.2.min.js"></script>
     <script src="${res!}/resources/sina/jquery.inview.min.js"></script>
     <script src="${res!}/resources/sina/jquery.easing.1.3.js" type="text/javascript"></script>
@@ -488,7 +488,11 @@
 
     .outlogin_layerbox_bylx .login_error_tips {
         color: #DA0000;
-    }</style>
+    }
+    #header{
+        width: 1200px;
+    }
+    </style>
 </head>
 <body>
 <div id="top"></div>
@@ -509,7 +513,7 @@
             [#elseif info?? && info.node?? && info.node.name?? && nod.name?? && (info.node.name == nod.name)]
             <li class="active"><a href="#">${nod.name!}<i></i></a></li>
             [#else]
-            <li ><a href="${nod.uri!}">${nod.name!}<i></i></a></li>
+            <li ><a href="#">${nod.name!}<i></i></a></li>
             [/#if]
             [/#list]
             [/#if]
@@ -545,16 +549,16 @@
         <div class="ps_box">
             <div class="pics_switch">
                 <ul class="pb" style="margin-left: -2457px; width: 4095px;">
+                    [@ec_info queryType="list" nodeId="${node.id!}" groupName="轮播";list]
+                    [#if list?? && (list?size >0)]
+                    [#list list as info]
                     <li><a target="_blank" href="#"><img
-                            src="${res!}/resources/sina/186.jpg"></a></li>
-                    <li><a target="_blank" href="#"><img
-                            src="${res!}/resources/sina/18.png"></a></li>
-                    <li><a target="_blank" href="#"><img
-                            src="${res!}/resources/sina/359.jpg"></a></li>
-                    <li><a target="_blank" href="#"><img src="${res!}/resources/sina/552.jpg"></a>
-                    </li>
-                    <li><a target="_blank" href="#"><img
-                            src="${res!}/resources/sina/6.gif"></a></li>
+                            src="	${info.fields['image']!}"></a></li>
+
+                    [/#list]
+                    [/#if]
+                    [/@ec_info]
+
                 </ul>
                 <div class="viewArrows va_prev" style="opacity: 0.6;">
                 </div>
@@ -562,11 +566,20 @@
                 </div>
                 <div class="pics_switch_clients">
                     <ul style="width: 210px;">
-                        <span class="" style="opacity: 0.6;">1</span>
-                        <span class="" style="opacity: 0.6;">2</span>
-                        <span class="" style="opacity: 0.6;">3</span>
-                        <span class="hover" style="opacity: 1;">4</span>
-                        <span class="" style="opacity: 0.6;">5</span>
+                        [@ec_info queryType="list" nodeId="${node.id!}" groupName="轮播";list]
+                        [#if list?? && (list?size >0)]
+                        [#list list as info]
+                        [#if info_index == 0]
+                        <span class="hover" style="opacity: 1;">${info_index + 1}</span>
+                        [#else]
+                        <span class="" style="opacity: 0.6;">${info_index + 1}</span>
+                        [/#if]
+
+                        [/#list]
+                        [/#if]
+                        [/@ec_info]
+
+
                     </ul>
                 </div>
             </div>
@@ -574,7 +587,7 @@
         <!-- 幻灯片 end-->
         <!-- 签到 -->
         <div class="checkbox">
-            <img src="/uploadFiles/images/lsh/%E7%BB%BF%E8%8A%BD%E5%95%86%E5%9F%8E/advertise2.png"/>
+            <img src="${node.fields['advertise1']!}"/>
         </div>
    
     </div>
@@ -638,7 +651,7 @@
     </div>
     <div class="artical artical2 clear">
         <div class="section sectionleft"><!--积分夺宝-->
-            <h3 class="tit1"><a href="http://jifen.sina.com.cn/db" target="_blank"
+            <h3 class="tit1"><a href="#" target="_blank"
                                 class="more">更多&gt;&gt;</a><em></em><i></i>积分夺宝</h3>
             <div class="mainList clear">
                 <ul class="clear">
@@ -714,7 +727,7 @@
         </div><!--中奖名单 end-->
     </div>
     <div class="artical artical3">
-        <h3 class="tit1"><a href="http://jifen.sina.com.cn/task" target="_blank"
+        <h3 class="tit1"><a href="#" target="_blank"
                             class="more">更多&gt;&gt;</a><em></em><i></i>绿优好品</h3>
         <ul class="clear">
             [@ec_info queryType="list" nodeId="${node.id!}" groupName="lyhp";list]
@@ -725,7 +738,7 @@
                     <img src="${info.fields['lyhp_image']!0}" style="opacity: 1;">
                 </a>
 
-                <p><a href="http://jifen.sina.com.cn/task/2761" target="_blank"
+                <p><a href="#" target="_blank"
                       class="sec_name">${info.fields['lyhp_name']!}</a><b>${info.fields['lyhp_price']!0}</b></p>
             </li>
             [/#list]
@@ -886,25 +899,6 @@
     }
 </style>
 
-<div id="checkin_pop" class="checkin_pop">
-    <div class="checkin_left">
-        <p class="checkin_name">亲爱的<span class="userinfo_name">用户昵称</span>：</p>
-        <p class="checkin_sm">今日签到奖励<span>100</span>积分<br>您已经连续签到<span id="daily_count"></span>天<br>获得额外奖励<span
-                id="daily_extra_bonus"></span>积分</p>
-        <div class="checkin_color">
-            <div id="progress_bar" class="checkin_color_area"></div>
-            <p id="daily_level_1" class="jf200">连续签到3天<br>每天签到奖励<i>200</i>积分</p>
-            <p id="daily_level_2" class="jf300">连续签到5天<br>每天签到奖励<i>300</i>积分</p>
-        </div>
-
-    </div>
-    <div id="date_input" class="checkin_right" style="float:left;padding:33px 0 0 33px;">
-
-    </div>
-    <div class="clear"></div>
-    <a id="pop_close" href="javascript: void 0"></a>
-    <a class="checkin_btn" href="http://jifen.sina.com.cn/help/" target="_blank">查看签到规则</a>
-</div>
 
 <script type="text/javascript" src="${res!}/resources/sina/date_input.js"></script>
 <link href="${res!}/resources/sina/date_input.css" rel="stylesheet" type="text/css">
@@ -990,104 +984,12 @@
 [#include "footer/footer.html"/]
 <!-- 通底end -->
 
-<div id="fixedtop" class="off"><a href="http://jifen.sina.com.cn/#"></a></div>
+<div id="fixedtop" class="off"><a href="#"></a></div>
 
 <!-- SUDA_CODE_START -->
 <script type="text/javascript" charset="utf-8" src="${res!}/resources/sina/suda4anywhere.js"></script>
 <!-- SUDA_CODE_END -->
 
-<!-- 统计代码 -->
-<script type="text/javascript">
-    (function (i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function () {
-                    (i[r].q = i[r].q || []).push(arguments)
-                }, i[r].l = 1 * new Date();
-        a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-    ga('create', 'UA-45051727-1', 'auto');
-    ga('send', 'pageview');
-</script>
-
-
-<div node-type="box" class="outlogin_layerbox_bylx outlogin_layerbox_bylx_anrrow" style="display: none;">
-    <div class="hide">
-        <div node-type="qrcode_help" class="otwo_hlp" style="display:none;">
-            <div class="hlp_cnt">
-                <div class="otwo_hlp_tl">用此功能扫描二维码快速登录</div>
-                <div class="ot_wrap"><img src="${res!}/resources/sina/weibo_how_ot.png"></div>
-            </div>
-            <span class="ot_arrow"></span></div>
-        <p node-type="phone_tip" class="login_recom_tips" style="visibility:hidden;">绑定手机号也能登录了。<a
-                href="http://help.weibo.com/faq/q/1576/15471" target="_blank">详情</a></p>
-        <li class="ndrelativewrap" node-type="prelogin_area" style="display:none;"><span class="pre_name"
-                                                                                         node-type="prelogin_name">加载中...</span><a
-                href="javascript:;" class="chg_ac" node-type="prelogin_changeAccount">换个账号登录</a></li>
-        <li class="sub_wrap_r"><span class="qq_spanoption"><a class="qq_login_h" node-type="qq_login"
-                                                              href="https://passport.weibo.com/othersitebind/authorize?site=qq&amp;wl=1&amp;entry=igame&amp;callback=http%3A%2F%2Fjifen.sina.com.cn%2F"
-                                                              suda-uatrack="key=index_new_menu&amp;value=logon_qq"><span
-                class="qq_login_logo"></span><span class="qq_login">使用QQ登录</span></a></span></li>
-    </div>
-    <div class="cur_move" node-type="handle"><a id="popclosed" node-type="close" href="javascript:;"
-                                                onclick="return false;" class="layerbox_close"></a></div>
-    <div class="otwo_d_wrap" node-type="layerleft_qrcode">微博客户端扫描二维码登录<img node-type="qrcode_img"
-                                                                           src="${res!}/resources/sina/td.png"></div>
-    <div node-type="root" class="cright"><h2 node-type="titletips">帐号登录</h2>
-        <p node-type="tip" class="login_error_tips" style="visibility:hidden;"></p><label class="username"
-                                                                                          node-type="loginname_box"><input
-                node-type="loginname" name="loginname" class="styles" type="text" placeholder="EEPAU微博/EEPAU博客/EEPAU邮箱/手机号"
-                tabindex="1" maxlength="128" autocomplete="off" autocapitalize="off"><i></i></label><label
-                class="password" node-type="password_box"><input node-type="password" name="password" class="styles"
-                                                                 type="password" placeholder="请输入密码" tabindex="2"
-                                                                 maxlength="24"><i></i></label><label class="password"
-                                                                                                      node-type="door_box"
-                                                                                                      style="display:none;"><input
-                node-type="door" name="door" class="styles" type="text" tabindex="3" maxlength="6" autocomplete="off"
-                autocapitalize="off"><img node-type="door_img" class="yzm" alt="看不清？换一换"><a node-type="door_change"
-                                                                                            href="javascript:;"
-                                                                                            class="reload-code"
-                                                                                            title="看不清？换一换"></a><a
-                node-type="door_voice" href="javascript:;" class="disability_voice"
-                style="display:none;"></a></label><label class="password" node-type="vsn_box"
-                                                         style="display:none;"><input node-type="vsn" name="vsn"
-                                                                                      class="styles" type="text"
-                                                                                      tabindex="4" maxlength="6"
-                                                                                      placeholder="请输入微盾动态码"
-                                                                                      autocomplete="off"
-                                                                                      autocapitalize="off"></label>
-        <div class="other1"><a node-type="forgot_password"
-                               href="https://security.weibo.com/iforgot/loginname?entry=weibo" target="_blank"
-                               suda-uatrack="key=index_new_menu&amp;value=logon_forgot">忘记密码？</a><input type="checkbox"
-                                                                                                        class="c"
-                                                                                                        name="remember"
-                                                                                                        node-type="remember"
-                                                                                                        checked="checked"
-                                                                                                        autocomplete="off">
-            下次自动登录
-        </div>
-        <a href="javascript:;" tabindex="5" node-type="submit" class="loginbtn"
-           suda-uatrack="key=index_new_menu&amp;value=logon_login">登录</a>
-        <div class="other2"><a class="register" node-type="register_button" target="_blank"
-                               href="https://login.sina.com.cn/signup/signup.php?entry=igame"
-                               suda-uatrack="key=index_new_menu&amp;value=logon_register">免费注册</a><a class="weibologin"
-                                                                                                     href="http://weibo.com/">EEPAU微博登录</a>
-        </div>
-    </div>
-    <div class="otwo_d_wrap" node-type="layerleft_preloginThumb" style="display:none;">
-        <div class="otwo_tl"></div>
-        <div class="td_wrap"><span class="thumb"><img node-type="prelogin_img"
-                                                      src="${res!}/resources/sina/pre_loading.gif"></span></div>
-    </div>
-    <div node-type="qrcode_tip" class="swip_check" style="display:none;"><span class="swip_check_cls"
-                                                                               node-type="qrcode_tip_close"></span><span
-            class="swip_check_icon"></span>
-        <p class="swip_check_txt">扫描成功！<br>手机上点击确认以登录</p><span class="swip_check_btmarow"></span></div>
-    <div node-type="css_check" class="outlogin_checkload" style="display:none;"></div>
-</div>
 </body>
 </html>
