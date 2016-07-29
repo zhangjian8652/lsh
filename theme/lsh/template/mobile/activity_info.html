@@ -1,10 +1,31 @@
 
 <div class="container-fluid">
     <div class="row">
+        <div class="col-xs-12 menu margin-top-bottom-10">
+            <a href="/"><img src="${res!}/resources/images/mobile/mobile_head.png" width="100%"></a>
+        </div>
+    </div>
+    <div class="row">
 
         <div class="col-xs-12">
             <h1 style="text-align: center;"> ${info.fields["tittle"]!}</h1>
             ${info.fields["content"]!}
+        </div>
+    </div>
+
+    <div class="row" style="margin-top: 60px;">
+        <div class="col-xs-12">
+            <div class="row">
+                [@ec_node code="header";nod]
+                <div class="col-xs-6">
+                    <img src="${nod.fields['logo']!}" width="100%">
+                </div>
+                [/@ec_node]
+
+                [@ec_node code="footer";nod]
+                <div class="col-xs-6" style="font-size: 14px;text-align: center;">	&copy; 2016 EEPAU 版权所有</div>
+                [/@ec_node]
+            </div>
         </div>
     </div>
 </div>
