@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>登录</title>
+    [#include "meta.html"/]
+    [#include "css.html"/]
+    <style>
+        table td {
+            height: 45px;
+            font-size: 20px;
+            text-align: right;
+        }
+
+        input {
+            height: 30px;
+            font-size: 20px;
+        }
+
+        input[type='button'] {
+            display: block;
+            width: 120px;
+            height: 35px;
+            cursor: pointer;
+        }
+    </style>
+    [#include "js.html"/]
+</head>
+
+<body>
+[#include "header/header.html"/]
+
+<div style="width: 940px;    margin-top: 60px;margin-bottom: 60px;">
+    <form>
+        <div>
+            <table style="width: 350px;">
+                <tbody>
+                <tr>
+                    <td><label>用户名：</label></td>
+                    <td><input type="text" name="loginId" id="loginId"/></td>
+                </tr>
+                <tr>
+                    <td><label>密码：</label><br/></td>
+                    <td><input type="password" name="password" id="password"/></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="button" value="登录" id="login-btn"/></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </form>
+</div>
+
+[#include "footer/footer.html"/]
+<script type="text/javascript">
+    $(function () {
+
+        $("#login-btn").click(function () {
+            var loginId = $("#loginId").val();
+            var password = $("#password").val();
+            if (loginId == null || password == null) {
+                alert("用户名与密码不能为空");
+            } else {
+                var uri = "${path!}/frontend/authorization"
+                $.post(uri, {loginId: loginId, password: password}, function (result) {
+                    try {
+                        var jsonData = JSON.parse(result);
+                        if (jsonData.code == 1000) {
+                            location.href = "${path!}/";
+                        } else {
+                            alert("用户名或者密码不正确，请重新输入。");
+                        }
+                    } catch (e) {
+                        alert("用户名或者密码不正确，请重新输入。");
+                    }
+                });
+            }
+        });
+    })
+
+
+</script>
+
+</body>
+</html>

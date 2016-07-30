@@ -5,26 +5,36 @@
         <li><a class="size txt_l" href="javascript:void(0);" title="18px" id="profile-btn">${member.loginId!''}</a>
             <div id="profile" style="display: none;">
                 <div style="padding: 10px">
-                用户名:${member.loginId!''}<br/>
-                邮箱:${member.email!''}<br/>
+                    用户名:${member.loginId!''}<br/>
+                    邮箱:${member.email!''}<br/>
                 </div>
             </div>
             <script type="text/javascript">
                 $(function () {
-                   $("#profile-btn").click(function () {
-                       $("#profile").show()
-                   });
+                    $("#profile-btn").click(function () {
+                        $("#profile").show()
+                    });
                     $("#profile-btn").mouseleave(function () {
                         $("#profile").hide();
                     });
                 });
             </script>
         </li>
-        <li><a href="${path!}/frontend/logout" title="18px">登出</a></li>
+        <li><a href="${path!}/frontend/logout" title="登出">登出</a></li>
         [#else]
-        <li><a  href="${path!}/login.do" title="18px">登录</a></li>
+        <li>
+            <a href="javascript:void(0);" title="登录" id="login">登录</a>
+            <div id="login-dialog">
+                <form id="login-form">
+                    <input type="text" name="loginId" id="loginId" placeholder="用户名"/>
+                    <input type="password" name="password" id="password" placeholder="请输入密码"/>
+                    <a id="login-btn">登录</a>
+                </form>
+            </div>
+
+        </li>
         [/#if]
-        <li><a  href="${path!}/register.do" title="18px">注册</a></li>
+        <li><a href="${path!}/register.do" title="注册">注册</a></li>
         <li>您好，欢迎参与生态保护行动&nbsp;&nbsp;</li>
     </ul>
 
@@ -34,4 +44,51 @@
             onclick="if(document.getElementById('search').value!='输入关键字'){location.href='search.php?searchkey='+document.getElementById('search').value;}"
             href="#"><img src="${res!}/resources/images/search-btn.png"></a>
     </div>
+
+
+    <script type="text/javascript">
+        $(function () {
+
+            /*    var display = false;
+             $("#login").click(function(){
+             if(display){
+             $("#login-dialog").hide();
+             display = false;
+             }else {
+             $("#login-dialog").show();
+             display = true;
+             }
+
+             });*/
+
+            $("#login,#login-dialog").mouseover(function () {
+                $("#login-dialog").show();
+            });
+
+            $("#login-dialog").mouseout(function () {
+                $("#login-dialog").hide();
+            });
+            $("#login-btn").click(function () {
+                var loginId = $("#loginId").val();
+                var password = $("#password").val();
+                if (loginId == null || password == null) {
+                    alert("用户名与密码不能为空");
+                } else {
+                    var uri = "${path!}/frontend/authorization"
+                    $.post(uri, {loginId: loginId, password: password}, function (result) {
+                        try {
+                            var jsonData = JSON.parse(result);
+                            if (jsonData.code == 1000) {
+                                location.href = "${path!}/";
+                            } else {
+                                alert("用户名或者密码不正确，请重新输入。");
+                            }
+                        } catch (e) {
+                            alert("用户名或者密码不正确，请重新输入。");
+                        }
+                    });
+                }
+            });
+        })
+    </script>
 </div>

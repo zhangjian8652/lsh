@@ -1,105 +1,1184 @@
 <!DOCTYPE html>
-<html lang="zh">
+<!-- saved from url=(0086)http://reg.email.163.com/unireg/call.do?cmd=register.entrance&from=163navi&regPage=163 -->
+<html>
 <head>
-    <title>注册</title>
-    [#include "meta.html"/]
-    [#include "css.html"/]
-    <style>
-        table td {
-            height: 45px;
-            font-size: 20px;
-            text-align: right;
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>EEPAU 注册</title>
+
+
+    <style type="text/css">header, footer, section, aside, article, nav, hgroup, figure, figcaption, details, summary {
+        display: block;
+        margin: 0;
+        padding: 0;
+        border: none
+    }
+
+    time, mark, ruby, rt, rp, output, keygen, meter, progress, command, source {
+        text-decoration: none;
+        font-style: normal;
+        font-weight: normal
+    }</style>
+    <link href="${res!}/resources/163/style.css" rel="stylesheet" type="text/css">
+    <link href="${res!}/resources/css/style.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+        .content .reg-infoBox {
+            width: 480px
+        }
+
+        .mobConfirm {
+        }
+
+        .mobConfirm li {
+            padding: 8px 0 8px 80px;
             position: relative;
+            zoom: 1
         }
 
-        input {
-            height: 30px;
-            font-size: 20px;
+        .mobConfirm li .tit {
+            position: absolute;
+            left: 0;
+            top: 12px;
+            font-size: 14px
         }
 
-        input[type='button'] {
-            display: block;
-            width: 120px;
-            height: 35px;
+        .mobConfirm li .btn,
+        .mobConfirm li .btn-disable {
+            font-size: 12px;
+        }
+
+        .mobConfirm-mdf .ipt {
+            width: 222px
+        }
+
+        .mobConfirm-mdf .btn,
+        .mobConfirm-mdf .btn-disable {
+            width: 192px;
+            text-align: center
+        }
+
+        /* add css*/
+        .inputContainer {
+            position: relative;
+            margin-left: -35px;
+        }
+
+        .itlFlag em, .itlSelect em {
+            position: absolute;
+            top: 50%;
+            left: 5px;
+            margin-top: -5px;
+            display: inline-block;
+            *display: inline;
+            *zoom: 1;
+            width: 16px;
+            height: 11px;
+            overflow: hidden;
+            background: url(http://reg.163.com/images2/flags.gif) no-repeat 9999px 9999px;
+        }
+
+        .itl {
+            position: absolute;
+            top: 0px;
+            left: 35px;
+            zoom: 1;
             cursor: pointer;
         }
-        label.error{
-            display: inline;
-            color: red;
+
+        .itl:after {
+            display: block;
+            clear: both;
+            visibility: hidden;
+            height: 0;
+            overflow: hidden;
+            content: ".";
+        }
+
+        .itlFlag {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            float: left;
+            cursor: default;
+            background: url(http://reg.163.com/images2/triangle.gif) no-repeat 25px center;
+        }
+
+        .itlSelect {
             position: absolute;
-            width: 200px;
-            text-align: left;
-            left: 270px;
-            top: 10px;
+            top: 0;
+            left: 0;
+            overflow-y: scroll;
+            margin-left: 35px;
+            border: 1px solid #000;
+            background: #fff;
+            z-index: 9999;
+        }
+
+        .itlSelect a {
+            position: relative;
+            display: block;
+            height: 24px;
+            line-height: 24px;
+            padding-left: 26px;
+            overflow: hidden;
+        }
+
+        .itlSelect a:hover {
+            background: #CCC;
+        }
+
+        .itlSelect a em {
+            margin-right: 0.5em;
+        }
+
+        /* A */
+        .flag-AD em {
+            background-position: 0 -594px;
+        }
+
+        .flag-AE em {
+            background-position: 0 -2223px;
+        }
+
+        .flag-AF em {
+            background-position: 0 -2311px;
+        }
+
+        .flag-AG em {
+            background-position: 0 -869px;
+        }
+
+        .flag-AI em {
+            background-position: 0 -1980px;
+        }
+
+        .flag-AL em {
+            background-position: 0 -1034px;
+        }
+
+        .flag-AM em {
+            background-position: 0 -176px;
+        }
+
+        .flag-AN em {
+            background-position: 0 -220px;
+        }
+
+        .flag-AO em {
+            background-position: 0 -1947px;
+        }
+
+        .flag-AR em {
+            background-position: 0 -2377px;
+        }
+
+        /*.flag-asa { background-position:0 -1562px;}*//* 美属萨摩亚 */
+        .flag-AT em {
+            background-position: 0 -1331px;
+        }
+
+        .flag-AU em {
+            background-position: 0 -1716px;
+        }
+
+        .flag-AW em {
+            background-position: 0 -792px;
+        }
+
+        .flag-AZ em {
+            background-position: 0 -1243px;
+        }
+
+        /* B */
+        .flag-BA em {
+            background-position: 0 -1584px;
+        }
+
+        .flag-BB em {
+            background-position: 0 -1573px;
+        }
+
+        .flag-BD em {
+            background-position: 0 -1771px;
+        }
+
+        .flag-BE em {
+            background-position: 0 0px;
+        }
+
+        .flag-BF em {
+            background-position: 0 -726px;
+        }
+
+        .flag-BG em {
+            background-position: 0 -2586px;
+        }
+
+        .flag-BH em {
+            background-position: 0 -1496px;
+        }
+
+        .flag-BI em {
+            background-position: 0 -1892px;
+        }
+
+        .flag-BJ em {
+            background-position: 0 -1298px;
+        }
+
+        .flag-BM em {
+            background-position: 0 -1914px;
+        }
+
+        .flag-BN em {
+            background-position: 0 -1683px;
+        }
+
+        .flag-BO em {
+            background-position: 0 -1650px;
+        }
+
+        .flag-BR em {
+            background-position: 0 -770px;
+        }
+
+        .flag-BS em {
+            background-position: 0 -363px;
+        }
+
+        .flag-BT em {
+            background-position: 0 -1848px;
+        }
+
+        .flag-BW em {
+            background-position: 0 -2707px;
+        }
+
+        .flag-BY em {
+            background-position: 0 -1100px;
+        }
+
+        .flag-BZ em {
+            background-position: 0 -484px;
+        }
+
+        /* C */
+        .flag-CA em {
+            background-position: 0 -1375px;
+        }
+
+        .flag-CD em {
+            background-position: 0 -1518px;
+        }
+
+        .flag-CF em {
+            background-position: 0 -1837px;
+        }
+
+        .flag-CG em {
+            background-position: 0 -1793px;
+        }
+
+        .flag-CH em {
+            background-position: 0 -1320px;
+        }
+
+        .flag-CI em {
+            background-position: 0 -1661px;
+        }
+
+        .flag-CK em {
+            background-position: 0 -891px;
+        }
+
+        .flag-CL em {
+            background-position: 0 -1342px;
+        }
+
+        .flag-CM em {
+            background-position: 0 -2057px;
+        }
+
+        .flag-CN em {
+            background-position: 0 -825px;
+        }
+
+        .flag-CO em {
+            background-position: 0 -330px;
+        }
+
+        /*.flag-cot { background-position:0 -1661px;}*//* 科特迪瓦 */
+        .flag-CR em {
+            background-position: 0 -2090px;
+        }
+
+        .flag-CU em {
+            background-position: 0 -748px;
+        }
+
+        .flag-CV em {
+            background-position: 0 -2652px;
+        }
+
+        .flag-CY em {
+            background-position: 0 -561px;
+        }
+
+        .flag-CZ em {
+            background-position: 0 -2256px;
+        }
+
+        /* D */
+        .flag-DE em {
+            background-position: 0 -2509px;
+        }
+
+        .flag-DJ em {
+            background-position: 0 -2101px;
+        }
+
+        .flag-DK em {
+            background-position: 0 -1386px;
+        }
+
+        .flag-DM em {
+            background-position: 0 -2432px;
+        }
+
+        .flag-DO em {
+            background-position: 0 -1529px;
+        }
+
+        .flag-DZ em {
+            background-position: 0 -528px;
+        }
+
+        /* E */
+        .flag-EC em {
+            background-position: 0 -1188px;
+        }
+
+        .flag-EE em {
+            background-position: 0 -2410px;
+        }
+
+        .flag-EG em {
+            background-position: 0 -2201px;
+        }
+
+        .flag-ER em {
+            background-position: 0 -715px;
+        }
+
+        .flag-ES em {
+            background-position: 0 -1155px;
+        }
+
+        .flag-ET em {
+            background-position: 0 -2443px;
+        }
+
+        /* F */
+        .flag-FI em {
+            background-position: 0 -1903px;
+        }
+
+        .flag-FJ em {
+            background-position: 0 -1859px;
+        }
+
+        .flag-FO em {
+            background-position: 0 -1111px;
+        }
+
+        .flag-FR em {
+            background-position: 0 -1012px;
+        }
+
+        /* G */
+        .flag-GA em {
+            background-position: 0 -880px;
+        }
+
+        .flag-GB em {
+            background-position: 0 -55px;
+        }
+
+        .flag-GD em {
+            background-position: 0 -2399px;
+        }
+
+        .flag-GE em {
+            background-position: 0 -858px;
+        }
+
+        .flag-GF em {
+            background-position: 0 -2234px;
+        }
+
+        .flag-GH em {
+            background-position: 0 -2112px;
+        }
+
+        .flag-GI em {
+            background-position: 0 -275px;
+        }
+
+        .flag-GL em {
+            background-position: 0 -1760px;
+        }
+
+        .flag-GM em {
+            background-position: 0 -627px;
+        }
+
+        .flag-GN em {
+            background-position: 0 -2575px;
+        }
+
+        .flag-GP em {
+            background-position: 0 -407px;
+        }
+
+        .flag-GQ em {
+            background-position: 0 -1507px;
+        }
+
+        .flag-GR em {
+            background-position: 0 -165px;
+        }
+
+        .flag-GT em {
+            background-position: 0 -935px;
+        }
+
+        .flag-GU em {
+            background-position: 0 -2366px;
+        }
+
+        .flag-GW em {
+            background-position: 0 -1925px;
+        }
+
+        .flag-GY em {
+            background-position: 0 -803px;
+        }
+
+        /* H */
+        .flag-HK em {
+            background-position: 0 -2696px;
+        }
+
+        .flag-HN em {
+            background-position: 0 -2156px;
+        }
+
+        .flag-HR em {
+            background-position: 0 -902px;
+        }
+
+        .flag-HT em {
+            background-position: 0 -319px;
+        }
+
+        .flag-HU em {
+            background-position: 0 -682px;
+        }
+
+        /* I */
+        .flag-ID em {
+            background-position: 0 -1958px;
+        }
+
+        .flag-IE em {
+            background-position: 0 -1969px;
+        }
+
+        .flag-IL em {
+            background-position: 0 -341px;
+        }
+
+        .flag-IN em {
+            background-position: 0 -1694px;
+        }
+
+        .flag-IQ em {
+            background-position: 0 -649px;
+        }
+
+        .flag-IR em {
+            background-position: 0 -2013px;
+        }
+
+        .flag-IS em {
+            background-position: 0 -1991px;
+        }
+
+        .flag-IT em {
+            background-position: 0 -143px;
+        }
+
+        /* J */
+        .flag-JE em {
+            background-position: 0 -55px;
+        }
+
+        .flag-JM em {
+            background-position: 0 -1727px;
+        }
+
+        .flag-JO em {
+            background-position: 0 -1463px;
+        }
+
+        .flag-JP em {
+            background-position: 0 -429px;
+        }
+
+        /* K */
+        .flag-KE em {
+            background-position: 0 -2630px;
+        }
+
+        .flag-KG em {
+            background-position: 0 -1617px;
+        }
+
+        .flag-KH em {
+            background-position: 0 -242px;
+        }
+
+        .flag-KM em {
+            background-position: 0 -1430px;
+        }
+
+        .flag-KN em {
+            background-position: 0 -99px;
+        }
+
+        .flag-KP em {
+            background-position: 0 -1804px;
+        }
+
+        .flag-KR em {
+            background-position: 0 -2245px;
+        }
+
+        .flag-KW em {
+            background-position: 0 -2487px;
+        }
+
+        .flag-KY em {
+            background-position: 0 -308px;
+        }
+
+        .flag-KZ em {
+            background-position: 0 -1210px;
+        }
+
+        /* L */
+        .flag-LA em {
+            background-position: 0 -451px;
+        }
+
+        .flag-LB em {
+            background-position: 0 -1254px;
+        }
+
+        .flag-LC em {
+            background-position: 0 -1397px;
+        }
+
+        .flag-LI em {
+            background-position: 0 -979px;
+        }
+
+        .flag-LK em {
+            background-position: 0 -2641px;
+        }
+
+        .flag-LR em {
+            background-position: 0 -2068px;
+        }
+
+        .flag-LS em {
+            background-position: 0 -2190px;
+        }
+
+        .flag-LT em {
+            background-position: 0 -1122px;
+        }
+
+        .flag-LU em {
+            background-position: 0 -1474px;
+        }
+
+        .flag-LV em {
+            background-position: 0 -1936px;
+        }
+
+        .flag-LY em {
+            background-position: 0 -132px;
+        }
+
+        /* M */
+        .flag-MA em {
+            background-position: 0 -2333px;
+        }
+
+        /*.flag-mar { background-position:0 -1144px;}*//* 马绍尔群岛 */
+        .flag-MC em {
+            background-position: 0 -913px;
+        }
+
+        .flag-MD em {
+            background-position: 0 -2685px;
+        }
+
+        .flag-ME em {
+            background-position: 0 -2167px;
+        }
+
+        .flag-MG em {
+            background-position: 0 -1287px;
+        }
+
+        /*.flag-mic { background-position:0 -1738px;}*//* 密克罗尼西亚联邦 */
+        .flag-MK em {
+            background-position: 0 -1353px;
+        }
+
+        .flag-ML em {
+            background-position: 0 -2520px;
+        }
+
+        .flag-MN em {
+            background-position: 0 -2553px;
+        }
+
+        .flag-MO em {
+            background-position: 0 -2597px;
+        }
+
+        .flag-MQ em {
+            background-position: 0 -198px;
+        }
+
+        .flag-MR em {
+            background-position: 0 -253px;
+        }
+
+        .flag-MS em {
+            background-position: 0 -583px;
+        }
+
+        .flag-MT em {
+            background-position: 0 -1551px;
+        }
+
+        .flag-MU em {
+            background-position: 0 -2179px;
+        }
+
+        .flag-MV em {
+            background-position: 0 -616px;
+        }
+
+        .flag-MW em {
+            background-position: 0 -2145px;
+        }
+
+        .flag-MX em {
+            background-position: 0 -2024px;
+        }
+
+        .flag-MY em {
+            background-position: 0 -1870px;
+        }
+
+        /*.flag-mya { background-position:0 -11px;}*//* 缅甸 */
+        .flag-MZ em {
+            background-position: 0 -638px;
+        }
+
+        /* N */
+        .flag-NA em {
+            background-position: 0 -1881px;
+        }
+
+        /*.flag-nau { background-position:0 -1749px;}*//* 瑙鲁 */
+        .flag-NC em {
+            background-position: 0 -1276px;
+        }
+
+        .flag-NE em {
+            background-position: 0 -550px;
+        }
+
+        .flag-NG em {
+            background-position: 0 -2476px;
+        }
+
+        .flag-NI em {
+            background-position: 0 -154px;
+        }
+
+        .flag-NL em {
+            background-position: 0 -1441px;
+        }
+
+        .flag-NO em {
+            background-position: 0 -836px;
+        }
+
+        /*.flag-nor { background-position:0 -209px;}*//* 诺福克岛 */
+        /*.flag-norm { background-position:0 -704px;}*//* 北马里亚纳群岛 */
+        .flag-NP em {
+            background-position: 0 -110px;
+        }
+
+        .flag-NZ em {
+            background-position: 0 -1540px;
+        }
+
+        /* O */
+        .flag-OM em {
+            background-position: 0 -2454px;
+        }
+
+        /* P */
+        .flag-PA em {
+            background-position: 0 -847px;
+        }
+
+        /*.flag-pala { background-position:0 -231px;}*//* 帕劳 */
+        .flag-PE em {
+            background-position: 0 -946px;
+        }
+
+        .flag-PF em {
+            background-position: 0 -1705px;
+        }
+
+        .flag-PG em {
+            background-position: 0 -1485px;
+        }
+
+        .flag-PH em {
+            background-position: 0 -1815px;
+        }
+
+        /*.flag-phi { background-position:0 -1815px;}*/
+        .flag-PK em {
+            background-position: 0 -2035px;
+        }
+
+        .flag-PL em {
+            background-position: 0 -1177px;
+        }
+
+        .flag-PM em {
+            background-position: 0 -1078px;
+        }
+
+        /*.flag-pol { background-position:0 -1177px;}*/
+        .flag-PR em {
+            background-position: 0 -473px;
+        }
+
+        .flag-PS em {
+            background-position: 0 -1199px;
+        }
+
+        .flag-PT em {
+            background-position: 0 -517px;
+        }
+
+        .flag-PY em {
+            background-position: 0 -2344px;
+        }
+
+        /* Q */
+        .flag-QA em {
+            background-position: 0 -462px;
+        }
+
+        /* R */
+        .flag-RE em {
+            background-position: 0 -264px;
+        }
+
+        .flag-RO em {
+            background-position: 0 -671px;
+        }
+
+        .flag-RS em {
+            background-position: 0 -2465px;
+        }
+
+        .flag-RU em {
+            background-position: 0 -660px;
+        }
+
+        /*.flag-rus { background-position:0 -660px;}*/
+        .flag-RW em {
+            background-position: 0 -2674px;
+        }
+
+        /* S */
+        .flag-SA em {
+            background-position: 0 -33px;
+        }
+
+        .flag-SC em {
+            background-position: 0 -1045px;
+        }
+
+        .flag-SD em {
+            background-position: 0 -352px;
+        }
+
+        .flag-SE em {
+            background-position: 0 -385px;
+        }
+
+        .flag-SG em {
+            background-position: 0 -22px;
+        }
+
+        .flag-SI em {
+            background-position: 0 -1221px;
+        }
+
+        .flag-SK em {
+            background-position: 0 -2212px;
+        }
+
+        .flag-SL em {
+            background-position: 0 -737px;
+        }
+
+        .flag-SM em {
+            background-position: 0 -2123px;
+        }
+
+        .flag-SN em {
+            background-position: 0 -2134px;
+        }
+
+        .flag-SO em {
+            background-position: 0 -1364px;
+        }
+
+        .flag-SR em {
+            background-position: 0 -2663px;
+        }
+
+        .flag-SS em {
+            background-position: 0 -2718px;
+        }
+
+        .flag-ST em {
+            background-position: 0 -2388px;
+        }
+
+        .flag-SV em {
+            background-position: 0 -1639px;
+        }
+
+        .flag-SY em {
+            background-position: 0 -1826px;
+        }
+
+        .flag-SZ em {
+            background-position: 0 -2278px;
+        }
+
+        /* T */
+        .flag-TC em {
+            background-position: 0 -1309px;
+        }
+
+        .flag-TD em {
+            background-position: 0 -814px;
+        }
+
+        .flag-TG em {
+            background-position: 0 -605px;
+        }
+
+        .flag-TH em {
+            background-position: 0 -957px;
+        }
+
+        .flag-TJ em {
+            background-position: 0 -187px;
+        }
+
+        .flag-TL em {
+            background-position: 0 -418px
+        }
+
+        .flag-TM em {
+            background-position: 0 -2542px;
+        }
+
+        .flag-TN em {
+            background-position: 0 -539px;
+        }
+
+        .flag-TO em {
+            background-position: 0 -1089px;
+        }
+
+        .flag-TR em {
+            background-position: 0 -1606px;
+        }
+
+        .flag-TT em {
+            background-position: 0 -440px;
+        }
+
+        /*.flag-tuv { background-position:0 -286px;}*//* 图瓦卢 */
+        .flag-TW em {
+            background-position: 0 -506px;
+        }
+
+        .flag-TZ em {
+            background-position: 0 -2289px;
+        }
+
+        /* U */
+        .flag-UA em {
+            background-position: 0 -2002px;
+        }
+
+        .flag-UG em {
+            background-position: 0 -1166px;
+        }
+
+        .flag-US em {
+            background-position: 0 -44px;
+        }
+
+        .flag-UY em {
+            background-position: 0 -2608px;
+        }
+
+        .flag-UZ em {
+            background-position: 0 -1001px;
+        }
+
+        /* V */
+        .flag-VC em {
+            background-position: 0 -2619px;
+        }
+
+        .flag-VE em {
+            background-position: 0 -1056px;
+        }
+
+        .flag-VG em {
+            background-position: 0 -1408px;
+        }
+
+        /*.flag-viu { background-position:0 -1782px;}*//* 美属维京群岛 */
+        .flag-VN em {
+            background-position: 0 -968px;
+        }
+
+        .flag-VU em {
+            background-position: 0 -1265px;
+        }
+
+        /* W */
+        .flag-WS em {
+            background-position: 0 -2300px;
+        }
+
+        /* Y */
+        .flag-YE em {
+            background-position: 0 -1672px;
+        }
+
+        /* Z */
+        .flag-ZA em {
+            background-position: 0 -2355px;
+        }
+
+        .flag-ZM em {
+            background-position: 0 -1595px;
+        }
+
+        .flag-ZW em {
+            background-position: 0 -2046px;
         }
     </style>
-    [#include "js.html"/]
+    <script type="text/javascript" src="${res!}/resources/plugins/jquery/jquery-2.1.4.min.js"></script>
+    <script src="${res!}/resources/plugins/jquery-validation/jquery.validate.min.js"></script>
+    <script src="${res!}/resources/plugins/jquery-validation/additional-methods.min.js"></script>
+    <script type="text/javascript" src="${res!}/resources/163/main.js"></script>
 </head>
-
 <body>
-[#include "header/header.html"/]
 
-<div style="width: 940px;    margin-top: 60px;margin-bottom: 60px;">
-    <form id="gy-register-form">
-        <div>
-            <table style="width: 360px;">
-                <tbody>
-                <tr>
-                    <td><label>*用户名：</label></td>
-                    <td><input type="text" name="loginId" id="loginId"/></td>
-                </tr>
-                <tr>
-                    <td><label>*手机号：</label></td>
-                    <td><input type="text" name="phoneNumber" id="phoneNumber"/></td>
-                </tr>
+<header>
+    [#include "header/header.html"/]
+</header>
 
-                <tr>
-                    <td><label>*邮箱：</label></td>
-                    <td><input type="text" name="email" id="email"/></td>
-                </tr>
-                <tr>
-                    <td><label>*密码：</label><br/></td>
-                    <td><input type="password" name="password" id="password"/></td>
-                </tr>
+<section class="content" id="mainSection">
 
-                <tr>
-                    <td><label>*密码确认：</label><br/></td>
-                    <td><input type="password" name="confirmPassword" id="confirmPassword"/></td>
-                </tr>
-                <tr>
-                    <td><label><img src="${path!}/management/verifycode.backend?9" class="code"/></label><br/></td>
-                    <td><input type="text" name="code" id="code"/></td>
-                </tr>
-                <tr>
-                    <td colspan="2"><input type="checkbox" name="terms" style="    height: 16px;"/> <span style="color: gray;">我已经阅读</span><a href="#">《EEPAU服务协议》</a></td>
-                </tr>
-                <tr>
-                    <td colspan="2"><input type="button" value="登录" id="login-btn" name="loginBtn"/></td>
-                </tr>
-                </tbody>
-            </table>
+
+    <header class="content-tit"><h1>欢迎注册EEPAU账户。</h1></header>
+    <script>function SGW(n){if(''==n.value){n.style.color="#999";n.style["font-weight"]="normal";n.value=GW;}}
+    function HGW(n){if(GW==n.value){n.style.color="";n.style["font-weight"]="bold";n.value="";}}</script>
+    <style>
+        .regForm-item-tit{width:90px}
+        .regForm-item-ct{padding-left:110px}
+        .vCodeArea-big .switchvCode{left:325px}
+    </style>
+    <div id="mMaskD" class="mainBody-wp">
+        <div class="m-mask" style="display:none;"></div>
+        <div class="mainBody">
+            <div id="overdueTips" class="tips-big" style="display:none;">
+                <b class="ico ico-warn-big"></b>
+              <a href="javascript:void(0);" onclick="window.location.reload();return false;"></a>。
+            </div>
+            <noscript>
+
+            </noscript>
+
+            <form id="gy-register">
+            <div id="regMobile" class="regForm">
+                <dl id="loginId" class="regForm-item">
+                    <dt class="regForm-item-tit"><span class="txt-impt">*</span>用户名</dt>
+                    <dd class="regForm-item-ct">
+                        <div class="mob-supt">
+                            <input id="loginIdIpt" name="loginId" type="text" class="ipt" style="ime-mode:disabled" autocomplete="off">
+                            <strong class="txt-14"></strong>
+                        </div>
+                        <div id="loginIdTips" class="tips">
+                            <span class="txt-tips">请填写用户名(6~16个字符)</span>
+                        </div>
+                    </dd>
+                </dl>
+                <dl id="mobileDl" class="regForm-item">
+                    <dt class="regForm-item-tit"><span class="txt-impt">*</span>手机号码</dt>
+                    <dd class="regForm-item-ct">
+                        <div class="mob-supt">
+                            <input id="mobileIpt" name="mobile" type="text" class="ipt" style="ime-mode:disabled" autocomplete="off">
+                            <strong class="txt-14"></strong>
+                            <b class="ico ico-mob"></b>
+                        </div>
+                        <div id="mobileTips" class="tips">
+                            <span class="txt-tips">请填写手机号码(11个数字)</span>
+
+                        </div>
+                    </dd>
+                </dl>
+                <dl id="emailDl" class="regForm-item" style="display: none;">
+                    <dt class="regForm-item-tit"><span class="txt-impt">*</span>邮箱</dt>
+                    <dd class="regForm-item-ct">
+                        <div class="mob-supt">
+                            <input id="email" name="email" type="text" class="ipt" value="default@gy.com" style="ime-mode:disabled" autocomplete="off">
+                            <strong class="txt-14"></strong>
+                        </div>
+                        <div id="emailTips" class="tips">
+                            <span class="txt-tips">请填写邮箱地址</span>
+                        </div>
+                    </dd>
+                </dl>
+                <dl id="mVcodeDl" class="regForm-item vCodeArea vCodeArea-big">
+                    <dt class="regForm-item-tit"><span class="txt-impt">*</span>图片验证码</dt>
+                    <dd class="regForm-item-ct">
+                        <input id="mVcodeIpt" name="code" type="text" class="ipt" autocomplete="off" style="width: 196px;">
+                        <img id="mVcodeImg" class="vCode" style="cursor:pointer;" src="${path!}/management/verifycode.backend?9" alt="验证码" width="120" height="50"><a id="mVcodeA" href="javascript:void(0);" class="switchvCode" tabindex="-1">看不清楚？换张图片</a>
+                        <div id="mVcodeTips" class="tips">
+                            <span class="txt-tips" id="mVRemind">请填写图片中的字符，不区分大小写</span>
+                        </div>
+                    </dd>
+                </dl>
+                <dl id="pwdDl" class="regForm-item">
+                    <dt class="regForm-item-tit"><span class="txt-impt">*</span>密码</dt>
+                    <dd class="regForm-item-ct">
+                        <input id="password" name="password" type="password" class="ipt norWidthIpt" style="ime-mode:disabled">
+                        <div id="pwdTips" class="tips" style="position:relative">
+                            <div id="mobilePwdStatus" class="pswState pswState-poor" style="display:none;">
+                                <span class="s1">弱</span>
+                                <span class="s2">中等</span>
+                                <span class="s3">强</span>
+                            </div>
+                            <span class="txt-tips">6~16个字符，区分大小写</span>
+                        </div>
+                    </dd>
+                </dl>
+                <dl id="cfmPwdDl" class="regForm-item">
+                    <dt class="regForm-item-tit"><span class="txt-impt">*</span>确认密码</dt>
+                    <dd class="regForm-item-ct">
+                        <input id="cfmPwdIpt" name="cfmPwdIpt" type="password" class="ipt norWidthIpt" style="ime-mode:disabled">
+                        <div id="cfmPwdTips" class="tips">
+                            <span class="txt-tips">请再次填写密码</span>
+                        </div>
+                    </dd>
+                </dl>
+                <dl id="acceptDl" class="regForm-item">
+                    <dd class="regForm-item-ct txt-tips">
+                        <label></label><input id="mobileAcceptIpt" type="checkbox" checked="checked" tabindex="-1" name="accept"> 同意<a href="/serviceitem" target="_blank" tabindex="-1">"服务条款"</a>
+                        <div id="acceptTips"></div>
+                    </dd>
+                </dl>
+                <dl class="regForm-item">
+                    <dd class="regForm-item-ct">
+                        <a id="mobileRegA" href="javascript:void(0);" class="btnReg">立即注册</a>
+                    </dd>
+                </dl>
+            </div>
+                <input name="firstname" value="null" type="hidden"/>
+                <input name="lastname" value="null" type="hidden"/>
+            </form>
         </div>
-        <input type="hidden" name="firstname" value="null"/>
-        <input type="hidden" name="lastname" value="null"/>
-    </form>
-</div>
-[#include "footer/footer.html"/]
-<script src="${res!}/resources/plugins/jquery-validation/jquery.validate.min.js"></script>
-<script src="${res!}/resources/plugins/jquery-validation/additional-methods.min.js"></script>
-<script type="text/javascript">
-    $(function () {
+        [@ec_node code="register";nod]
+        <aside class="mainBody-side">
+            <div class="regExt" id="adds">
+                <img src="${nod.fields['advertise']!}" alt="${nod.fields['advertise_name']!}">
+                <!-- <div class="intro">
+                    <p>手机编辑短信 <strong>A</strong>，</p>
+                    <p>发送到 <strong>10698 1630 163</strong></p>
+                </div>
+                <div class="tips">
+                    温馨提示：仅限中国大陆手机用户使用<br>运营商收取0.1元/条的费用
+                </div> -->
 
-        $("#gy-register-form").validate({
+            </div>
+        </aside>
+        [/@ec_node]
+        <div class="clear"></div>
+    </div>
+</section>
+[#include "footer/footer.html"/]
+
+<script>
+    $(function(){
+        $("#mVcodeImg,#mVcodeA").click(function(){
+            $("#mVcodeImg").attr("src","${path!}/management/verifycode.backend?a=" + new Date());
+        });
+
+
+
+        $("#gy-register").validate({
             debug: true, //调试模式取消submit的默认提交功能
             //errorClass: "label.error", //默认为错误的样式类为：error
             focusInvalid: false, //当为false时，验证无效时，没有焦点响应
             onkeyup: true,
+            errorPlacement:function(error, element){
+
+            },
             rules:{
                 loginId:{
                     required:true,
-                    rangelength:[1,20]
+                    rangelength:[6,16]
                 },
-                phoneNumber:{
+                mobile:{
                     required:true,
                     mobileCN:true
                 },
@@ -109,9 +1188,9 @@
                 },
                 password:{
                     required:true,
-                    rangelength:[1,20]
+                    rangelength:[6,16]
                 },
-                confirmPassword:{
+                cfmPwdIpt:{
                     required:true,
                     equalTo:"#password"
                 },
@@ -123,7 +1202,7 @@
                         dataType: "json",           //接受数据格式
                         data: {                     //要传递的数据
                             verifyCode: function () {
-                                return $("#code").val();
+                                return $("#mVcodeIpt").val();
                             }
                         }
                     }
@@ -134,7 +1213,7 @@
                     required:"用户名必须填写。",
                     rangelength:"用户名长度必须为{0}到{1}。"
                 },
-                phoneNumber:{
+                mobile:{
                     required:"手机号必须填写。",
                     mobileCN:"手机号格式不正确。"
                 },
@@ -146,7 +1225,7 @@
                     required:"密码必须填写。",
                     rangelength:"密码长度必须为{0}到{1}。"
                 },
-                confirmPassword:{
+                cfmPwdIpt:{
                     required:"确认密码必须填写。",
                     equalTo:"与密码不一致。"
                 },
@@ -175,19 +1254,11 @@
             }
         });
 
-
-        $(".code").click(function(){
-            $(this).attr("src","${path!}/management/verifycode.backend?a=" + new Date());
+        $("#mobileRegA").click(function(){
+            $("#gy-register").submit();
         });
 
-
-        $("#login-btn").click(function(){
-            $("#gy-register-form").submit();
-        })
     })
-
-
 </script>
-
 </body>
 </html>

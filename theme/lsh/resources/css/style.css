@@ -46,7 +46,7 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 
 #header .nav{ float:left;}
 #header .nav ul {z-index: 350; position: relative; width:940px;}
-#header .nav ul li{ float:left; font-size:100%; text-align:center; position: relative;margin-right:2px;}
+#header .nav ul li{ float:left; font-size:16px; text-align:center; position: relative;margin-right:2px;}
 #header .nav ul li a{ color:#FFF;background: #45895b; display:inline-block; height: 36px; width: 133px;font-weight:bold; text-decoration:none; line-height:38px; overflow:hidden;}
 #header .nav ul li a:hover{color:#FFF;background:#abc468;}
 #header .nav ul li a.current{color:#FFF;background:#abc468;}
@@ -1550,4 +1550,54 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 	display: inline-block;
 	width: 0; height: 100%;
 	vertical-align: middle;
+}
+#login-dialog{
+	display: none;
+	height: 105px;
+	width: 205px;
+	background: #fff;
+	border: 1px solid #cdcdcd;
+	-webkit-box-shadow: 0 0 8px #cdcdcd;
+	-moz-box-shadow: 0 0 8px #cdcdcd;
+	box-shadow: 0 0 8px #cdcdcd;
+	position: absolute;
+	z-index: 10000;
+	top: 84px;
+	left: 800px;
+	padding: 12px 0 20px;
+}
+#login-dialog input{
+	width: 154px;
+	height: 28px;
+	line-height: 28px;
+	font-size: 16px;
+	font-weight: 400;
+	font-family: "\u5b8b\u4f53";
+	display: block;
+	margin-bottom: 10px;
+	padding-left: 8px;
+	color: #333;
+}
+#header .navigation ul li #login-btn{
+	margin: auto;
+	color: white;
+	display: block;
+	width: 154px;
+	height: 30px;
+	text-align: center;
+	text-decoration: none;
+	font-weight: 700;
+	cursor: pointer;
+	border-image-source: initial;
+	border-image-slice: initial;
+	border-image-width: initial;
+	border-image-outset: initial;
+	border-image-repeat: initial;
+	color: rgb(255, 255, 255);
+	background-color: rgb(94, 186, 109);
+	background-image: -webkit-linear-gradient(top, rgb(94, 186, 109), rgb(60, 160, 81));
+	line-height: 30px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: rgb(35, 148, 56);
 }
