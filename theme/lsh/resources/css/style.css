@@ -894,6 +894,10 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 #news-info div{
 	margin-bottom: 8px;
 	font-size: 14px;
+	width: 100%;
+}
+#news-info .detail{
+	height: 60px;
 }
 
 #news-info span{
