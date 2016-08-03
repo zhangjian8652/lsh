@@ -13,6 +13,12 @@
     [#include "js.html"/]
     [/#if]
 
+    <style>
+        #recent a{
+            text-decoration: none;
+            color: black;
+        }
+    </style>
 </head>
 
 <body>
@@ -75,7 +81,7 @@
                 [#if list?? && (list?size >0)]
                 [#list list as info]
                 <tr>
-                    <td>${info.name!}</td>
+                    <td><a href="${info.uri!}">${info.name!}</a></td>
                     <td>${info.updateDate?string("yyyy-MM-dd")}</td>
                 </tr>
                 [/#list]
