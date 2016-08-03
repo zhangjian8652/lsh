@@ -7,17 +7,12 @@
     [#include "../js.html"/]
 
     <style>
-        .right-advertise>img{
-            margin-top: 30px;
-        }
 
-        h1{
+        h1 {
             line-height: 2em;
         }
-        #others{
-            position: fixed;
-        }
-        #others .head{
+
+        #others .head {
             margin-top: 0px;
             margin-bottom: 0px;
             background: url('${res!}/resources/images/revent_news.png') no-repeat;
@@ -31,17 +26,24 @@
             left: 0px;
             top: 7px;
         }
-        #others img{
+
+        #others img {
             margin-left: 2px;
         }
-        #others td{
+
+        #others td {
             height: 40px;
             border: none;
             border-bottom: 1px dashed gray;
             padding-left: 10px;
         }
-        #others tr>td:nth-child(1){
+
+        #others tr > td:nth-child(1) {
             width: 215px;
+        }
+
+        #others .recent-news{
+            margin-left: 2px;
         }
     </style>
 </head>
@@ -58,28 +60,36 @@
             </div>
         </div>
         <div style="width: 40%;float: left;" class="right-advertise">
-            <div id="others">
-            <div class="head">其他新闻</div>
-            <img src="${res!}/resources/images/news_head_top.png">
-            [@ec_node code="news";nod]
-            [@ec_info_page nodeId="${nod.id!}" groupName="其他新闻" pageNum="1" pagesize = "6";page]
-            <table class="recent-news" >
-                <tbody>
-                [#assign list = page.datas/]
-                [#if list?? && (list?size >0)]
-                [#list list as info]
-                <tr>
-                    <td><a href="${info.uri!}">${info.name!}</a></td>
-                    <td>${info.updateDate?string("yyyy-MM-dd")}</td>
-                </tr>
-                [/#list]
-                [/#if]
 
-                </tbody>
-            </table>
-            [/@ec_info_page]
-            [/@ec_node]
-            <img src="${res!}/resources/images/news_head_footer.png">
+            <div style="position: fixed;width: 376px;margin-left: 25px;">
+                [@ec_node code="news";nod]
+                <div>
+                    <img src="${nod.fields['advertise_1']!}" style="margin-bottom: 60px;"/>
+                    <img src="${nod.fields['advertise_2']!}" style="margin-bottom: 60px;"/>
+                </div>
+                <div id="others">
+                    <div class="head">其他新闻</div>
+                    <img src="${res!}/resources/images/news_head_top.png">
+
+                    [@ec_info_page nodeId="${nod.id!}" groupName="其他新闻" pageNum="1" pagesize = "6";page]
+                    <table class="recent-news">
+                        <tbody>
+                        [#assign list = page.datas/]
+                        [#if list?? && (list?size >0)]
+                        [#list list as info]
+                        <tr>
+                            <td><a href="${info.uri!}">${info.name!}</a></td>
+                            <td>${info.updateDate?string("yyyy-MM-dd")}</td>
+                        </tr>
+                        [/#list]
+                        [/#if]
+
+                        </tbody>
+                    </table>
+                    [/@ec_info_page]
+                    [/@ec_node]
+                    <img src="${res!}/resources/images/news_head_footer.png">
+                </div>
             </div>
         </div>
     </div>
