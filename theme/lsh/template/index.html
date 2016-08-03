@@ -34,22 +34,25 @@
         </div>
         <div class="content">
             <ul class="content-ul">
-                [@ec_info queryType="list" nodeId="${nod.id!}" groupName="default";list]
+                [@ec_info_page  nodeId="${nod.id!}" groupName="" pageNum="1" pagesize ="6";page]
+                [#assign list = page.datas/]
                 [#if list?? && (list?size >0)]
                 [#list list as info]
                 <li>
                     <div style="padding: 15px;">
                         <h3>${info.fields['tittle']}</h3>
-                        <img src="${info.fields['image']!}">
+                        <img src="${info.fields['image']!}" width="256" height="155">
                         <div>
-                            ${info.fields['describe']}
+                            <span>
+                            ${info.fields['describe']!}
+                            </span>
                             <a href="${info.uri!}">[阅读更多]</a>
                         </div>
                     </div>
                 </li>
                 [/#list]
                 [/#if]
-                [/@ec_info]
+                [/@ec_info_page]
 
             </ul>
         </div>
@@ -60,12 +63,12 @@
     </div>
     <div class="news-right">
         <div class="head">
-            <div class="head1" table-id="recent"><a>活动回顾</a></div>
-            <div class="head2" table-id="review"><a>最新动态</a></div>
+            <div class="head1" table-id="review"><a>活动回顾</a></div>
+            <div class="head2" table-id="recent"><a>最新动态</a></div>
         </div>
         <div class="content">
-            [@ec_node code="work";nod]
-            [@ec_info_page nodeId="${nod.id!}" groupName="activity_info" pageNum="1" pagesize = "6";page]
+            [@ec_node code="news";nod]
+            [@ec_info_page nodeId="${nod.id!}" groupName="最新动态" pageNum="1" pagesize = "6";page]
             <table class="recent-news" id="recent">
                 <tbody>
                 [#assign list = page.datas/]
@@ -82,6 +85,7 @@
             </table>
             [/@ec_info_page]
             [/@ec_node]
+
             [@ec_node code="move_angel";nod]
             [@ec_info_page nodeId="${nod.id!}" groupName="default" pageNum="1" pagesize = "6";page]
             <table class="activity-review" style="display:none;" id="review">
@@ -108,7 +112,7 @@
 
 <div id="medias">
     <div class="left">
-        <a href="#"><img width="250px" src="${node.fields['medias_image']!}"></a>
+        <a href="#"><img width="255px" src="${node.fields['medias_image']!}"></a>
     </div>
     <div class="right">
         <div class="medias_nav">
@@ -123,8 +127,8 @@
                 <div class="mediaphoto-list shipin">
                     <ul>
                         <li>
-                            <div style=" width:640px; height:360px; margin-left: 0px;margin-top: -15px;">
-                                <video controls width="605px" height="350px">
+                            <div style="width:670px;height: 361px;margin-left: 0px;margin-top: -15px;">
+                                <video controls width=670px" height="365px">
                                     <source src="${node.fields['video']!}" type="video/mp4">
                                 </video>
                             </div>

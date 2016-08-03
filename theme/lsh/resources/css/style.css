@@ -100,8 +100,8 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 
 
 #medias{ width:940px;height: 400px;padding-top:0px;position:relative;margin:0px auto; overflow:hidden;}
-#medias .left{ float:left; width:250px; vertical-align:top;}
-#medias .right{ width:600px; overflow:hidden;padding-top: 6px;}
+#medias .left{ float:left; width:280px; vertical-align:top;}
+#medias .right{ width:660px; overflow:hidden;margin: 0px;}
 #medias .right .media_nav{}
 #medias .right .media_nav ul{}
 #medias .right .media_nav ul li{background: url("../images/medias_video.png") 0px no-repeat;color: white;}
@@ -118,10 +118,10 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 	top:0;overflow:hidden; z-index:1;}
 .mediaphoto .prev { left:0px; background:url(../images/left_t.png) no-repeat center #FFF; cursor:pointer;}
 .mediaphoto .next { right:0px;background:url(../images/right_t.png) no-repeat center #FFF; cursor:pointer;}
-.mediaphoto-list { position:relative; width:670px;overflow:hidden;}
+.mediaphoto-list { position:relative; width:670px;overflow:hidden;margin: 0px;}
 .mediaphoto-list ul { width:9999px;}
 .mediaphoto-list li { float:left; width:670px;cursor: pointer}
-.mediaphoto-list li img{ width:620px; height: 331px;}
+.mediaphoto-list li img{     width: 660px;height: 345px;}
 
 .mediaphoto-list li .phototitle{
 	float: left;
@@ -458,6 +458,7 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 #news h3{
 	margin-bottom: 30px;
 	font-size: 16px;
+	height: 20px;
 }
 
 #news .news-left,#news .news-right{
@@ -476,6 +477,7 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 }
 #news .news-right table{
 	width: 336px;
+	height:290px;
 }
 #news .news-right td{
 	height: 40px;
@@ -534,7 +536,6 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 .medias_nav{
 	position: relative;
 	z-index: 100;
-	padding-left: 15px;
 	height: 29px;
 }
 .medias_nav ul>li{

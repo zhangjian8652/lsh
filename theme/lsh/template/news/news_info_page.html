@@ -1,12 +1,12 @@
 [@ec_node code="news";nod]
-[@ec_info_page  nodeId="${nod.id!}" groupName="content" pageNum="${RequestParameters['pageNum']!1}" pagesize = "${RequestParameters['pageSize']!3}";page]
+[@ec_info_page  nodeId="${nod.id!}" groupName="" pageNum="${RequestParameters['pageNum']!1}" pagesize = "${RequestParameters['pageSize']!3}";page]
 
 <ul id="news-info-ul">
     [#assign list = page.datas/]
     [#if list?? && (list?size >0)]
     [#list list as info]
     <li uri="${domain!}${info.uri!}">
-        <div class="avator"><img src="${info.fields['image']!}"/></div>
+        <div class="avator"><img src="${info.fields['image']!}" width="200" height="120"/></div>
         <div class="content">
             <p class="tittle">${info.fields['tittle']!}</p>
             <div class="detail">${info.fields['describe']!}</div>
