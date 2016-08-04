@@ -118,7 +118,7 @@
 
 <div id="medias">
     <div class="left">
-        <a href="#"><img width="255px" src="${node.fields['medias_image']!}"></a>
+        <img width="255px" src="${node.fields['medias_image']!}">
     </div>
     <div class="right">
         <div class="medias_nav">
@@ -134,7 +134,7 @@
                     <ul>
                         <li>
                             <div style="width:670px;height: 361px;margin-left: 0px;margin-top: -15px;">
-                                <video controls width=670px" height="366px">
+                                <video controls width=664px" height="361px">
                                     <source src="${node.fields['video']!}" type="video/mp4">
                                 </video>
                             </div>
@@ -151,7 +151,7 @@
                     <ul>
 
                         <li>
-                            <div style=" width:620px; height:361px; margin-left: 0px"><img height="391"
+                            <div style=" width:620px; height:361px; margin-left: 0px"><img
                                                                                            src="${node.fields['image']!}">
                             </div>
                             <div class="photo-tittle"><span>${node.fields['image_describe']!}</span>
@@ -216,7 +216,7 @@
         <div class="area-1">
             <div class="area-2"><span>${nod.name!}</span></div>
         </div>
-        <div class="moore-goods">更多商品</div>
+       <!-- <div class="moore-goods">更多商品</div>-->
     </div>
     <div class="lyhp-content" style="margin: 0px;width:940px">
         <div class="content">
@@ -323,6 +323,13 @@
                 $(".lyhp-content ul li").click(function () {
                     location.href = $(this).attr("uri");
                 });
+
+                var userAgent = navigator.userAgent;
+
+                if(userAgent.indexOf("Chrome") > 0){
+                    $("#video video").height("366px").width("660px");
+                }
+
             }
     );
 </script>

@@ -121,7 +121,7 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 .mediaphoto-list { position:relative; width:670px;overflow:hidden;margin: 0px;}
 .mediaphoto-list ul { width:9999px;}
 .mediaphoto-list li { float:left; width:670px;cursor: pointer}
-.mediaphoto-list li img{     width: 660px;height: 345px;}
+.mediaphoto-list li img{     width: 660px;height: 346px;}
 
 .mediaphoto-list li .phototitle{
 	float: left;
