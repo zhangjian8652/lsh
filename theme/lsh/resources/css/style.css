@@ -1103,7 +1103,10 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 	margin-top: 30px;
 }
 .angel-info>div:nth-child(1){
-	width: 490px;padding-left: 125px;
+	width: 490px;
+	padding-left: 125px;
+	min-height: 680px;
+
 }
 .angel-info>div:nth-child(2){
 	background: url("../images/angel/sx.png") repeat-y;
