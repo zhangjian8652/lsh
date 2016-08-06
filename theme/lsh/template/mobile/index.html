@@ -13,7 +13,7 @@
             <div id="carousel-index" class="carousel slide" data-ride="carousel">
                 <!-- Indicators -->
                 <ol class="carousel-indicators">
-                    [@ec_info queryType="list" nodeId="${nod.id!}" groupName="mobile_carousel";list]
+                    [@ec_info queryType="list" nodeId="${nod.id!}" groupName="手机轮播";list]
                     [#if list?? && (list?size >0)]
                     [#list list as info]
                     [#if info_index == 0]
@@ -28,7 +28,7 @@
 
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner">
-                    [@ec_info queryType="list" nodeId="${nod.id!}" groupName="mobile_carousel";list]
+                    [@ec_info queryType="list" nodeId="${nod.id!}" groupName="手机轮播";list]
                     [#if list?? && (list?size >0)]
                     [#list list as info]
                     [#if info_index == 0]
@@ -61,7 +61,7 @@
     <div class="row">
         <div class="col-sm-12 margin-top-bottom-10">
             <div class="row" id="zhuanti">
-                [@ec_info queryType="list" nodeId="${nod.id!}" groupName="mobile_two";list]
+                [@ec_info queryType="list" nodeId="${nod.id!}" groupName="手机双图区";list]
                 [#if list?? && (list?size >0)]
                 [#list list as info]
                 <div class="col-xs-6 no-padding url" data-url="${info.uri!}">
@@ -102,7 +102,7 @@
         </div>
         <div class="col-sm-12">
             <div class="row">
-                [@ec_info queryType="list" nodeId="${nod.id!}" groupName="mobile";list]
+                [@ec_info queryType="list" nodeId="${nod.id!}" groupName="手机";list]
                 [#if list?? && (list?size >0)]
                 [#list list as info]
                 <div class="col-xs-12 margin-top-bottom-10 info-block url" data-url="${info.uri!}">

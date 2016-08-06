@@ -509,6 +509,7 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 #news .news-right .head .head1{
 	background: url("../images/activity_review.png") no-repeat;
 	margin-right: 20px;
+	display: none;
 }
 
 #news .news-right .head .head1,#news .news-right .head .head2{
@@ -654,7 +655,8 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 }
 
 #lyhp .content{
-	height: 540px;
+	min-height: 270px;
+	max-height: 540px;
 }
 #xdts{
 	background: url("../images/xdts_bg.png") 0px;

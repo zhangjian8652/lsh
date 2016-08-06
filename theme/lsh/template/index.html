@@ -180,7 +180,8 @@
 
             <div class="content">
                 <ul class="content-ul">
-                    [@ec_info queryType="list" nodeId="${nod.id!}" groupName="activity_info";list]
+                    [@ec_info_page nodeId="${nod.id!}" groupName="默认组" pageNum="1" pagesize = "9";page]
+                    [#assign list = page.datas/]
                     [#if list?? && (list?size >0)]
                     [#list list as info]
                     <li>
@@ -196,7 +197,7 @@
                     </li>
                     [/#list]
                     [/#if]
-                    [/@ec_info]
+                    [/@ec_info_page]
 
                 </ul>
             </div>
@@ -205,7 +206,7 @@
             </div>
             [/@ec_node]
         </div>
-        <div class="lets-go">我要发起行动</div>
+        <div class="lets-go" style="display: none;">我要发起行动</div>
     </div>
 
 </div>
@@ -221,7 +222,8 @@
     <div class="lyhp-content" style="margin: 0px;width:940px">
         <div class="content">
             <ul class="content-ul">
-                [@ec_info queryType="list" nodeId="${nod.id!}" groupName="default";list]
+                [@ec_info_page nodeId="${nod.id!}" groupName="产品" pageNum="1" pagesize = "4";page]
+                [#assign list = page.datas/]
                 [#if list?? && (list?size >0)]
                 [#list list as info]
                 <li uri="${info.uri!}" style="cursor: pointer;">
@@ -235,7 +237,7 @@
                 </li>
                 [/#list]
                 [/#if]
-                [/@ec_info]
+                [/@ec_info_page]
 
             </ul>
         </div>
@@ -326,9 +328,9 @@
 
                 var userAgent = navigator.userAgent;
 
-                if(userAgent.indexOf("Chrome") > 0){
+              /*  if(userAgent.indexOf("Chrome") > 0){
                     $("#video video").height("366px").width("660px");
-                }
+                }*/
 
             }
     );
