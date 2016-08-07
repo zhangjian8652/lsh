@@ -117,8 +117,20 @@
 </div>
 
 <div id="medias">
-    <div class="left">
+    <div class="left" style="position: relative;">
         <img width="255px" src="${node.fields['medias_image']!}">
+        <div style="position: absolute ;top: 42px;z-index: 10000;">
+            [@ec_node code="special";nod]
+            [@ec_info_page nodeId="${nod.id!}" groupName="default" pageNum="1" pagesize = "3";page]
+            [#assign list = page.datas/]
+            [#if list?? && (list?size >0)]
+            [#list list as info]
+            <img src="${info.fields['image']!}" data-uri="${info.uri!}"/>
+            [/#list]
+            [/#if]
+            [/@ec_info_page]
+            [/@ec_node]
+        </div>
     </div>
     <div class="right">
         <div class="medias_nav">
@@ -331,6 +343,10 @@
               /*  if(userAgent.indexOf("Chrome") > 0){
                     $("#video video").height("366px").width("660px");
                 }*/
+
+                $("#medias .left div img ").click(function(){
+                    location.href = $(this).attr("data-uri");
+                });
 
             }
     );

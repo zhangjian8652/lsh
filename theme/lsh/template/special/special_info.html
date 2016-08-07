@@ -1,33 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
-    <title>${node.fields["tittle"]!}</title>
-    [#include "meta.html"/]
-    [#include "css.html"/]
-    [#include "js.html"/]
+    <title>${info.fields["tittle"]!}</title>
+    [#include "../meta.html"/]
+    <style>
+
+    </style>
 </head>
 
-<body>
-[#include "header/header.html"/]
+<body style="margin: 0px;padding: 0px;">
 
-<div class="container">
-    <div class="head">
-        <img src="${node.fields['head_image']!}">
-    </div>
+<img src="${res!}/resources/images/special/ad_ep1.jpg" style=" width: 55%;margin: auto; display: block;"/>
 
-    <div class="center">
-        <div class="single-info">
-
-        </div>
-    </div>
-</div>
-
-[#include "../footer/footer.html"/]
-<script type="text/javascript">
-    $(".container .left li").click(function () {
-        var targetId = $(this).attr("content-id");
-        $("#" + targetId).show().siblings().hide();
-    });
-</script>
 </body>
 </html>

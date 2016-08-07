@@ -101,6 +101,12 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 
 #medias{ width:940px;height: 400px;padding-top:0px;position:relative;margin:0px auto; overflow:hidden;}
 #medias .left{ float:left; width:280px; vertical-align:top;}
+#medias .left div img {
+	height: 92px;
+	margin: 1px 0 6px 14px;
+	width: 225px;
+	cursor: pointer;
+}
 #medias .right{ width:660px; overflow:hidden;margin: 0px;}
 #medias .right .media_nav{}
 #medias .right .media_nav ul{}
@@ -538,6 +544,7 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 	position: relative;
 	z-index: 100;
 	height: 29px;
+	margin-left: 3px;
 }
 .medias_nav ul>li{
 	float: left;

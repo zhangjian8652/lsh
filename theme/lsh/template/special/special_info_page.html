@@ -5,8 +5,8 @@
 [#assign list = page.datas/]
 [#if list?? && (list?size >0)]
 [#list list as info]
-<div class="single-info">
-    <img src="${info.fields['image']!}"/>
+<div class="single-info" data-uri="${info.uri!}">
+    <img src="${info.fields['image']!}" />
     <p>${info.fields['tittle']!}</p>
 
     [#if info_index < (list?size -1) ]
@@ -41,6 +41,11 @@
 [/@ec_info_page]
 [/@ec_node]
 
+<style>
+    .single-info{
+        cursor: pointer;
+    }
+</style>
 <script>
     $(function () {
         $(".page li>a").click(function () {
@@ -49,6 +54,10 @@
             $.get(url, function (data) {
                 $("#info-page-data").html(data);
             });
+        });
+
+        $(".single-info").click(function(){
+            location.href = $(this).attr("data-uri");
         });
     });
 </script>
