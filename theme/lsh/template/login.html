@@ -40,7 +40,7 @@
                 </tr>
                 <tr>
                     <td><label>密码：</label><br/></td>
-                    <td><input type="password" name="password" id="password"/></td>
+                    <td><input type="password" name="password" id="apassword"/></td>
                 </tr>
                 <tr>
                     <td colspan="2"><input type="button" value="登录" id="login-btn"/></td>
@@ -57,7 +57,7 @@
 
         $("#login-btn").click(function () {
             var loginId = $("#loginId").val();
-            var password = $("#password").val();
+            var password = $("#apassword").val();
             if (loginId == null || password == null) {
                 alert("用户名与密码不能为空");
             } else {

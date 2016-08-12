@@ -1101,7 +1101,7 @@
                 <dl id="pwdDl" class="regForm-item">
                     <dt class="regForm-item-tit"><span class="txt-impt">*</span>密码</dt>
                     <dd class="regForm-item-ct">
-                        <input id="password" name="password" type="password" class="ipt norWidthIpt" style="ime-mode:disabled">
+                        <input id="apassword" name="password" type="password" class="ipt norWidthIpt" value="">
                         <div id="pwdTips" class="tips" style="position:relative">
                             <div id="mobilePwdStatus" class="pswState pswState-poor" style="display:none;">
                                 <span class="s1">弱</span>
@@ -1192,7 +1192,7 @@
                 },
                 cfmPwdIpt:{
                     required:true,
-                    equalTo:"#password"
+                    equalTo:"#apassword"
                 },
                 code:{
                     required:true,
