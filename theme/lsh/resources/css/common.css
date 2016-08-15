@@ -1,0 +1,225 @@
+body{
+    font-family:PingFangSC-Regular;
+}
+
+.eepau-form-group{
+    width: 320px;
+    margin: auto;
+    position: relative;
+}
+.eepau-form-group label{
+    font-size: 14px;
+    color: #909aaa;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: block;
+    height: 28px;
+    line-height: 28px;
+}
+.eepau-form-group label.error{
+    height: 0px;
+    text-align: left;
+    color: red;
+    position: relative;
+    top: -12px;
+}
+
+.eepau-input-group{
+    border-radius:4px;
+    background-color: #fff;
+}
+.eepau-input-group>div{
+    display: inline-block;
+}
+.eepau-input-group.normal{
+    border:1px solid #d3e6d9;
+}
+
+
+.eepau-input-group.normal .icon-user{
+    background-image: url("../images/login_register/user.png");
+}
+.eepau-input-group.normal .icon-phone{
+    background-image: url("../images/login_register/phone.png");
+}
+.eepau-input-group.normal .icon-password{
+    background-image: url("../images/login_register/password.png");
+}
+.eepau-input-group.success{
+    border:1px solid #428a5a;
+}
+.eepau-input-group.success .icon-user{
+    background-image: url("../images/login_register/user_active.png");
+}
+.eepau-input-group.success .icon-phone{
+    background-image: url("../images/login_register/phone_active.png");
+}
+.eepau-input-group.success .icon-password{
+    background-image: url("../images/login_register/password_active.png");
+}
+
+.eepau-input-group.error{
+    border:1px solid orangered;
+}
+
+.eepau-input-group.error .icon-user{
+    background-image: url("../images/login_register/wrong.png");
+}
+.eepau-input-group.error .icon-phone{
+    background-image: url("../images/login_register/wrong.png");
+}
+.eepau-input-group.error .icon-password{
+    background-image: url("../images/login_register/wrong.png");
+}
+.code-input{
+    display: inline-block;
+}
+.eepau-input-group.code-input{
+    width: 185px;
+}
+.eepau-input-group .eepau-input{
+    height: 45px;
+}
+.eepau-form-group .code-img{
+    display: inline-block;
+    width: 115px;
+    position: absolute;
+    margin-left: 16px;
+    top: 40px;
+}
+
+.eepau-input-group.code-input .eepau-input{
+    width: 135px;
+}
+.eepau-input-icon{
+    width: 40px;
+    height: 45px;
+    line-height: 45px;
+    text-align: right;
+    position: relative;
+    top: 2px;
+}
+.eepau-input{
+    line-height: 44px;
+    width: 220px;
+}
+.eepau-input{
+    border: none;
+    height: 40px;
+    width: 85%;
+    outline:none;
+    padding-left: 45px;
+    background: no-repeat 17px 14px;
+}
+.eepau-form{
+    width: 315px;
+}
+.eepau-form-group>h1{
+    font-size: 22px;
+    color: #1e2d3e;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    display: block;
+    height: 50px;
+    line-height: 50px;
+}
+.eepau-form-group>p{
+    font-family:PingFangSC-Regular;
+    font-size:14px;
+    color:#909aaa;
+    width:100%;
+    text-align: center;
+    display: block;
+    height: 50px;
+    line-height: 50px;
+}
+
+.eepau-form-group>hr{
+    border: none;
+    height: 1px;
+    margin: 0px;
+    padding: 0px;
+    border-bottom: 1px solid #ebeced;
+}
+
+.btn{
+    display: block;
+    width: 100%;
+    height: 46px;
+    line-height: 46px;
+    text-align: center;
+    border-radius:4px;
+    color: #ffffff;
+    cursor: pointer;
+}
+.btn-success{
+    background:#428a5a;
+}
+.eepau-form{
+    width: 390px;
+    margin: auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding-top: 10px;
+    box-shadow: 2px 2px #ebeced;
+}
+
+.eepau-form.register{
+    margin-top: 85px;
+}
+.eepau-form.login{
+    margin-top: 215px;
+}
+.eepau-form-group .close-btn{
+    display: inline-block;
+    width: 30px;
+    height: 25px;
+    position: relative;
+    cursor: pointer;
+    background: url("../images/login_register/x.png") 5px 0px no-repeat;
+}
+.eepau-form-group .close-btn:hover{
+    background-image: url("../images/login_register/x_click.png");
+}
+
+.eepau-form.register .close-btn{
+    left: 300px;
+    position: absolute;
+    top: 20px;
+}
+.eepau-form.login .close-btn{
+    left: 300px;
+    position: absolute;
+    top: 20px;
+}
+
+.eepau-form-group.line{
+    margin: 20px auto;
+}
+
+.modal{
+    position: absolute;
+    z-index: 10000;
+    width: 100%;
+    height: 100%;
+    display: none;
+    top: 0px;
+    left: 0px;
+}
+.modal-cover {
+    padding: 0px;
+    margin: 0px;
+    position: fixed;
+    z-index: 9999;
+    opacity: 0.69;
+    background: #748d7d;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    display: none;
+}
+#login-form,#register-form{
+    margin: 0px;
+}

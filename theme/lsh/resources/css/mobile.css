@@ -38,9 +38,6 @@ body{
 .info-block .name{
     font-size: 18px;
     color: #716251;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
 }
 .number-red{
     color: #fd6512;

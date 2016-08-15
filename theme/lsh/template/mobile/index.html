@@ -1,6 +1,6 @@
 
 <div class="container-fluid">
-    [@ec_node code="work";nod]
+
     <div class="row">
         <div class="col-xs-12 menu margin-top-bottom-10">
             <a href="/"><img src="${res!}/resources/images/mobile/mobile_head.png" width="100%"></a>
@@ -9,11 +9,11 @@
 
     <div class="row">
         <div class="col-xs-12">
-
+            [@ec_node code="focus";nod]
             <div id="carousel-index" class="carousel slide" data-ride="carousel">
                 <!-- Indicators -->
                 <ol class="carousel-indicators">
-                    [@ec_info queryType="list" nodeId="${nod.id!}" groupName="手机轮播";list]
+                    [@ec_info queryType="list" nodeId="${nod.id!}" groupName="";list]
                     [#if list?? && (list?size >0)]
                     [#list list as info]
                     [#if info_index == 0]
@@ -28,16 +28,16 @@
 
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner">
-                    [@ec_info queryType="list" nodeId="${nod.id!}" groupName="手机轮播";list]
+                    [@ec_info queryType="list" nodeId="${nod.id!}" groupName="";list]
                     [#if list?? && (list?size >0)]
                     [#list list as info]
                     [#if info_index == 0]
                     <div class="item active url" data-url="${info.uri!}">
-                        <img src="${info.fields['image']!}" style="margin: auto;">
+                        <img src="${info.fields['background']!}" style="margin: auto;">
                     </div>
                     [#else]
                     <div class="item url" data-url="${info.uri!}">
-                        <img src="${info.fields['image']!}" style="margin: auto;">
+                        <img src="${info.fields['background']!}" style="margin: auto;">
                     </div>
                     [/#if]
                     [/#list]
@@ -53,11 +53,11 @@
                     <span class="glyphicon glyphicon-chevron-right"></span>
                 </a>
             </div>
-
+            [/@ec_node]
         </div>
     </div>
 
-
+    [@ec_node code="work";nod]
     <div class="row">
         <div class="col-sm-12 margin-top-bottom-10">
             <div class="row" id="zhuanti">
@@ -97,12 +97,9 @@
 
 
     <div class="row">
-        <div class="col-xs-12 margin-top-bottom-10">
-            <span class="tittle">活动项目</span>
-        </div>
         <div class="col-sm-12">
             <div class="row">
-                [@ec_info queryType="list" nodeId="${nod.id!}" groupName="手机";list]
+                [@ec_info queryType="list" nodeId="${nod.id!}" groupName="默认组";list]
                 [#if list?? && (list?size >0)]
                 [#list list as info]
                 <div class="col-xs-12 margin-top-bottom-10 info-block url" data-url="${info.uri!}">
@@ -119,7 +116,7 @@
                         </tr>
                         <tr>
                             <td class="describe"><img src="${res!}/resources/images/mobile/icon_1.png">&nbsp;共<span
-                                    class="number-red">${info.fields['donation_people_number']!}</span>人捐助
+                                    class="number-red">${info.fields['donation_people_number']!0}</span>人捐助
                             </td>
                         </tr>
                         </tbody>

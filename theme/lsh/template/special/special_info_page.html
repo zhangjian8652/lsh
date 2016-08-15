@@ -42,7 +42,7 @@
 [/@ec_node]
 
 <style>
-    .single-info:nth-child(1){
+    .single-info{
         cursor: pointer;
     }
 </style>
@@ -56,7 +56,7 @@
             });
         });
 
-        $(".single-info:first-child").click(function(){
+        $(".single-info").click(function(){
             location.href = $(this).attr("data-uri");
         });
     });

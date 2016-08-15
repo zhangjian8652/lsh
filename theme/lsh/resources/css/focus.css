@@ -1,4 +1,4 @@
-﻿
+﻿﻿
 .box-focus {
 	width:940px;
 	position:relative;
@@ -54,3 +54,4 @@
 .img_description{ float:left; width:320px; height:320px; background:url(../images/mainbanner_bg.jpg) no-repeat;}
 .img_description h1, .img_description h2 { font-family:'微软雅黑'; font-size: 320%; line-height: 95%; margin: 40px 0 10px 20px; color:#FFF;}
 .img_description p { font-size:110%;line-height: 122%; margin:0 20px 20px 20px; color:#FFF; font-weight:bold;}
+								

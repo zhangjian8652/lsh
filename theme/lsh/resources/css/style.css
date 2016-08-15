@@ -105,7 +105,9 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 	height: 92px;
 	margin: 1px 0 6px 14px;
 	width: 225px;
-	cursor: pointer;
+}
+#medias .left div img{
+	cursor:pointer;
 }
 #medias .right{ width:660px; overflow:hidden;margin: 0px;}
 #medias .right .media_nav{}
@@ -399,27 +401,6 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 #info .sitemap ul li .smallul li{padding-left:15px;}
 #info .sitemap ul li .smallul a{ padding-left:12px; background:url(../images/cc2.png) left center no-repeat; text-decoration:none;}
 
-
-
-
-#register-form{
-	margin-top: 55px;
-	margin-left: 300px;
-}
-
-#register-form div{
-	margin-top:10px;
-}
-#register-form div label{
-	position: absolute;
-	left: 220px;
-}
-#register-form div input{
-	width: 220px;
-}
-#register-form div label,#register-form div input{
-	line-height: 26px;
-}
 
 #profile{
 	position: absolute;
@@ -1618,3 +1599,5 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 	border-style: solid;
 	border-color: rgb(35, 148, 56);
 }
+								
+								

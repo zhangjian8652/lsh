@@ -24,7 +24,7 @@
 <body>
 [#-- 如果是手机则用手机页面 --]
 [#if isMobileUA]
-    [#include "mobile/index.html"/]
+[#include "mobile/index.html"/]
 [#else]
 
 [#include "header/header.html"/]
@@ -74,14 +74,14 @@
         </div>
         <div class="content">
             [@ec_node code="news";nod]
-            [@ec_info_page nodeId="${nod.id!}" groupName="最新动态" pageNum="1" pagesize = "6";page]
+            [@ec_info_page nodeId="${nod.id!}" groupName="" pageNum="2" pagesize = "6";page]
             <table class="recent-news" id="recent">
                 <tbody>
                 [#assign list = page.datas/]
                 [#if list?? && (list?size >0)]
                 [#list list as info]
                 <tr>
-                    <td><a href="${info.uri!}">${info.name!}</a></td>
+                    <td style="width: 240px;"><a href="${info.uri!}">${info.name!}</a></td>
                     <td>${info.updateDate?string("yyyy-MM-dd")}</td>
                 </tr>
                 [/#list]
@@ -111,7 +111,7 @@
             [/@ec_node]
         </div>
         <div class="footer">
-            <a href="${path!}/activity"><img src="${res!}/resources/images/news_more.png"/>&nbsp;&nbsp;&nbsp;浏览更多</a>
+            <a href="${path!}/news"><img src="${res!}/resources/images/news_more.png"/>&nbsp;&nbsp;&nbsp;浏览更多</a>
         </div>
     </div>
 </div>
@@ -119,7 +119,7 @@
 <div id="medias">
     <div class="left" style="position: relative;">
         <img width="255px" src="${node.fields['medias_image']!}">
-        <div style="position: absolute ;top: 42px;z-index: 10000;">
+        <div style="position: absolute ;top: 42px;z-index: 998;">
             [@ec_node code="special";nod]
             [@ec_info_page nodeId="${nod.id!}" groupName="default" pageNum="1" pagesize = "3";page]
             [#assign list = page.datas/]
@@ -150,7 +150,7 @@
                                     <source src="${node.fields['video']!}" type="video/mp4">
                                 </video>
                             </div>
-                            <div class="video-tittle"><span>"${node.fields['video_describe']!}"</span>
+                            <div class="video-tittle"><span>${node.fields['video_describe']!}</span>
                             </div>
                         </li>
                     </ul>
@@ -164,7 +164,7 @@
 
                         <li>
                             <div style=" width:620px; height:361px; margin-left: 0px"><img
-                                                                                           src="${node.fields['image']!}">
+                                    src="${node.fields['image']!}">
                             </div>
                             <div class="photo-tittle"><span>${node.fields['image_describe']!}</span>
                             </div>
@@ -229,7 +229,7 @@
         <div class="area-1">
             <div class="area-2"><span>${nod.name!}</span></div>
         </div>
-       <!-- <div class="moore-goods">更多商品</div>-->
+        <!-- <div class="moore-goods">更多商品</div>-->
     </div>
     <div class="lyhp-content" style="margin: 0px;width:940px">
         <div class="content">
@@ -240,8 +240,8 @@
                 [#list list as info]
                 <li uri="${info.uri!}" style="cursor: pointer;">
                     <div style="padding: 15px;">
-                        <img src="${info.fields['image']!}">
-                        <div class="describe">${info.fields['tittle']!}</div>
+                        <img src="${info.fields['image']!}" width="198px" height="198px">
+                        <div class="describe" style="height:42px;">${info.fields['tittle']!}</div>
                         <div class="tittle">
                             ${info.fields['price']!}
                         </div>
@@ -340,11 +340,11 @@
 
                 var userAgent = navigator.userAgent;
 
-              /*  if(userAgent.indexOf("Chrome") > 0){
-                    $("#video video").height("366px").width("660px");
-                }*/
+                /*  if(userAgent.indexOf("Chrome") > 0){
+                 $("#video video").height("366px").width("660px");
+                 }*/
 
-                $("#medias .left div img ").click(function(){
+                $("#medias .left div img").click(function(){
                     location.href = $(this).attr("data-uri");
                 });
 
@@ -358,4 +358,9 @@
 
 </body>
 </html>
+
+
+
+
+
 								
