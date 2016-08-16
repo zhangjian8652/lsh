@@ -194,7 +194,7 @@
 #backtop a:hover{ background-color: rgba(0,0,0,.7); }
 
 
-body{ background-color: #f1f1f1;color: #474747;font-family: "Microsoft Yahei";font-size: 14px;}
+body{ background-color: #f1f1f1;color: #474747;font-family: "Microsoft Yahei";font-size: 16px;}
 body a{color: #474747;}
 /*消息数量 样式*/
 .msgnum,.msg_num{display:none;}

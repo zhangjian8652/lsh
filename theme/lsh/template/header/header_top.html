@@ -1,12 +1,21 @@
 <div class="logo"><a href="/"><img src="${nod.fields['logo']!}"></a></div>
 <div class="navigation">
     <ul>
+
         [#if member??]
         <li><a class="size txt_l" href="javascript:void(0);" title="18px" id="profile-btn">${member.loginId!''}</a>
             <div id="profile" style="display: none;">
-                <div style="padding: 10px">
-                    用户名:${member.loginId!''}<br/>
-                    邮箱:${member.email!''}<br/>
+                <div class="eepau-login-info">
+                    <div><img src="${res!}/resources/images/login_info/yonghu.png" class="eepau-login-info-icon"/><span class="eepau-login-info-name">邮箱: ${member.loginId!''}@163.com</span><input type="hidden" value="${member.email!''}"/></div>
+                    <hr/>
+                    <div><img src="${res!}/resources/images/login_info/dianhua-1.png" class="eepau-login-info-icon"/><span class="eepau-login-info-name">电话: ${member.loginId!''}</span></div>
+                    <hr/>
+                    <div><img src="${res!}/resources/images/login_info/jifen.png" class="eepau-login-info-icon"/><span class="eepau-login-info-name">绿芽积分: 100</span></div>
+                    <hr/>
+                    <div><img src="${res!}/resources/images/login_info/dianhua.png" class="eepau-login-info-icon"/><span class="eepau-login-info-name">状态: 未认证<span class="eepau-login-info-blue">（前往认证）</span></span></div>
+                    <hr/>
+                    <div id="logout"><img src="${res!}/resources/images/login_info/tuichu.png" class="eepau-login-info-icon"/><span class="eepau-login-info-name">退出账号</span></div>
+
                 </div>
             </div>
             <script type="text/javascript">
@@ -14,21 +23,25 @@
                     $("#profile-btn").click(function () {
                         $("#profile").show()
                     });
-                    $("#profile-btn").mouseleave(function () {
-                        $("#profile").hide();
+                    $("#profile").mouseleave(function () {
+                        $(this).hide();
+                    });
+                    $("#logout").click(function(){
+                        location.href = "${path!}/frontend/logout";
                     });
                 });
             </script>
         </li>
-        <li><a href="${path!}/frontend/logout" title="登出">登出</a></li>
+
+
         [#else]
         <li>
             <a href="javascript:void(0);" title="登录" id="eepau-login">登录</a>
         </li>
         <li><a href="javascript:void(0);" title="注册" id="eepau-register">注册</a></li>
         [/#if]
-
         <li>您好，欢迎参与生态保护行动&nbsp;&nbsp;</li>
+
     </ul>
 
     <div class="site-search">

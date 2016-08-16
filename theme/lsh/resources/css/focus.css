@@ -5,10 +5,10 @@
 	background:#999;
 }
 .ctrl-panel {
-	position:absolute;
-	right:14px;
-	top:282px;
-	z-index:1000;
+	position: absolute;
+	right: 61px;
+	top: 270px;
+	z-index: 1000;
 }
 .m-page {
 	display:block;
