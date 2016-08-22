@@ -16,9 +16,13 @@
                 [@ec_info queryType="list" nodeId="${nod.id!}" groupName="";list]
                 [#if list?? && (list?size >0)]
                 [#list list as info]
+
                 <div class="content_list">
-                    <img  src="${info.fields['background']!}">
+                    <a href="${info.fields['url']!'#'}">
+                        <img src="${info.fields['background']!}">
+                    </a>
                 </div>
+
                 [/#list]
                 [/#if]
                 [/@ec_info]
