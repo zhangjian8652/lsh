@@ -118,7 +118,7 @@
 
 <div id="medias">
     <div class="left" style="position: relative;">
-        <img width="255px" src="${node.fields['medias_image']!}">
+        <img width="255px" height="396px" src="${node.fields['medias_image']!}">
         <div style="position: absolute ;top: 42px;z-index: 998;">
             [@ec_node code="special";nod]
             [@ec_info_page nodeId="${nod.id!}" groupName="default" pageNum="1" pagesize = "3";page]
@@ -145,9 +145,10 @@
                 <div class="mediaphoto-list shipin">
                     <ul>
                         <li>
-                            <div style="width:670px;height: 361px;margin-left: 0px;margin-top: -15px;">
+                            <div style="width:670px;height: 400px;margin-left: 0px;margin-top: -15px;">
                                 <video controls width=664px" height="361px">
-                                    <source src="${node.fields['video']!}" type="video/mp4">
+                                <!--    <source src="${node.fields['video']!}" type="video/mp4">-->
+                                    <source src="http://og9eczixb.bkt.clouddn.com/dtxw.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="video-tittle"><span>${node.fields['video_describe']!}</span>
@@ -163,7 +164,7 @@
                     <ul>
 
                         <li>
-                            <div style=" width:620px; height:361px; margin-left: 0px"><img
+                            <div style=" width:620px; margin-left: 0px"><img
                                     src="${node.fields['image']!}">
                             </div>
                             <div class="photo-tittle"><span>${node.fields['image_describe']!}</span>

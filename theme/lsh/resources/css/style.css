@@ -99,11 +99,11 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 #info .info_content .activity{ padding-top:20px;}
 
 
-#medias{ width:940px;height: 400px;padding-top:0px;position:relative;margin:0px auto; overflow:hidden;}
+#medias{ width:940px;height: 440px;padding-top:0px;position:relative;margin:0px auto; overflow:hidden;}
 #medias .left{ float:left; width:280px; vertical-align:top;}
 #medias .left div img {
 	height: 92px;
-	margin: 1px 0 6px 14px;
+	margin: 4px 0 17px 14px;
 	width: 225px;
 }
 #medias .left div img{
@@ -129,7 +129,7 @@ body {margin:0px auto; color: #545454; background: #eaeade url(../images/body_bg
 .mediaphoto-list { position:relative; width:670px;overflow:hidden;margin: 0px;}
 .mediaphoto-list ul { width:9999px;}
 .mediaphoto-list li { float:left; width:670px;cursor: pointer}
-.mediaphoto-list li img{     width: 660px;height: 346px;}
+.mediaphoto-list li img{     width: 660px;height: 379px;}
 
 .mediaphoto-list li .phototitle{
 	float: left;
